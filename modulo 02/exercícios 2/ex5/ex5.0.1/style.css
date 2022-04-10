@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+h1 {
+    /*
+    O h1 por padrão é uma caixa box-level, para mudar isso 
+    basta usar "display: inline", inline-level não possui medidas 
+    de altura e largura.
+    */
+    display: inline;
+    background-color: aqua;
+    height: 300px;
+    width: 300px;
+
+    /*Shorthands*/
+    border: 10px solid darkgreen;
+    padding: 10px; 
+    /*
+    Os valores a serem alterados vão na direção do relógio: 
+    cima, direita, baixo, esquerda.
+    Se todos os valores são iguais só digite ele uma vez
+    Se você colocar 2 medidas ele diz que o primeiro valor corresponde 
+    às medidas de cima e de baixo, e o segundo à direita e esquerda.
+    */
+    margin: 20px auto 40px auto;
+    /*
+    Usando "auto" você centraliza o lado
+    */
+    outline: 5px dashed salmon;
+/*
+    border-width: 10px;
+    border-style: solid;
+    border-color: blueviolet;
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+
+    outline-width: 5px;
+    outline-style: dashed;
+    outline-color: black; 
+*/
+}
+a {
+    /*
+    Por padrão é uma caixa inline-level, use "display:block" para 
+    tranformá-lo em block-level
+    */
+    display: block;
+    border-width: 10px;
+    border-style: solid;
+    border-color: brown;
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/*
+Existem também o "dysplay: inline-block" que é inline-level mas 
+possui algumas caracterísitcas de block-level, como altura e largura
+*/

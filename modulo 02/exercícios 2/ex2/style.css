@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+
+* { /*A tag "* {}" é para fazer configurações globais na CSS */
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(-135deg, #FDB34B, #EE7535, #D14B65, #C92C81, #8139AF, #624BC5, #466AD7);
+    background-attachment: fixed; /*Mesmo que você role para baixo o degradê se mantém fixo*/
+}

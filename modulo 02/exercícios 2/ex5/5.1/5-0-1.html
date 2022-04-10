@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon1.ico" type="image/x-icon">
+    <title>Revisão Modelo de Caixas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1 class="a">Teoria das Caixas</h1>
+        <p>
+            Ele auxialia você a organizar melhor a estrutura do seu site. A maioria das caixas no HTML podem estar dentro de outra caixa, 
+            isso se chama aninhamento.     
+        </p>
+        <p>
+            Sempre que fazemos um "h1", por exemplo, nós estamos criando uma pequena caixa que possuí esse conteúdo dentro dela, por isso que 
+            quando você está fazendo uma alteração nele com CSS, você na verdade está fazendo uma alteração na caixa que o contém.
+        </p>
+        <p>
+            Existem 2 parâmetros que definem o tamanho dessa caixa, a <strong>altura</strong> (<code>height</code>) e a <strong>largura</strong> 
+            (<code>width</code>).
+        </p>
+        <p>
+            Além disso podemos fazer uma linha que contorna a caixa do conteúdo, que é a <code>border</code>. Só que essa linha fica bem colada no conteúdo, 
+            então para resolver isso usamos o <code>padding</code>, que é chamado de preenchimento, você meio que "engorda" a caixa. Você pode alterar a distâncias 
+            do padding na direita, esquerda, cima e baixo.
+        </p>
+        <p>
+            No entanto, caso tenha um conteúdo logo abaixo dessa caixa ele ficará encostando no border, o que é um problema, por isso que além de você poder fazer um 
+            espaço interno você também pode fazer um espaço externo, um quadrado invisível que distância a border de uma caixa da outra. Esse espaço externo é o que 
+            chamamos de <code>margin</code>.
+        </p>
+        <p>
+            Dentro do espaço da margin você pode criar um tracejado fora do border, chamamos ele de <code>outline</code>, também conhecido como "tracejado". Você usa ele 
+            caso você precise de um trajedo além da borda.
+        </p>
+
+        <h1 class="a">Tipos de Caixa</h1>
+        <h2 class="b">Box-level</h2>
+        <p>
+            Sempre se inicia em uma linha nova, caso tenha um conteúdo que o antecede.
+        </p>
+        <p>
+            Ele sempre ocupa a largura inteira do seu navegador (do seu viewport), se a tela for grande ele será grande, se for pequena ele será pequeno.
+        </p>
+        <p>
+            Sempre que a caixa for começar ele vai pular para a linha de caixa, ocupara a largura inteira da tela e vai pular para a próxima linha antes de continuar o próximo 
+            conteúdo.
+        </p>
+        <p>
+            Ex: div, h1-h6, p, main, header, nav, article, aside, footer, form, video.
+        </p>
+        <h2 class="b">Inline-level</h2>
+        <p>
+            A caixa é criada ao lado do conteúdo e vai possuir o tamanho necessário para armazenar seu conteúdo. E após terminar ele, o próximo conteúdo vai seguir na mesma linha.
+        </p>
+        <p>
+            Ex: span, a, code, small, strong, em, sup-sub, label, button, input, select.
+        </p>
+    </main>
+</body>
+</html>

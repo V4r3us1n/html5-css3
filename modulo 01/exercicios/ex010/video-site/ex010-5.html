@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <title>Vídeos com HTML5</title>
+</head>
+<body>
+    <h1>Inserindo vídeos hospedados localmente</h1>
+    <p>
+        Cuidado com direitos autorais quando se trata de vídeos, caso você queira baixar Vídeos
+        sem direitos autorais recomendo o site <strong>pexels</strong>, mas não precisa baixar ele 
+        com qualidade máxima.
+    </p>
+    <p>
+        Nos vídeos também é bom colocar o vídeo em diferentes formatos. Você pode editar o formato de seu vídeo 
+        com o <strong>HandBrake</strong>. Ele também consegue reduzir o tamanho do arquivo, deixando ele mais leve.
+    </p>
+    <img src="tabela-navegadores.png" alt="tabela com os formatos aceitos nos navegadores">
+    <p>
+        Você pode colocar uma <emp>tumb</emp> nos vídeos que você vai colocar no site.
+    </p>
+    <p>
+        Este vídeo está hospedado no meu próprio servidor. <br>
+        Assim como nos aúdios existem duas formas de se colocar um vídeo hospedado localmente:
+    </p>
+    <video src="🔴Rap do Sans Sem Vigor (Glitchtale) Versão Acústica VMZ_720P HD.mp4" width="500" controls></video>
+    <p>
+        Essa primeira forma não funciona muito bem, porque nem todo navegador usa suporta o mesmo formato de vídeo. 
+        Por isso temos a segunda forma onde você coloca mais de um formato:
+    </p>
+    <video width="500" poster="sans600x400.jpg" controls>
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) Versão Acústica VMZ_720P HD.mp4" type="video/mp4">
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) Versão Acústica VMZ_720P HD.m4v" type="video/m4v">
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) Versão Acústica VMZ_720P HD.webm" type="video/webm">
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) Versão Acústica VMZ_720P HD.ogg" type="video/ogg">
+        <p>
+            Seu navegador não tem compatibilidade com esse vídeo.
+        </p>
+    </video>
+    <p>
+        Nessa segunda forma, a ordem tem total influência, primeiro o site tenta usa o formato de cima, em seguida 
+        ele vai para o de baixo e assim sucessivamente.
+    </p>
+    <p>
+        Mas tem um pequeno problema em ter o vídeo hospedado em seu site. Por exemplo, um vídeo de 11MB visto por 1000 pessoas 
+        gastou 11,23GB e isso pesa no bolso de seu cliente, pois consome muito tráfego de dados. Por isso você tem que falar ao 
+        cliente sobre essa alternativa.
+    </p>
+    <p>
+        Caso você não queira gastar muito do bolso de seu cliente, indo pelo caminho mais inteligente, acesse a 
+        <a href="video-youtube/ex010-5-1.html" target="_self" rel="next">segunda página</a>.
+    </p>
+</body>
+</html>

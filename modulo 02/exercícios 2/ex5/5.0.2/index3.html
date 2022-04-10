@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon1.ico" type="image/x-icon">
+    <title>Bordas Personalizadas</title>
+    <style>
+        h1 {
+            border: 15px solid black;
+            padding: 10px;
+            border-image-source: url('borda.png');
+            border-image-slice: 24; /*o valor 38 é interessante*/
+            border-image-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+    <h1>Usando Bordas Personalizadas</h1>
+    <p>
+        Criando um quadrado de 80x80px, resolução X e Y de 70 e cor transparente. 
+        Não precisa ser transparente, mas vamos usar esse exemplo, depois dividir o 
+        quadrado em 9 partes usando aquelas linhas imaginárias do GIMP. Após fazer as linhas 
+        criar uma bolinha e pintar ela, depois colorcar uma bolinha em cada um dos quadrados, 
+        exceto o do meio, pintar as bolinhas dos cantos de outra cor, baixar a imagem.
+    </p>
+    <p>
+        O "border-image-repeat" tem 2 valores o "repeat" e o "stratch", mas o stratch é estranho.
+    </p>
+    <p>
+        Pode ficar um pouco ruim se você diminuir e aumentar a tela. 
+        A shorthand para ele é "<strong>border-image</strong>: url('border.png') 24 repeat;"
+        A border-image não funciona se não tiver um border no elemento.
+    </p>
+</body>
+</html>

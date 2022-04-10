@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <title>Imagens dinâmicas, áudios e vídeos</title>
+</head>
+<body>
+    <h1>Imagens Dinâmicas, Áudio e Vídeo</h1>
+    <p>
+        Fotos, áudios e vídeos são essenciais na construção de sites atualmente. Ilustrar bem 
+        seu conteúdo ajuda a esclarecer a mensagem que você quer passar. Mas tem que tomar cuidado 
+        com formatos e tamanhos, pois nem todas as pessoas vão acessar seu site com o computador.
+    </p>
+    <h2>Seu site deve se adaptar ao tamanho da tela</h2>
+    <p>
+        A mídia que mais sofre problemas de tamanho de exibição são as imagens, saber adaptar isso é de extrema importância.    
+    </p>
+    <h2>Imagens Flexíveis</h2>
+    <p>
+        O primeiro passo para adaptar o conteúdo ao tamanho da tela é aprender  a gerar imagens de tamanhos diferentes e fazer com que o navegador 
+        carregue a imagem certa para cada situação. Para isso, existem as tags <code>&ltpicture&gt</code> e <code>&ltsource&gt</code>.
+    </p>
+    <p>
+        Para esse exemplo criamos 3 imagens com diferentes tamanhos, 300x300px, 700x700px e 1000x1000px. Para isso foi usado o <strong>GIMP</strong>, 
+        essas imagens serão carregadas pelo navegador de acordo com o tamanho da janela atual. Para isso criaremos o seguinte código: <br>
+    <picture>
+        <img src="sans1000.jpg" alt="A imagem flexível vai funcioanr">
+    </picture>
+    </p>
+    <p>
+        Como pode notar inserimos a tag &ltimg&gt dentro da tag &ltpicture&gt, essa nova tag vai ter também as outras fontes de imagem. Como padrão a imagem 
+        1000x1000px vai ser carregada.
+    </p>
+    <p>
+        O problema começa a surgir quando a janela do navegador chega perto dos 1000px de largura da imagem, dessa forma a imagem não cabe mais. Vamos adicionar uma linha para 
+        resolver o problema: <br>
+        <picture>
+            <source media="(max-width: 1050px)" srcset="sans700.jpg" type="image/jpg">
+            <img src="sans1000.jpg" alt="A imagem flexível vai funcionar">
+        </picture>
+    </p>
+    <p>
+        Note que a tag <code>&ltsource&gt</code> possui 3 atributos:
+        <ul type="circle">
+            <li><code>type</code> indica o <em>media type</em> da imagem que usamos (veja sobre isso no ex009)</li>
+            <li><code>srcset</code> configura o nome da imagem que vai ser carregada quando o tamanho indicado for atingido</li>
+            <li><code>media</code> indica o tamanho máximo a ser considerado para carregar a imagem indicada no atributo <code>srcset</code></li>
+        </ul>
+    </p>
+    <p>
+        A o recarregar o site você vai ver que a imagem vai diminuir de tamanho quando você diminuir o tamanho de sua janela. Vamos acrescenter mais um 
+        <code>source</code> à nossa imagem: <br>
+        <picture>
+            <source media="(max-width: 750px)" srcset="sans300.jpg" type="image/jpg">
+            <source media="(max-width: 1050px)" srcset="sans700.jpg" type="image/jpg">
+            <img src="sans1000.jpg" alt="A imagem flexível vai funcionar">
+        </picture>
+    </p>
+    <p>
+        <strong>Algo que notei foi que ao colocar as tags estava ocorrendo alguns bugs em relação à mudança de tamanho, recomendo que escreva primeiro só a 
+            tag &ltsource&gt ao invés da tag &ltsource media&gt pois ela tá bugando, vai adicionado as outras tags uma por uma, ok?
+        </strong>
+    </p>
+    <p>
+        É importante existir uma ordem entre os <code>&ltsource&gt</code>, nessa configuração os itens mais acima são de tamanhos menores para <code>max width</code> 
+        e os a baixo vão ficando maiores. O último dentro de <code>&ltpicture&gt</code> deve ser a imagem padrão, a que você colocou na tag &ltimg&gt.
+    </p>
+    <h2>Vamos falar sobre aúdio</h2>
+    <p>
+        Antigamente era muito complicado colocar aúdio nos sites, sendo necessário o conhecimentos de várias linguagens de programação. Mas com a chegagem da HTML5 isso se 
+        tornou mais fácil, bastando usar a tag &ltaudio&gt e alguns &ltsource&gt para ser capaz de tocar qualquer aúdio. Ex:
+    </p>
+        <audio preload="metadata" controls autoplay loop>
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) _ Versão Acústica _ VMZ (320 kbps).mp3" type="audio/mpeg">
+        <source src="midia/guanacast-33.ogg" type="audio/ogg">
+        <source src="midia/guanacast-33.wav" type="image/wav">
+        <p>
+            Seu navegador não suporta aúdio <a href="midia/guanacast-33.mp3" download="guanacast-33.mp3" type="audio/mpeg"></a>
+        </p>
+    </audio>
+    <p>
+        Vamos dar uma olhada nos principais atributos da tag <code>&ltaudio&gt</code>:
+        <ul>
+            <li><code>preload</code> indica se o aúdio será, ou não, pré-carregado, esse atributo aceita 3 valores:</li>
+            <ul type="circle">
+                <li><code>metadata</code> vai carregar apenas as informações sobre o arquivo (tamanho, tempo, informações de direito, etc)</li>
+                <li><code>none</code> não vai carregar absolutamente nada até que o usuário clique no botão play ou um script inicie a reprodução</li>
+                <li><code>auto</code> é o padrão, vai carregar o arquivo todo assim  que a página for carregada, mesmo que a pessoa nunca aperte para tocar</li>
+            </ul>
+            <li><code>controls</code> vai apresentar o player na tela. Se não for colocado dentro da tag &ltaudio&gt, o controle ficará transparente, impossibilitando a interação com ele</li>
+            <li><code>autoplay</code> quando inserido, vai iniciar a reprodução do aúdio assim que a página carregar</li>
+            <li><code>loop</code> faz com que o aúdio seja repetido eternamente assim que ele termina de reproduzir uma vez</li>
+        </ul>
+    </p>
+    <p>
+        Dentro da tag &ltaudio&gt adicionamos vários &ltsource&gt com farmatos diferentes do mesmo aúdio. 
+        Isso serve como precaução, caso o de cima não rode o de baixo dele vai rodar, você também tem que colocar 
+        o atributo <code>type</code> onde você coloca o formato do áudio. Mas caso todos falhem 
+        será disponibilizadoum parágrafo que permite o download do arquivo MP3 para ouvir.
+    </p>
+    <h2>E os vídeos?</h2>
+    <p>
+        Para inserir um vídeo, caso ele esteja em nosso próprio servidor, utilizamos a tag &ltvideo&gt. Ex:
+    </p>
+    <video width="600" poster="sans600x400.jpg" controls autoplay>
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) Versão Acústica VMZ_720P HD.mp4" type="video/mp4">
+        <source src="meu-video.wrbm" type="video/webm">
+        <source src="meu-video.ogv" type="video/ogg">
+        <p>
+            Infelizmente seu navegador não conseguiu carregar o vídeo.
+        </p>
+    </video>
+    <p>
+        Primeiramente vamos criar a tag <code>&ltvideo&gt</code> e configurar alguns atributos dela:
+        <ul>
+            <li><code>width</code> indica a largura que o vídeo vai ter na tela, no exemplo acima foi de 600px</li>
+            <li><code>poster</code> configura uma imagem que vai aparecer na capa enquanto o visistante não dá play</li>
+            <li><code>controls</code> configura se os controles do vídeo vão aparecer na parte inferior da mídia. Por padrão ela não aparece, basta colocar a palavra <code>control</code> dentro da tag <code>&ltvideo&gt</code></li>
+            <li><code>autoplay</code> diz ao navegador se o vídeo vai tocar automaticamente assim que a página carregar</li>
+        </ul>
+    </p>
+    <h3>Que formatos são esses?</h3>
+    <p>
+        Diferente de aúdios, onde o formato indica o padrão para abrir e reproduzir a mídia, vídeos possuem formatos e codecs e isso pode tornar o vídeo invíavel pela maioria dos dispositivos e navegadores. É preciso 
+        estar atento a esse detalhe.
+    </p>
+    <p>
+        Formatos suportados: MPEG, WEBM e OGG, os 2 primeiros possuem maior compatibilidade com navegadores atualmente.
+    </p>
+    <img src="tabela-navegadores.png" alt="Tabela que mostra a compatibilidade dos formatos de vídeo nos navegadores">
+    <h3>Hospedar seus próprios vídeos pode ser caro</h3>
+    <p>
+        Quando colocamos vídeos em nosso próprio servidor podemos ter problemas como: alto consumo de banda, site lento e 
+        incompatibilidade com alguns navegadores devido aos <code>codecs</code>.
+    </p>
+    <p>
+        Um vídeo mp4 de 150MB se for visto por 200 visitantes vai ter utilizado 29GB de tráfego, o que é muita coisa. Devemos ter cuidad 
+        quando se trata de guardar nossos próprios vídeos.
+    </p>
+    <h3>E agora, quem poderá nos defender?</h3>
+    <p>
+        O <strong>YouTube</strong> e o <strong>Vimeo</strong> são serviços para hospedagem de vídeos, o que faz com que nossos prórpios recursos de host contratado não seja consumido. 
+        No entando, cada um deles possuí vantagens e desvantagens:
+    </p>
+    <p>
+        <strong>YouTube</strong>
+        <ul>
+            <li>Vantagem</li>
+            <ul type="circle">
+                <li>Servidores ultra rápidos</li>
+            </ul>
+            <li>Desvantagem</li>
+            <ul type="circle">
+                <li>Deixa todos os vídeos públicos, não serve para escolas online onde só os alunos devem ter acesso ao vídeo</li>
+            </ul>
+        </ul>
+    </p>
+    <p>
+        <strong>Vimeo</strong>
+        <ul>
+            <li>Vantagem</li>
+            <ul type="circle">
+                <li>Permite limitar quem pode ver o vídeo, bom para quem cria produtos em forma de vídeo</li>
+            </ul>
+            <li>Desvantagens</li>
+            <ul type="circle">
+                <li>Ele é pago por uma taxa anual</li>
+                <li>Seus algoritmos não são tão eficientes, os vídeos podem apresentar pequenos travamentos</li>
+            </ul>
+        </ul>
+    </p>
+    <h3>E dá pra incorporar com esses aí em HTML?</h3>
+    <p>
+        Existem recursos que dão códigos prontos em HTML5 para incorporar vídeos do <strong>YouTube</strong> ou <strong>Vimeo</strong>.
+    </p>
+    <p>
+        No <strong>YouTube</strong> basta você abrir o vídeo, clicar em compartilhar e clicar em incorporar.
+    </p>
+    <img src="incorporar-youtube.png" alt="Como incorporar um vídeo do youtube em seu site">
+    <p>
+        O código HTML personalizado vai aparecer em uma nova janela de contexto, também há um botão que ter permite COPIAR o código com a tag 
+        do <code>&ltiframe&gt</code> que vai aparecer em sua página. Volte no editor de código e insira a tag.
+    </p>
+    <p>
+        Com o <strong>Vimeo</strong> o procedimento é semelhante, abra seu painel de controle do serviço e vá para sua lista de vídeos hospedados. Na 
+        lista de mídias armazenadas clicque no botão com reticências e escolha a opção <strong>incorporação</strong>. 
+        Na janela você pode clicar no botão Código de incorporação, fazendo com que a tag <code>&ltiframe&gt</code> apareça.
+    </p>
+    <p>
+        Após copiar o link basta colar ele em seu código na parte onde voce^quer que ele apareça.
+    </p>
+    <img src="incorporar-vimeo.png" alt="Como incorporar um vídeo do vimeo em seu site">
+    <br>
+    <br>
+    <br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/b090oNJLetE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>

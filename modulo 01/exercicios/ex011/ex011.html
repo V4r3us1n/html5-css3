@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Introdução às CSS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            color: aqua;
+        }
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body style="background-color: gray;">
+    <body style="font-family: Arial, Helvetica, sans-serif; color: rgb(47, 0, 255);">
+    <h1 style="color: red;">CSS: Introdução</h1>
+    <p style="text-align: justify;">
+        Se o conteúdo de seu site não for bem apresentado seu alcance diminuirá. 
+        Visitantes de sites gostam de beleza, mantenha isso em mente. <br>
+        É muito satisfatório ver um conteúdo organizado e bonito.
+    </p>
+    <h2>Você se lembra do que falamos sobre as CSS?</h2>
+    <p style="text-align: justify;">
+        As CSS são as <em>folhas em estilo cascata</em>, todo e qualquer efeito visual que 
+        você queira colocar em seu site é feito através das CSS.
+    </p>
+    <h2>A forma mais simples de aplicar estilos: CSS inline style</h2>
+    <p style="text-align: justify;">
+        Para fazer a técnica mais básica, para aplicar estilos em seu site, basta você ir na área <code>&ltbody&gt</code> 
+        e criar o código a baixo: <br>
+        <pre>
+            <code>
+                &ltbody style="font-family: Arial, Helvetica, sans-serif; color: rgb(47, 0, 255);"&gt </body>
+            </code>
+        </pre>
+    </p>
+    <p style="text-align: justify;">
+        Com o código acima foi alterado o formato da letra (de Times para Arial) e a cor da fonte foi alterada para roxo.
+    </p>
+    <p style="text-align: justify;">
+        Caso você queira alterar apenas a cor do primeiro título use o seguinte código: be
+        <pre><code>
+            &lth1 style="color: red;"&gtCapítulo 1&lth1&gt
+        </code></pre>
+    </p>
+    <h1 style="color: chartreuse;">Observe</h1>
+    <p style="text-align: justify;">
+        Apenas o <code>h1</code> selecionado teve sua cor alterado, esse acima permaneceu igual ao resto. 
+        O motivo disso é porque fizemos uma <strong>configuração pontual</strong> usando CSS.
+    </p>
+    <h2>Estilizando de maneira mais interessante: CSS internal style</h2>
+    <p style="text-align: justify;">
+        Para aplicar estilos de forma de maneira mais prática, podemos adicionar uma tag <code>&ltstyle&gt</style></code> 
+        dentro da área <code>&lthead&gt</code> de nosso documento. Ex: <br>
+        <pre><code>
+                &lttitle&gtIntrodução às CSS&lt/title&gt
+                &ltstyle&gt
+                    body {
+                        font-family: Arial,Helvetica, sans-serif;
+                        background-color: black;
+                        color: blue;
+                    }
+                    h1 {
+                        color: red;
+                    }
+                &lt/style&gt
+        </code></pre>
+    </p>
+    <p style="text-align: justify;">
+        Após essa configuração você vai se questionar: "se eu coloquei o h1 da cor vermelha porque o segundo h1 
+        ainda está verde?" <br>
+        Isso acontece porque <em>as configurações pontuais vão prevalecer sobre as configurações gerais no CSS style</em>
+    </p>
+    <p style="text-align: justify;">
+        <a href="ex011-1.html" rel="next">Clique aqui para ir para a próxima página</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <title>Mídia em HTML5</title>
+</head>
+<body>
+    <h1>Audio no site</h1>
+    <p>
+        Sempre tome cuidado com direitos autorais em forma de música. Também tome cuidado com o tamanho do aúdio, porque ele pode pesar. <br>
+        Você pode pegar audios grátis no youtube, indo na biblioteca de aúdio. 
+        Você pode colocar filtros, como atribuição necessária ou não-necessária (a ñao-necessária você só coloca e pronto)
+        Você também pode escolher que tipo de audio, musica infantil, rap de anime, etc.
+    </p>
+    <p>
+        Hora de reproduzir aúdios no seu site. <br>
+        Existem duas formas de reproduzir aúdio em seu site.
+    </p>
+    
+        <audio src="🔴Rap do Sans Sem Vigor (Glitchtale) _ Versão Acústica _ VMZ (320 kbps).mp3" controls autoplay></audio>
+    <p>
+        Dependendo do navegador o formato mp3 não funciona, para isso você tem que disponibilizar diferentes formatos. <br>
+        Os formatos mais usados são: w4V, mp3 ogg. <br>
+        Tente evitar ao máximo os arquivos "wav", eles são muito pesados.
+    </p>
+    <audio preload="metadata" autoplay controls loop>
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) _ Versão Acústica _ VMZ (320 kbps).mp3" type="audio/mp3">
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) _ Versão Acústica _ VMZ (320 kbps).ogg" type="audio/ogg">
+        <source src="🔴Rap do Sans Sem Vigor (Glitchtale) _ Versão Acústica _ VMZ (320 kbps).wav" type="audio/wav">
+        <p>
+            Infelizmente seu navegador não consegue reproduzir o áudio. <a href="🔴Rap do Sans Sem Vigor (Glitchtale) _ Versão Acústica _ VMZ (320 kbps).mp3">Clique aqui para baixar o arquivo</a>
+        </p>
+    </audio>
+    <p>
+        Na segunda forma você coloca o áudio em diferentes formatos, a ordem em que você colocar vai ser a ordem em que 
+        o site vai tentar rodar os formatos, nesse caso vai ser mp3>ogg>wav. 
+    </p>
+</body>
+</html>

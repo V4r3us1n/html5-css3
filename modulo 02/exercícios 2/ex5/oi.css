@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(34, 34, 34);
+}
+
+header {
+    background-color: blueviolet;
+    text-align: center;
+    height: 110px;
+    width: 780px;
+    padding: 10px;
+}
+
+nav {
+    margin: auto;
+    background-color: blue;
+    text-align: center;
+    height: 30%;
+    border: 10px;
+}
+
+main {
+    padding: 10px;
+    inline-size: auto;
+    background-color: aqua;
+    height: 800px;
+    width: 780px;
+}
+
+section {
+    background-color: brown;
+    height: 700px;
+    width: 70%;
+}
+
+article {
+    margin: auto;
+    background-color: antiquewhite;
+    height: 40%;
+    width: 95%;
+    text-align: justify;
+    margin: 10px;
+}
+
+aside {
+    margin: 5px;
+    background-color: darkcyan;
+    height: auto;
+    width: 33%;
+}
+
+footer {
+    background-color: chocolate;
+    height: 100px;
+    width: 800px;
+    text-align: center;
+}
+
+#top {
+    padding-top: 20%;
+    padding-bottom: 10%;
+}
+
+#caixa {
+    padding-top: 70%;
+    padding-bottom: 17%;
+    width: 28%;
+}
+
+#letra {
+    text-indent: 20px;
+    width: 60%;
+    padding: 10px;
+}
+
+.content {
+    display: inline-block;
+}
+
+.inline {
+    display: inline-block;
+}
+
+p {
+    text-indent: 20px;
+    padding: 10px;
+
+}

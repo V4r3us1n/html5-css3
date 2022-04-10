@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Fontes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>
+        <a href="ex3-1.html" rel="prev"><img src="../ex1/ex1-1/voltar.png" alt="Volta para a página anterior"></a>
+    </p>
+    <main>
+        <h2>Como aplicar isso na prática?</h2>
+        <p>
+            Em muitos dispositivos algumas letras não funcionam, como a Helvetica nos celulares, por isso usamos o que chamamos de <code>safe-combination</code>, 
+            que consiste em colocar mais de uma fonte e colocá-las em sequência, o próprio VSCode recomenda algumas safe-combinations. Você pode pesquisar por elas 
+            em "CSS Web Safe Combinations" da W3Schools.
+        </p>
+        <p>
+            Para escolher a família tipográfica de determinado texto usamos a propriedade <code>font-family</code> das CSS. Se indicarmos mais de 
+            uma família em sequência, estamos dizendo ao navegador para dar preferência para a primeira, esoclhendo a seguinte só se a primeira não 
+            for encontrada. Essa estratégia seguirá até a última, que normalmente é: <code>serif</code>, <code>sans-serif</code> e <code>monospaced</code>. 
+            Ex:
+        </p>
+        
+        <pre><code>
+            &ltstyle&gt
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black.
+                }
+                h1 {
+                    font-family:> 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    color: rgb(24, 97, 126)
+                }
+                h2 {
+                    font-family: 'Times New Roman', Times, serif;
+                    color: rgb(33, 136, 161);
+                }
+                p {
+                    font-family: 'Courier New', Courier, monospace;
+                }
+            &lt/style&gt
+        </code></pre>
+
+        <p>
+            No exemplo acima seus h1 usarão preferencialmente a fonte <strong>Franklin Gothic Medium</strong>, mas essa fonte não existe em smartphones, que possuem 
+            a fonte <strong>Arial Narrow</strong> que é bem parecida. Caso não tenha nenhuma das duas a fonte <strong>Arial</strong> será utilizada. Se isso falhar 
+            também o sistema escolherá uma fonte genérica sem serifa.
+        </p>
+
+        <h2>Vamos falar de tamanhos</h2>
+        <p>
+            Além de escolher a família nós também podemos alterar os tanhos e estilos extras de qualquer componente textual do HTML5.
+        </p>
+        <p>
+            Existem várias medidas para especificar o tamanho da fonte, como <strong>cm</strong> (centímetro), <strong>in</strong> (polegadas), <strong>pt</strong> (pontos), 
+            <strong>pc</strong> (paicas), <strong>px</strong> (pixels), etc. Para tamanhos de fonte que serão exibidos na tela o W3C recomenda o uso do <strong>px</strong> ou <strong>em</strong>.
+        </p>
+        <p>
+            Existem as medidas <strong>absolutas</strong> (cm, mm, in, px, pt, pc) e as medidas <strong>relativas</strong> (em, ex, rem, vw, vh, %). 
+            As meidas absolutas não funcionam muito bem, pois o que você considera 1 cm na tela em q programa pode não ser em outra tela. 
+            São relativos a alguma coisa como tamanho base de uma fonte, tamanho tela, etc.
+
+        </p>
+        <p>
+            A medida <strong>em</strong> é uma medida referencial em relação ao tamanho da fonte. O tamanho normal da fonte é <strong>16px</strong>, isso equivale a <strong>1em</strong>. Se 
+            você quer dobrar o tamanho dela, basta usar <strong>2em</strong>. Ex:
+        </p>
+
+        <pre><code>
+            h1 {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 2em;
+            }
+            h2 {
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 1.5em;
+            }
+        </code></pre>
+
+        <h2>Outros estilos</h2>
+        <p>
+            Existem outras formatações usadas em CSS, são propriedades <code>font-style</code> para aplicar o itálico e <code>font-weight</code> para deixar a letra mais magra ou mais gorda, sem existir o fator semântico. 
+            Ex:
+        </p>
+        <p style="text-align: center;">
+            <img src="font-italico-negrito.png" alt="Itálico e Negrito em textos, mas sem valor semântico">
+        </p>
+        <p>
+            O padrão dessas propriedades é o valor "normal", mas pode aplicar o valor itálico ao <code>font-style</code> usando <code>italic</code> (mais compatível) ou <code>oblique</code> (menos compatível). 
+            Já o negrito pode ser aplicado por nomes ou números indicados, na imagem acima.
+        </p>
+
+        <h2>Me dá uma mãozinha?</h2>
+        <p>
+            Existe um atalho para fazer as formatações que deseja, conhecido como <em>shorthands</em>. Nesse caso se trata da propriedade <code>font</code>. Ao invés de fazer várias configurações em múltiplas linhas...
+        </p>
+        <pre><code>
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                font-style: italic;
+                font-weight: bold;
+            }
+        </code></pre>
+
+        <p>
+            Podemos simplificar tudo:
+        </p>
+        <pre><code>
+            p {
+                font: italic bold 1em Arial, Helvetica, sans-serif;
+            }
+        </code></pre>
+
+        <p>
+            A ordem dos atributos em uma <em>shorthans</em> em CSS é importante, nesse caso é: <br>
+            <ol type="I">
+                <li>font-style</li>
+                <li>font variant</li>
+                <li>font-weight</li>
+                <li>font-size / line-height</li>
+                <li>font-family</li>
+            </ol>
+        </p>
+
+        <h2>Alinhamentos</h2>
+        <p>
+            De forma simples, existem 4 formas de você alinhar seus textos:
+        </p>
+        <p>
+            <code>text-align: center;</code> (O texto começa no centro)
+            <code>text-align: right;</code>O texto começa no lado direito)
+            <code>text-align: left;</code> (O texto começa no lado esquerdo)
+            <code>text-align: jutify;</code> (O texto começa do lado esquerdo e vai até o lado direito, sem deixar grandes espaços em branco)
+        </p>
+        <p>
+            Existe também uma propriedade chamada "text-indent" que é o espaçamento do início do parágrafo. Você coloca o valor dessa propriedade em <strong>px</strong> ou <strong>em</strong>. 
+            20px é um tamanho bom.
+        </p>
+    </main>
+    <p style="text-align: right;">
+        <a href="ex3-3.html" rel="next"><img src="../ex1/ex1-1/ir.png" alt="Ir para a próxima página"></a>
+    </p>
+</body>
+</html>

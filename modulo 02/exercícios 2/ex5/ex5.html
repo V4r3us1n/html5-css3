@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Modelo de Caixas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1 id="principal">Modelo de Caixas</h1>
+        <p>
+            Entender o modelo de caixas é o primeiro passo para construir interfaces web. Chegou a hora de desenhar nossa primeira página.
+        </p>
+
+        <h1>O que é uma caixa?</h1>
+        <p>
+            Baseada no conceito <em>"box model"</em>, a maioria dos elementos HTML que temos em nosso site são como caixas. São <em>containers</em> 
+            que armazenam conteúdos ou até mesmo outras caixas.
+        </p>
+        <h2>Anatomia de uma caixa</h2>
+        <p>
+            Abaixo você pode ver como uma caixa é apresentada nos navegadores:
+        </p>
+        <p class="imagem">
+            <img src="modelo-caixas.png" alt="Modelo de Caixas">
+        </p>
+        <p>
+            Tudo começa com o <strong>conteúdo</strong> (<code>content</code>), que é representado pelo "bla bla bla". Por padrão, as caixas são compostas 
+            apenas pelo conteúdo, sem possuir <code>padding</code>, <code>border</code>, <code>outline</code> ou <code>margin</code>. A únixa exceção é o 
+            elemento <code>&ltbody&gt</code> que vem com uma <code>margin</code> de 8px. 
+        </p>
+        <p>
+            O <strong>tamanho da caixa</strong> (<code>box size</code>) é definido por duas propriedades: <strong>largura</strong> (<code>width</code>) e 
+            <strong>altura</strong> (<code>height</code>). O box size nãi inclui medidas de <code>padding</code>, <code>border</code>, <code>outline</code> e 
+            <code>margin</code>.
+        </p>
+        <p>
+            Após definir o conteúdo e o tamanho da caixa nós vamos definir a <strong>borda</strong> que fica ao seu redor. Ela pode ter uma <em>espessura</em>, 
+            uma <em>cor</em> e um <em>formato</em>.
+        </p>
+        <p>
+            Entre a borda (a parte de dentro dela) e o conteúdo, nós temos o <strong>preenchimento</strong> (<code:>padding</code:>) e da borda de fora temos a 
+            <strong>margem</strong> (<code:>margin</code:>).
+        </p>
+        <p>
+            Entre a margem e a borda podemos determinar o <strong>contorno</strong> (<code:>outline</code:>), que é pouco utilizado. Ele é um traçado visual que 
+            podemos criar fora da borda e o cálculo da sua espessura faz parte da margem estabelecida.
+        </p>
+        <p>
+            Vamos criar um exemplo para exemplificar todos os componentes para configurar as propriedades do modelo de caixa:
+        </p>
+        <pre><code>
+            &ltstyle&gt
+                h1 {
+                    width: 300px;
+                    height: 50px;
+                    background-color: lightgray;
+                    border-width: 10px;
+                    border-style: solid;
+                    border-color: red;
+                    padding: 20px;
+                    outline-width: 30px;
+                    outline-style: solid;
+                    outline-color: blue;
+                    margin: 50px;
+                }
+            &lt/style&gt
+        </code></pre>
+        <p>Veja o que ocorreu com o título abaixo:</p>
+        <h1 class="caixa">Exemplo de Caixa</h1>
+        <p>
+            Todas essas configurações estão sendo feitas no elemento &lth1&gt. As linhas 3 e 4 configuram o <code>size</code> da caixa, com largura e altura, tendo o tamanho 
+            de 300x50px.
+        </p>
+        <p>
+            Já as linhas 5, 6 e 7 configuram uma borda solida, vermelha e com 10px de espessura.
+        </p>
+        <p>
+            A linha 8 cria um espaço interno de preenchimento (da borda para dentro) de 20px no elemento e a linha 12 cria um espaço externo (da bor da para fora) de 50px.
+        </p>
+        <p>
+            As linhas de 9, 10 e 11 usam parte da margem para criar um contorno azul, sólido e com 20px de espessura.
+        </p>
+        <p class="obs">
+            <strong>OBS:</strong> para calcular o Tamanho Total de um elemento na tela, some os tamanhos do <strong>conteúdo + preenchimento + borda + margem</strong>. O contorno 
+            deve ser desconsiderado, pois usa parte da medida da margem.
+        </p>
+        <p>
+            A imagem a seguir pode ajudar a entender onde cada um desses comandos está inserido:
+        </p>
+        <p class="imagem">
+            <img src="exemplo-caixa.png" alt="Exemplo de caixa">
+        </p>
+        <p>
+            As meididas de <code>height</code> e <code>width</code> (300x50) são a parte pontilhada do conteúdo.
+        </p>
+        <p>
+            A <code>border</code> de 10px é a parte vermelha e o <code>outline</code> de 30px é a parte azul. O <code>padding</code> de 20px para dentro da borda vermelha de 10px <code>box size</code> 
+            e a <code>margin</code> são os 50px para fora da borda vermelha. parte da margin está sendo ocupada pela cor azul do do <code>outline</code>.
+        </p>
+        <p>
+            A medida total que a caixa vai ocupar é de 50 + 10 + 20 + 300 + 20 + 10 + 50 = <strong>460px de largura</strong> e 50 + 10 + 20 + 50 + 20 + 10 +50 = <strong>210px de altura</strong>.
+        </p>
+        <p class="obs">
+            <strong>OBS:</strong> Na CSS3 existe a nova propriedade <code>box-sizing</code> onde pode se definir as dimensões de <code>height</code> e <code>width</code> como sendo medidas da borda (<code>border-box</code>) 
+            ao invés de pelo conteúdo (<code>content-box</code>).
+        </p>
+        <h2>Dá pra simplificar?</h2>
+        <p>
+            As configurações de borda e contorno possuem <em>shorthands</em> para simplificar o código. A ordem para as duas configurações é sempre a mesma para as duas shorthands: largura (<code>-width</code>), estilo (<code>-style</code>) 
+            e cor (<code>-color</code>).
+        </p>
+        <p class="imagem">
+            <img src="shorthands-borda-contorno.png" alt="Shorthands de borda e contorno">
+        </p>
+    </main>
+    <p class="next">
+        <a href="ex5-1.html" target="_self" rel="next"><img src="../ex1/ex1-1/ir.png" alt="Próxima página"></a>
+    </p>
+</body>
+</html>

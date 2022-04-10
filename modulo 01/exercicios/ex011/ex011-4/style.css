@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body {
+    background-color: gold;
+}
+h1 {
+    font-family: Arial;
+    color: purple;
+    background-color: limegreen;
+    font-size: 40px;
+}
+h2 {
+    font-family: Arial;
+    color: red;
+    font-size: 30px;
+}
+p {
+    font-family: Arial;
+    color: brown;
+    font-size: 20px;
+}

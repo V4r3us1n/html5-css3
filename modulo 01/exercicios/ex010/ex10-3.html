@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <title>Midias em HTML5</title>
+</head>
+<body>
+    <p>
+        Ao invés de usar a CSS para diminuir o tamanho da imagem (e não seu peso), você 
+        pode usar funções do HTML5 para trocar as imagens de acordo com o tamanho da tela que o vê.
+    </p>
+    <p>
+        Vamos criar imagens com diferentes tamanhos no GIMP, 300px, 700px e 1000px. <br>
+        Para criar essas imagens basta você criar um novo arquivo no GIMP e alterar sua largura e altura para 
+        o tamanho necessário. Você também pode diminuir a resolução, recomendo 80 para a pequena. <br>
+        Imagens que não se adaptam ao dispositivo do cliente podem causar problema pro seu site, isso faz com que 
+        as pessoas fiquem pouco tempo nele, o que faz o google não te recomendar mais.
+    </p>
+    <p>
+        Tente abrir esse site em vários dispositivos diferentes ou aumente e diminua o tamanho do seu navegador.
+    </p>
+
+    <picture>>
+        <source media="(max-width: 750px)" srcset="imagens/image-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/image-m.png" type="image/png">
+        <img src="imagens/image-g.png" alt="Imagem flexível">
+    </picture>
+    <p>
+        A ordem de tamanho tem que ser seguida, nesse exemplo foi da menor para a maior (seguindo de cima para baixo).
+    </p>
+</body>
+</html>

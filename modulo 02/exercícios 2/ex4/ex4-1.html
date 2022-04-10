@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Seletores Personalizados</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+                font: normal 1em Arial, Helvetica, sans-serif;
+            }
+
+            a {
+                font-weight: bold;
+                text-decoration: none;
+                color: red;
+            }
+
+            a:visited {
+                color: darkred;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .especial:hover {
+                color: white;
+                background-color: black;
+                text-decoration: none;
+            }
+
+            .especial::before {
+                content: '>';
+                font-weight: lighter;
+            }
+
+            .especial::after {
+                content: '<';
+                font-weight: lighter;
+            }
+
+            div > p {
+                display: none;
+            }
+
+            div:hover > p {
+                display: block;
+                background-color: yellow;
+            }
+    </style>
+</head>
+<body>
+    <a href="ex4.html" rel="prev"><img src="../ex1/ex1-1/voltar.png" alt="Voltar para a página anterior"></a>
+    <main>
+        <p>
+            Por padrão os navegadores mostram links que não foram acessados em azul e os que já foram visitados em violeta, além disso todos os links aparecem sublinhados.
+        </p>
+        <p>
+            Para alterar essa forma de apresentação dos links devemos configurar seu estilo. Para isso, na área <code>&ltstyle&gt</code> coloque os seguintes seletores:
+        </p>
+        <pre><code>
+            body {
+                font: normal 1em Arial, Helvetica, sans-serif;
+            }
+
+            a {
+                font-weight: bold;
+                text-decoration: none;
+                color: red;
+            }
+
+            a:visited {
+                color: darkred;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </code></pre>
+        <p>
+            No código acima foram feitas 3 configurações para os links: a primeira (na linha 5) para links não visitados (inéditos), colocando o texto em negrito, removendo o sublinhado 
+            e colocanco-os em cor vermelha.
+        </p>
+        <p>
+            A segunda alteração (linha 11), foi configurado os links já visitados (com a pseudo-classe <code>:visited</code>). Nele apenas mudamos sua cor.
+        </p>
+        <p>
+            Já na terceira (linha 15) foram feitas alterações em todos os links, dessa forma, quando passar o mouse sobre eles (pseudo-classe <code>:hover</code>) o sublinhado volta a aparecer.
+        </p>
+        <p>
+            O resultados dessas alterações podem ser vistos abaixo:
+        </p>
+        <p style="text-align: center;">
+            <img src="links-personalizados.png" alt="links personalizados">
+        </p>
+        <p>
+            Aqui estão alguns exemplos práticos disso: <a href="ex4.html" rel="prev"  class="especial">Voltar para a página anterior</a> ou <a href="ex4-1.html" rel="next">Ir para a próxima página</a>. Se você preferir pode 
+            ouvir <a href="https://youtu.be/C9Ov5jI6aS4" target="_blank">a música que estou escutando nesse momento</a>
+        </p>
+        <p>
+            Também podemos fazer algumas configurações relacionadas à classe <code>especial</code> para o terceiro link.
+        </p>
+        <pre><code>
+            .especial:hover {
+                color: white;
+                background-color: black;
+                text-decoration: none;
+            }
+
+            .especial::before {
+                content: '&gt';
+                font-weight: lighter;
+            }
+
+            .especial::after {
+                content: '&lt';
+                font-weight: lighter;
+            }
+        </code></pre>
+        <p>
+            Na primeira linha do código acima, dizemos que o link da classe especial vai ter cor branco, fundo preto e perderá sublinhado quando movermos o mouse sobre ele.
+        </p>
+        <p>
+            Já nas próximas declarações estamos adicionando símbolos antes e depois do link, usando os pseudo-elementos <code>::beofre</code> e <code>::after</code>, respectivamente. 
+            O que resultou nisso:
+        </p>
+        <p style="text-align: center;">
+            <img src="link-personalizado-especial.png" alt="Usando classificações especiais em links">
+        </p>
+
+        <h2>Mais um exemplo</h2>
+        <p>
+            Mais um exemplo para o uso de pseudo-classes.
+        </p>
+        <pre><code>
+            &lth3&gtConteúdo especial&lt/h3&gt
+            &ltdiv&gt
+                Passe o mouse aqui
+                &ltp&gtQuanto mais escuro a noite, mais bonitas são as ESTRELAS!&lt/p&gt
+            &lt/div&gt
+            &ltp&gtVeja o conteúdo oculto aparecendo!&lt/p&gt
+        </code></pre>
+        <p>
+            Na segunda linha do código acima, criamos um bloco especial com a tag <code>&ltdiv*gt</code>. Uma das grandes vantagens de seu uso é que elas podem ter outras tags em seu interior, 
+            como o parágrafo que criamos dentro dela. Agora vamos dar um estilo para ela:
+        </p>
+        <pre><code>
+            &ltstyle&gt
+                div > p {
+                    display: none;
+                }
+
+                div:hover > p {
+                    display: block;
+                    background-color: yellow;
+                }
+            &lt/style&gt
+        </code></pre>
+        <!--A pseudo-classe "hover" significa quando eu passar o cursor por cima-->
+        <p>
+            No código acima vimos um símbolo novo, o símbolo ">" serve para idicar os filhos (<em>children</em>) imediatos de um elemento. Nesse exemplo ele diz que o primeiro parágrafo é <em>direct children</em> 
+            da <code>div</code>.
+        </p>
+
+        <h3>Conteúdo especial</h3>
+        <div>
+            Passe o mouse aqui
+            <p>
+                Quanto mais escuro a noite, mais bonitas são as ESTRELAS!
+            </p>
+        </div>
+        <p>
+            Veja o conteúdo oculto aparecendo!
+        </p>
+    </main>
+</body>
+</html>

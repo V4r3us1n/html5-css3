@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Fontes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>
+        <a href="ex3-1.html" rel="prev"><img src="../ex1/ex1-1/voltar.png" alt="Volta para a página anterior"></a>
+    </p>
+    <main>
+        <h2>Usando fontes externas baixadas</h2>
+        <p>
+            Basta achar uma fonte que você goste (usei o <strong>dafont.com</strong> para pegar uma), baixar ela, colocar o arquivo dentro da pasta do seu site e fazer o seguinte:
+        </p>
+        <p>
+            <pre><code>
+                @font-face {
+                    font-family: 'minecraft'; /*Aqui você da o nome do arquivo*/
+                    src: url('minecrafter/Minecrafter.Alt.ttf') format(truetype), 
+                    url('minecrafter/Minecrafter.Reg.ttf') format(truetype); 
+                    /*Na url você coloca o nome do arquivo e o caminho até ele, se preciso*/
+                }
+            
+                /*
+                    Tipos de format():
+                    - opentype (otf)
+                    - truetype (ttf)
+                    - embedded-opentype
+                    - truetype-aat (Apple Advanced Typography)
+                    - svg
+                */
+            </code></pre>
+        </p>
+        <p>
+            Após isso basta você colocar o nome que você escolheu em "font-family", que no exemplo acima foi "minecraft". Infelizmente não funcionou, achoi que não era compatível com a acentuação.
+        </p>
+
+        <h2>Como descobrir uma fonte que está sendo usada em outro site?</h2>
+        <p>
+            A extensão <strong>Fonts Ninja</strong> lhe permite identificar a fonte usada em determinado texto. Basta instalá-la, clicar na ferramenta e colocar o mouse 
+            sobre uma parte do texto que deseja.
+        </p>
+        <p>
+            Além de mostrar a família tipográfica ela também indica o tamanho, peso (possíveis peso para a fonte), cor, espaçamento vertical e horizontal da fonte.
+        </p>
+
+        <h2>Detectando Fontes em Imagens</h2>
+        <p>
+            É possível detectar a fonte de uma letra presente em uma imagem, no entanto os resultados não são 100% precisos.
+            Existem 3 sites que podem te ajudar a identificar a fonte:
+        </p>
+        <ul>
+            <li>whatfontis.com</li>
+            <li>fontsquirrel.com</li>
+            <li>myfonts.com</li>
+        </ul>
+        <p>
+            Dentro de imagens você precisa de um pouco de visão computacional, de alguns algoritmos mostrados a seguir:
+        </p>
+        <p>
+            No "whatfontis.com" você tem que ter a imagem baixada e colocar ela como anexo no local instruído. Ele é o mais inteligente, mas mesmo assim ainda comete erros. Ele carrega a imagem e vê onde 
+            é texto nela. No entanto ela não consegue detectar todas as fonte de uma vez, por isso você precisa clicar em uma fonte por vez. <br>
+            Após selecioná-la você vai para o próximo passo, onde deve configurar 
+            o contraste e o brilho, seu objetivo é facilitar a identificação das letras deixando-as contrastantes entre si, você também pode inverter as cores, entre outras coisas. Quanto mais cuidadoso você for 
+            nessa parte, mais fácil será para o programa identificar a fonte. No terceiro passo você vai digitar as letras que compõem a palavra selecionada. Após isso ele vai mostrar os resultados obtidos da possível fonte.
+        </p>
+        <p>
+            No "fontsquirrel.com" ocorre algo bem similar, você vai em "font identifier", arrastar a imagem escolhida, ele vai pedir para você selecionar a palavra. Ele faz a identificação e a separação automática das letras. 
+            Mas ele peca um pouco na hora da identificação.
+        </p>
+        <p>
+            E , por fim, no "myfonts.com" você vai na opção "what the font" e faz o mesmo processo.
+        </p>
+        <p>
+            Se o "whatfontis.com" é melhor porque citar esses outros dois? Caso ele não consiga identificar a fonte ainda exite a possibilidade de que um dos outros sites identifique-a.
+        </p>
+
+        <h2>Como usar fontes do Google Fonts</h2>
+        <p>
+            Além das famílias tipográficas e fontes padronizadas disponíveis em navegadores, também podemos usar fontes externas sem necessidade de 
+            baixar ou instalá-las no computador dos visitantes.
+        </p>
+        <p>
+            Para isso exite o serviço <strong>Google Fonts</strong>, disponível em <code>https://fonts.google.com</code>. Ele possuí várias funções úteis.
+        </p>
+        <p style="text-align: center;">
+            <img src="funcoes-googlefonts.png" alt="Google Fonts funções">
+        </p>
+        <ol>
+            <li>Se você sabe o nome da fonte basta digitar nessa área.</li>
+            <li>Na segunda área você escreve um texto para ver como fica na fonte desejada.</li>
+            <li>Tamanho da fonte a ser apresentado na tela.</li>
+            <li>Categoria de fontes a ser exibidas, aquelas mostradas anteriormente, você pode escolher mais de uma categoria.</li>
+            <li>Listas que se encaixam com as configurações feitas por você.</li>
+        </ol>
+        <p>
+            Após escolher a fonte clqiue sobre o nome dela (área 5) e aparecerá outra tela. Clique sobre o botão <strong>+ Select this style</strong> e em seguida clique no icone 
+            superior marcado na imagem abaixo:
+        </p>
+        <p style="text-align: center;">
+            <img src="selecionando-fonte.png" alt="Selecionando a fonte desejada no Google Fonts">
+        </p>
+        <p>
+            Ao clicar no ícone superior direito uma aba lateral chamada <strong>Selected family</strong> aparecerá.
+        </p>
+        <p style="text-align: center;">
+            <img src="selecionando-fonte2.png" alt="Continuação, selecionando fonte">
+        </p>
+        <p>
+            Clique em <strong>Embed</strong> e em seguida <strong>@import</strong> para ter acesso aos código que serão usados no seu arquivo CSS. O código de cima será colocado na 
+            primeira linha de sua declaração de estilo. O segundo código, em <strong>CSS rules</strong>, será colocado na propriedade <code>font-family</code> na declaração de todos os 
+            seletores que iremos aplicar essa fonte.
+        </p>
+    </main>
+</body>
+</html>

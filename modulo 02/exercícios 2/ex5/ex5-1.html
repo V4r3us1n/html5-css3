@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Modelo de Caixas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p class="back">
+        <a href="ex5.html"><img src="../ex1/ex1-1/voltar.png" alt="voltar"></a>
+    </p>
+    <main>
+        <h1>Preenchimento e margem personalizados</h1>
+        <p>
+            Todo elemento de caixa possui 4 valores para <code>padding</code> e 4 para <code>margin</code>, na seguinte ordem: superior (<code>-top</code>), direita (<code>-right</code>), inferior (<code>-bottom</code>), 
+            esquerda (<code>-left</code>). Quando colocamos um único valor de dimensão para o preenchimento ou margem ele é aplicado para todas as direções, mas também podemos fazer o seguinte:
+        </p>
+        <p class="imagem">
+            <img src="preenchimento-margem-pers.png" alt="Preenchimento e margem personalizados">
+        </p>
+        <p>
+            Você também pode indicar cada <em>shorthand</em> das propriedades de preenchimento e borda, se quiser, usando apenas duas medidas:
+        </p>
+        <p class="imagem">
+            <img src="shorthand2.png" alt="Outra forma de shorthand">
+        </p>
+        <p>
+            Só é possível fzr isso quando as medidas <code>-top</code> e <code>-bottom</code> forem iguais entre si e o mesmo também ocorrer entre as medidas <code>-right</code> e <code>-left</code>.
+        </p>
+
+        <h1>Margens no automático</h1>
+        <p>
+            Consiste na centralização dos blocos, você pede para o navegador calcular automaticamente as margens da esquerda e direita para o bloco ficar no meio.
+        </p>
+        <p>
+            Basta você fazer a seguinte declaração:
+        </p>
+        <pre><code>
+            margin:auto
+        </code></pre>
+
+        <h1>Tipos de Caixa</h1>
+        <p>
+            Dependendo do comportamento da caixa ela pode classificar ela em uma de duas categorias:
+        </p>
+        <h2>Caixa do tipo block-level</h2>
+        <p>
+            Sempre vai iniciar em uma nova linha e vai ocupar a largura total do elemento onde ele está contido. Se não estiver contido em nenhuma outra caixa ele vai ocupar 100% da largura do <code>&ltbody&gt</code>.
+        </p>
+        <p>
+            Os elementos mais conhecido dessa categoria é o <code>&ltdiv&gt</code> e suas variações semânticas da HTML5, como <code>&ltmain&gt</code>, <code>&ltsection&gt</code>, <code>&ltaside&gt</code>, etc.
+        </p>
+        <p>
+            Na lista a seguir, tem alguns elementos block-level:
+        </p>
+        <pre><code>
+&ltaddress&gt   &ltarticle&gt   &ltaside&gt             &ltblockquote&gt     &ltcanvas&gt       &ltdd&gt
+&ltdiv&gt       &ltdl&gt        &ltdt&gt                &ltfieldset&gt       &ltfigcaption&gt   &ltfigure&gt
+&ltfooter&gt    &ltform&gt      &lth1&gt - &lth6&gt         &ltheader&gt         &lthr&gt           &ltli&gt
+&ltmain&gt      &ltnav&gt       &ltnoscript&gt          &ltol&gt             &ltp&gt            &ltpre&gt
+&ltsection&gt   &lttable&gt     &lttfoot&gt             &ltul&gt             &ltvideo&gt
+        </code></pre>
+        <h2>Caixa do tipo inline-level</h2>
+        <p>
+            Um elemento do tipo <em>inline-level</em>, <strong>não vai começar em uma nova linha e sim no ponto exato onde foram definidos</strong>. Sua largura ocupa apena o tamanho relativo ao conteúdo, alguns dos mais usados pela HTML:
+        </p>
+        <pre><code>
+    &lta&gt         &ltabbr&gt      &ltacronym&gt       &ltb&gt         &ltbdo&gt       &ltbr&gt
+    &ltbutton&gt    &ltcite&gt      &ltcode&gt          &ltdfn&gt       &ltem&gt        &lti&gt
+    &ltimg&gt       &ltinput&gt     &ltkbd&gt           &ltlabel&gt     &ltmap&gt       &ltobject&gt
+    &ltiutput&gt    &ltq&gt         &ltsamp&gt          &ltscript&gt    &ltselect&gt    &ltsmall&gt
+    &ltspan&gt      &ltstrong&gt    &ltsub&gt           &lttextarea&gt  &lttt&gt        &ltvar&gt
+        </code></pre>
+
+        <h1>Grouping Tags e Semantic Tags</h1>
+        <p>
+            Com o surgimento da HTML5 surgiram as <em>tags semânticas de agrupamento</em>. Mas a <code>&ltdiv&gt</code> (block-level) e <code>&ltspan&gt</code> (inline-level) deixaram de existir, é só que seu uso tem menos sentido. Pois temos 
+            tags para dividir partes do nosso documento HTML.
+        </p>
+        <p>
+            A seguir os principais agregadores semânticos:
+        </p>
+        <h2>Header</h2>
+        <p>
+            Cria áreas relativas a cabeçalhos. Pode ser qualquer cabeçalho, normalmente inclui títulos do h1 ao h6 e subtítulos. Podem conter menus de navegação.
+        </p>
+        <h2>Nav</h2>
+        <p>
+            Define uma área que possui os links de navegação pela estrutura de páginas que vão compor o website. Essa tag pode estar dentro de um <code>&ltheader&gt</code>.
+        </p>
+        <h2>Main</h2>
+        <p>
+            Usado para delimitar o conteúdo principal do site. Normalmente contém as seções, artigos e conteúdos periféricos.
+        </p>
+        <h2>Section</h2>
+        <p>
+            Cria seções para sua página. Pode conter conteúdos diretamente nela ou dividir eles em artigos com conteúdos específicos. Segundo W3C "uma seção é um agrupamento temático de conteúdos, tipicamente com um cabeçalho".
+        </p>
+        <h2>Article</h2>
+        <p>
+            Elemento que vai conter um conteúdo para ser lido de forma independente e diz respeito ao mesmo assunto que o resto do site. Pode ser usado para delimitar um post de blog/fórum, uma notícia, etc.
+        </p>
+        <h2>Aside</h2>
+        <p>
+            Delimita um conteúdo périférico e complementar ao conteúdo principal de um artigo ou seção. Normalmente fica posicionado ao lado de certo texto ou até mesmo no meio dele, exatamente como fizemos no bloco de texto apresentado anteriormente, falando sobre "MÚLTIPLOS NÍVEIS". 
+        </p>
+        <p class="obs">
+            <strong>OBS:</strong> Sua criatividade e planejamento vão definir a estrutura de seu site. Você pode colocar mais de um <code>article</code> dentro de uma <code>section</code> ou até mesmo o oposto.
+        </p>
+        <h2>Footer</h2>
+        <p>
+            Cria um rodapé para o site, seção ou artigo. é um conteúdo que não faz parte diretamente do conteúdo nem é um conteúdo periférico (o que caracteriza um <code>aside</code>), mas possui informações sobre autoria do conteúdo, links adicionais, mapa do site, documentos relacionados.
+        </p>
+        <p>
+            A seguir está uma proposta de estrutura para um site:
+        </p>
+        <p class="imagem">
+            <img src="estrutura-site.png" alt="estrutura de um site">
+        </p>
+        <p>
+            Analise a imagem e o código acima. Veja a hierarquia entre os elementos e quais deles estão dentro um do outro.
+        </p>
+    </main>
+    <p class="next">
+        <a href="ex5-2.html" target="_self" rel="next"><img src="../ex1/ex1-1/ir.png" alt="Próxima página"></a>
+    </p>
+</body>
+</html>

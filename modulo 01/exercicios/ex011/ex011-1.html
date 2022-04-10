@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Página 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>A técnica mais versátil: CSS external style</h1>
+    <p>
+        <a href="ex011.html" rel="prev">Clique aqui para voltar à página anterior</a>
+    </p>
+    <p>
+        Manter as folhas de estilo fora do código HTML, além de mais organizado, faz com que tudo seja reaproveitado de forma eficiente nas outras páginas do nosso site. 
+        Para isso utilizamos a tag <code>&ltlink&gt </code> especialmente configurada para trabalhar com arquivos externos de estilo. 
+        Essa tag teve ser colocada na área <code>&lthead&gt</code> do documento. Ex:
+        <pre><code>
+            &ltlink rel="stylesheet" href="style.css"&gt
+        </code></pre>
+    </p>
+    <p>
+        Essa tag pode estar em qualquer linha, desde que esteja na área <code>&lthead&gt</code>, mas recomento que deixe ela após o <code>&lttitle&gt</code>. 
+        Após criar essa tag clique em <code>style.css</code> e siga o link, isso criará um arquivo separado chamado <em># style.css</em>.
+    </p>
+    <p>
+        Agora basta apenas você colocar todos as alterações que deseja fazer com CSS nesse novo arquivo :)
+    </p>
+    <p>
+        Ex: <br>
+        <pre><code>
+            @charset "UTF-8";
+            /* Regra @charset caso hava problemas com acentuação*/
+
+            body {
+                background-color: chocolate;
+                color: antiquewhite;
+                font-size: 14pt;
+                font-family: Arial;
+            }
+
+            h1{
+                color:chartreuse;
+            }
+
+            a {
+                color: aqua;
+                text-decoration: none;
+            }
+        </code></pre>
+    </p>
+    <p>
+        Na linha 1 colocamos uma <strong>regra</strong> em CSS, que indica a compatibilidade com o padrão UTF-8, não é tão necessária, mas recomendo colocar.
+        As regras são colocadas usando o "@" e elas ficam no início do arquivo.
+    </p>
+    <p>
+        Na linha 2 foi colocado apenas um comentário, que serve para explicar o motivo da linha 1.
+    </p>
+    <p>
+        Nas outras linhas foram feitas as configurações dos seletores.
+    </p>
+    <h2>Qual técnica eu escolho pra usar?</h2>
+    <p>
+        Nesse capítulo vimos 3 técnicas de uso da CSS: <strong>inline</strong>, <strong>interna</strong> e <strong>externa</strong>. Mas quando devo usar cada?
+    </p>
+    <p>
+        A técnica <strong>CSS inline style</strong> deve ser evitada, ela deixa seu código confuso. Só use ela em configurações muito pontuais e que não serão usadas em nenhum outro 
+        momento fora aquele.
+    </p>
+    <p>
+        Já a <strong>CSS internal style</strong> deve ser usada quando você for criar páginas isoladas, e somente quando as configurações de estilo for pequenas/médias, caso contrário vai deixar seu arquivo
+         html muito grande, dificultando manutenções futuras.
+    </p>
+    <p>
+        Opte sempre pela <strong>CSS external style</strong> sempre que seu estilo for usado em várias páginas no seu site. <emp>Usando a tag <code>&ltlink&gt</code> em várias páginas você pode compartilhar o mesmo 
+        estilo entre elas</emp>, sem precisar ficar alterando vários arquivos quando lhe for solicitado a alteração de uma cor, por exemplo.
+    </p>
+    <p>
+        De forma resumida: <br>
+        <ul>
+            <li>CSS externo: use sempre que puder</li>
+            <li>CSS interno: use para pequenas configurações</li>
+            <li>CSS inline: procure evitar</li>
+        </ul>
+    </p>
+    <p>
+        Ainda é possível misturar as 3 técnicas, criando um <strong>CSS externo</strong> para as configurações globais, <strong>CSS interno</strong> para as configurações locais de um documento e 
+        <strong>CSS inline</strong> para pequenas configurações pontuais.
+    </p>
+    <p>
+        Alguns comandos de css:
+        <pre><code>
+            h1 {
+                color: blue;
+                font-family: Arial;
+                background-color: red;
+                font-size: 40px;
+                text-align: justify;
+            }
+        </code></pre>
+    </p>
+</body>
+</html>

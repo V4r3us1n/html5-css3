@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <title>Formatação de Textos</title>
+</head>
+<body>
+    <h1>O que é semântica?</h1>
+    <p>
+        <strong>Colocamos o arquivo como "index.html", porque index significa índice, que é a página principal do projeto, e como só usamos uma página ela sempre será index.</strong>
+    </p>
+    <br>
+    <p>
+        É ela a principal diferença entre o HTML4 e HTML5.</p>
+    <p>
+        Segundo o pai-dos-burros,Michaelis, que tem uma versão grátis online:<br>
+        "Semântica é o significado dos vocábulos, por oposição à sua forma".
+    </p>
+    <p>
+        No HTML4 eram usados tags para colocar palavras em negrito e sublinhado, <br>
+        mas isso era usado só para determinar um formato visual para chamar sua atenção à algo.
+    </p>
+    <p>
+        No HTML5 chegou um novo conceito, que busca valorizar a semântica. <br>
+        Logo, suas tags tentam levar um significado embutido muito forte.
+        Aqui está um exemplo:<br>
+        Juvenal era um sujeito de muita sorte. E já começou de pequeno onde morou na <address>Rua 21 Fernando de Noronha</address>, 
+        local muito bem localizado, próximo ao Centro da cidade.
+    </p>
+    <p>
+        Note que no exemplo acima a tag &ltaddress&gt foi usada para dar significado à palavra destacada, 
+        mostrando que se trata de um endereço. Em um celular essa tag pode até sugerir que 
+        você veja o mapa do local, entre outras coisas.
+    </p>
+    <p>
+        Caso você queira que um endereço apareça na forma de um texto sublinhado, 
+        recomendo que use CSS para isso, pois o HTML serve para dar sentido ao conteúdo.
+        <br>Tanto que a W3C anda dando muito valor em adicionar tags que tenham mais significado 
+        e a tirar aquelas que focam no efeito visual (forma) de apresentação, deixando a apresentação 
+        gráfica para as CSS.
+    </p>
+    <p>
+        <strong>Caso você queira colocar uma frase dentro de uma tag, selecione ele e aperte "crtl + shift + p", digitar "abb" e selecionar ">Emmet: Wrap with abbreviation" (Envelope com a abreviatura), aí basta você digitar a tag sem os colchetes angulares.</strong>
+        <br>Exemplo: <em>essa frase está em itálico, diferentemente da frase acima que está em negrito</em>.
+    </p>
+    <h2>Abandono de tags antigas e o surgimento de novas</h2>
+    <p>
+        Caso você queira basta pesquisar "obsolete tags" no w3.org.
+         Se você estiver usando alguma tag em seus estudos e ela aparecer em vermelho, é bom que você não use ela mais, 
+         pois ela é considerada obsoleta e a qualquer momento vai parar de funcionar. O HTML5 é usado para dar significado, deixe a forma para a CSS e as animações para o JS.
+    </p>
+    <p>
+        Tags obsoletas vêm sendo esquecidas e deletadas, já que existem melhores. 
+        No caso do &ltb&gt que deixa a palavra em negrito é recomendado que use a tag 
+        <strong>&ltstrong&gt</strong>, que dá o sentido de força/potência dentro da frase.
+    </p>
+    <p>
+        Para usar o <strong>negrito</strong> e o <em>itálico</em>, recomendo que use as seguintes tags:<br>
+        A tag &ltstrong&gt que dá o sentido de força dentro da frase. <br>
+        A tag &ltem&gt significa que queremos dar ênfase ao termo.<br>
+        É possível fazer o mesmo que as canetas marca texto em seu site, <mark>elas servem para marcar um trecho 
+        que você considere muito valioso</mark>. Para fazer essa marcação usamos a tag &ltmark&gt.
+    </p>
+    <br>
+    <h2>Aumentar e diminuir o tamanho do texto</h2>
+    <p>
+        A tag &ltbig&gt que deixa o texto maior está sendo desvalorizada pelo HTML5, 
+        mas a tag &ltsmall&gt que deixa o texto menor ainda está de pé. <br>
+        Também pode ser utilizado a tag &ltdel&gt para <del>selecionar uma parte do texto que não deve ser considerada</del> pelo leitor.<br>
+        O <ins>texto inserido</ins> é o oposto, usando a tag &ltins&gt, serve para dizer que <ins>o texto está ali, deve ser lido e você deve prestar atenção nele.</ins>
+    </p>
+    <br>
+    <h2>Texto sobrescrito e subscrito</h2>
+    <p>
+        Parafazer textos sobrescritos e subscrito basta usar a tag &ltsup&gt ou &ltsub&gt. 
+        Não sabe o que são, tome aqui um exemplo deles:<br>
+        Texto sobrescrito: x<sup>2</sup>;<br>
+        Texto subscrito: H<sub>2</sub>O;
+    </p>
+    <br>
+    <h2>Colocando códigos no texto</h2>
+    <p>
+        Existem muitos código-fonte compartilhados em diversas linguagens. 
+        Para isso entra a tag &ltcode&gt da HTML onde ela delimita o código, você 
+        deve colocar o código entre essa tag, ela serve para indicar ao navegador 
+        que aquele trecho se trata de um código de computador. Ela também causa um efeito visual, 
+        deixando as letras mono-espaçadas, facilitando a leitura do código. Exemplo de Código em Python:
+    </p>
+    <code>
+        num = int(input('Digite um número'))
+        if num % 2 ==0:
+            print(f'O número {num} é par')
+        else:
+            print(f'O número {num} é impar')
+        print('FIM DO PROGRAMA')
+    </code>
+    <p>
+        Para manter o texto da mesma forma que ele foi digitado utilizados a tag &ltpre&gt antes da tag &ltcode&gt. Observe:</p>
+    <pre><code>
+    num = int(input('Digite um número'))
+    if num % 2 ==0:
+        print(f'O número {num} é par')
+    else:
+        print(f'O número {num} é impar')
+    print('FIM DO PROGRAMA')
+    </code></pre>
+    <p>
+        Como você viu acima é possível colocar uma tag dentro da outra e assim fazendo com que as duas ajam simultâneamente. 
+        Outro exemplo: <strong><em>escrever algo em negrito e em itálico ao mesmo tempo</em></strong>!
+    </p>
+    <br>
+    <h2>Citações</h2>
+    <p>Para fazer citações basta usar a tag &ltblockquote&gt, oq vc escrever dentro dessa tag automaticamente vai ganhar um espaçamento, 
+        além disso você também pode colocar o endereço de onde pegou a citação, para isso basta colocar o parâmetro"cite" dentro da tag. Exemplo:
+    </p>
+    <blockquote cite="https://aminoapps.com/c/omori-br/page/blog/pura-imaginacao-omori-theory/DXJN_KPcPuxkWLbz0x0GdDY6dEoMJ23JGP">
+        Omori nunca saiu do seu quarto (White Space) e toda sua aventura, lembranças e essas coisas é fruto da sua imaginação.
+    </blockquote>
+    <br>
+    <h2>Abreviações</h2>
+    <p>
+        Sempre que você quiser escrever uma sigla, mas deixar claro ao usuário (e aos mecanismo de busca) o significado dela, 
+        basta usar a tag &ltabbr&gt. Exemplo:
+    </p>
+    <p>
+        Eu estou estudando <abbr title="Hyper Text Markup Language">HTML</abbr> para criar sites.
+    </p>
+    <br>
+    <h2>Texto invertido</h2>
+    <p>
+        Quando você passar o mouse por cima da abreviação vai aparecer o significado dela.
+    </p>
+    <p>
+        Para fazer textos invertidos use a tag &ltbdo&gt, você pode usar o parâmetro "dir" para indicar uma das opções abaixo:<br>
+        rtl = da direita para a esquerda;<br>
+        ltr = da esquerda para a direita;<br>
+        Exemplo:<br>
+        <bdo dir="rtl">
+            Esse texto está escrito da direita para esquerda!
+        </bdo>
+        <br>
+        <bdo dir="ltr">
+            Esse texto está escrito da esquerda para a direita!
+        </bdo>
+    </p>
+
+</body>
+</html>

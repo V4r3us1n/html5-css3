@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon1.ico" type="image/x-icon">
+    <title>Exemplo para estudo</title>
+    <style>
+        div {
+            display: inline-block;
+            background-color: blueviolet;
+            text-align: center;
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+        }
+
+        div > p {
+            display: none;
+        }
+        /*O comando acima está fazendo alterações no parágrafo dilho da dive, > p*/
+        div:hover > p {
+            display: block;
+            background-color: aqua;
+            color: gold;
+        }
+
+        div:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5
+        <p>Tem 2 reais para emprestar fi??</p>
+    </div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</body>
+</html>

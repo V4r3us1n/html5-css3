@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon1.ico" type="image/x-icon">
+    <title>Pseudo-elementos</title>
+    <style>
+        a {
+            color: blueviolet;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:visited { 
+            color: darkgreen;
+            /*O pseudo-elemento :visited faz alterações nos links q já foram visitados*/
+        }
+
+        a:hover {
+            text-decoration: underline black;
+            color: white;
+        }
+
+        a:active {
+            color: orangered;
+        }
+
+        a::after {
+            content: " ❰";
+            text-decoration: none;
+        }
+
+        a::before {
+            content: "❱ ";
+        }
+        .especial::after {
+            content: "☃";
+        }
+
+        .especial::before {
+            content: "☃";
+        }
+
+        .especial {
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personalizando links</h1>
+    <ul>
+        <li><a href="../ex4.html" target="_blank">Ir para seletores personalizados, página 1</a></li>
+        <li><a href="../ex4.html" target="_blank">Ir para seletores personalizadosm, página 2</a></li>
+        <li><a href="ex4-2.html" target="_blank" class="especial">Ir para página com divs</a></li>
+    </ul>
+    <p>
+        Pseudo-elementos mexem no conteúdo periférico do elemento, seja id, class, etc. Eles são definidos por ::, 
+        veja na área de style da página.
+    </p>
+</body>
+</html>

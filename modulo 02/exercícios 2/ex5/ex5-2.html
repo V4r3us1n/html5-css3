@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Modelo de Caixas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p class="back">
+        <a href="ex5-1.html" target="_self" rel="prev"><img src="../ex1/ex1-1/voltar.png" alt="Voltar"></a>
+    </p>
+    <main>
+        <h1>Sombras nas caixas</h1>
+        <p>
+            São muito úteis para dar a sensção de volume, que as caixas realmente estão ali. Veja um exemplo de código:
+        </p>
+        <pre><code>
+            &ltstyle&gt
+                body {
+                    font: 1em Arial, Helvetica, sans-serif;
+                    background-color: peachpuff;
+                }
+                article#caixa {
+                    background-color: cyan;
+                    width: 400px;
+                    margin: auto;
+                    padding: 1px 10px;
+                    /* sombra aqui */
+                }
+            &lt/style&gt
+        </code></pre>
+        <article id="caixa">
+            <h1>Usando sombras</h1>
+            <p>
+                Vamos aprender a usar sombras com esse exemplo simples.
+            </p>
+        </article>
+        <p>
+            No momento só temos um <code>&ltarticle&gt</code> com um breve conteúdo. As configurações deixaram ele do jeito acima. 
+            Para colocar a sombra vamos adicionar uma declaração especial: 
+        </p>
+        <pre><code>
+            box-shadow: 3px 5px 4px black;
+        </code></pre>
+        <p>
+            Veja o que acontece agora lá em cima.
+        </p>
+        <p>
+            Ao adicionar a propriedade <code>box-shadow</code> tem quatro valores, devendo seguir a seguinte ordem:
+        </p>
+        <ol>
+            <li><strong>Deslocamento horizontal</strong> (<em>h-offset</em>): quanto a seombra vai andar para o lado direito (é possível usar valores nagativos também).</li>
+            <li><strong>Deslocamento vertical</strong> (<em>v-offset</em>): quanto a sombra vai andar para baixo (também é possível usar valores negativos).</li>
+            <li><strong>Embaçamento</strong> (<em>blur</em>): quanto a sombra vai se espalhar pelo fundo.</li>
+            <li><strong>Cor</strong> (<em>color</em>): cor da sombra, é possível usar transparência também.</li>
+        </ol>
+        <p class="obs">
+            <strong>OBS</strong>: Não exagere no uso de sombras, podem deixar o efeito visual pesado. Evite também sombras coloridas, além disso use cores <code>rgba()</code> para obter uma transparência que cause efeitos mais suaves.
+        </p>
+
+        <h1>Bordas decoradas</h1>
+        <p>
+            As bordas da caixa não precisam ser sempre iguais. É possível colocar detalhes especiais:
+        </p>
+        <pre><code>
+            border-radius: 10px;
+        </code></pre>
+        <article class="ex">
+            <h1 class="cent">Exemplo de borda decorada</h1>
+        </article>
+        <h2>Vértices arredondadas</h2>
+        <p>
+            Você pode arredondas todas as bordas usando a propriedade <code>border-radius</code>, ex: 10px
+        </p>
+        <article class="a">
+            <h1 class="cent">Usando sombras</h1>
+            <p>
+                Sombras arredondadas.
+            </p>
+        </article>
+        <p>
+            No exemplo acima as bordas ficaram simétricas. Mas podemos edicar cada uma delas de forma individual, ex: 10px 20px 30px 40px
+        </p>
+        <article class="b">
+            <h1 class="cent">Usando sombras</h1>
+            <p>
+                Sombras arredondadas.
+            </p>
+        </article>
+        <p>
+            Assim como as margens, também é possível indicar apenas 2 valores, que vão agir em vértices intercaladas (canto superior esquerdo e inferior direito, canto superior direito e inferior esquerdo, respectivamente), ex: 10px 30px
+        </p>
+        <article class="c">
+            <h1 class="cent">Usando sombras</h1>
+            <p>
+                Sombras arredondadas.
+            </p>
+        </article>
+        <br>
+    </main>
+    <p class="next">
+        <a href="ex5-3.html" target="_self" rel="next"><img src="../ex1/ex1-1/ir.png" alt="Próxima página"></a>
+    </p>
+</body>
+</html>

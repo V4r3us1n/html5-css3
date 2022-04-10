@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Press+Start+2P&display=swap');
+
+:root {
+    --cor-fundo : #080a0e;
+    --cor-cabaçalho : #6B949E;
+    --cor-letra1 : #fff;
+    --cor-animation1 : #0c5197;
+    --cor-animation2 : #09172D;
+    --cor-fundo-main : #161B22;
+    --cor-h1 : #9ba5af;
+    --cor-h2 : #B9BBBD;
+}
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-fundo);
+}
+
+header {
+    border-bottom: 1px solid var(--cor-cabaçalho);
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin: 0 5%;
+}
+
+header img {
+    height: 50px;
+}
+
+header h1 {
+    font-family:'Press Start 2P', cursive;
+    color: var(--cor-letra1);
+    padding: 20px 0px 20px 20px;
+    text-align: center;
+}
+
+/* Menu */
+
+#menu-h ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: var(--cor-fundo);
+}
+
+#menu-h ul li {
+    display: inline;
+    position: relative;
+}
+
+#menu-h ul li a {
+    color: var(--cor-letra1);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+#menu-h ul:hover {
+    background-color: var(--cor-fundo);
+}
+
+#menu-h ul li a:hover {
+    color: var(--cor-animation1);
+}
+
+#menu-h ul li a img {
+    filter: saturate(0) invert(100%) sepia(0%) saturate(7500%) hue-rotate(315deg) brightness(100%) contrast(101%);
+    height: 30px;
+    padding: 10px 10px 10px 50px;
+    transition: .3s;
+}
+
+#menu-h ul li a:hover img {
+    filter: saturate(0) invert(28%) sepia(25%) saturate(3311%) hue-rotate(185deg) brightness(89%) contrast(102%);
+}
+
+/* Sub Menu */
+
+#menu-h ul ul {
+    display: none;
+    position: absolute;
+    width: 150px;
+    background-color: var(--cor-fundo);
+    transition: .3s;
+}
+
+#menu-h ul li:hover ul {
+    display: block;
+}
+
+#menu-h ul ul li a {
+    width: 100%;
+}
+
+#menu-h ul ul li a:hover {
+    background-color: var(--cor-animation2);
+    transition: .3s;
+}
+
+
+/* Main */
+
+
+main section {
+    background-color: var(--cor-fundo-main);
+    max-width: 700px;
+    margin: auto;
+    border-radius: 10px;
+
+}
+
+main h1 {
+    color: var(--cor-h1);
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+main h2 {
+    color: var(--cor-h2);
+    margin-bottom: 10px;
+}
+
+main p {
+    color: var(--cor-letra1);
+    margin-bottom: 10px;
+    text-indent: 10px;
+}
+
+section {
+    padding: 20px 20px;
+}

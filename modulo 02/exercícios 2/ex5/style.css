@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+body {
+    background-image: linear-gradient(to right, #89DFF0, #33A7BD);
+}
+
+main {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(44, 22, 65, 0.6);
+    width: 600px;
+    padding: 10px;
+    margin: auto;
+}
+
+.caixa {
+    width: 300px;
+    height: 50px;
+    background-color: lightgray;
+    border-width: 10px;
+    border-style: solid;
+    border-color: red;
+    padding: 20px;
+    outline-width: 30px;
+    outline-style: solid;
+    outline-color: blue;
+    margin: 50px;
+}
+
+article#caixa {
+    background-color: cyan;
+    width: 400px;
+    margin: auto;
+    padding: 1px 10px;
+    /* sombra aqui */
+    box-shadow: 3px 5px 4px black;
+}
+
+h1#principal {
+    font-family: 'Bungee Shade', cursive;
+    color: #1E606E;
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 1px 1px 2px #3F666E;
+    background-color: aquamarine;
+}
+
+.cent {
+    text-align: center;
+}
+
+article {
+    width: 300px;
+    height: 100px;
+    background-color: royalblue;
+    margin: auto;
+    box-shadow: 3px 5px 4px black;
+}
+
+.ex {
+    border-radius: 10px;
+    width: 400px;
+    height: 100px;
+    background-color: rebeccapurple;
+    margin: auto;
+}
+
+.imagem {
+    text-align: center;
+}
+
+.obs {
+    background-color: aquamarine;
+    width: auto;
+    height: auto;
+}
+
+.next {
+    text-align: right;
+}
+
+.back {
+    text-align: left;
+}
+
+.a {
+    border-radius: 10px;
+}
+
+.b {
+    border-radius: 10px 20px 30px 40px;
+}
+
+.c {
+    border-radius: 10px 30px;
+}
+
+p {
+    text-align: justify;
+    text-indent: 20px;
+}

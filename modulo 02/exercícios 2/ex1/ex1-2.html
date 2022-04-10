@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../modulo 01/exercicios/favicon1.ico" type="image/x-icon">
+    <title>Cores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>
+        <a href="ex1-1.html" rel="prev"><img src="ex1-1/voltar.png" alt="Voltar para a página anterior"></a>
+    </p>
+
+    <h2>Onde aplico esse conhecimento na prática?</h2>
+    <p>
+        O site <strong>Adobe Color</strong> vai te ajudar a escolher as cores baseado nos esquemas mostrados na pasta anterior. 
+        Acesse-o hein <ins>https://color.adobe.com/pt</ins>
+    </p>
+    <p>
+        Nele existe o modo <strong>Criar</strong>, onde você pode escolher o modo de cores (RGB para monitor) e a regra harmônica, nele você cria sua paleta. 
+        Já no modo <strong>Explorar</strong> você consegue ver paletas já prontas, podendo copiar elas se quiser.
+    </p>
+    <p>
+        Além dele existe também o <ins>Paletton</ins> que até mesmo lhe fornece um exemplo de página com a paleta escolhida, e também o <ins>Coolors</ins>, que 
+        é mais para quem quer criar um paleta do zero, ele gera automaticamente e vc pode travar as cores q gostou, assim gerando as outras até obter uma paleta completa.
+    </p>
+
+    <h2>Aplicando cores ao site</h2>
+    <p>
+        Até agora no código CSS vimos valores textuais como <code>red</code> e <code>blue</code>. 
+    </p>
+    <p>
+        No VSCode, criando a propriedade cores em CSS, podemos posicionar o cursor entre os dois pontos e o ponto e vírgula, ao clicar <code>Ctrl + Espaço</code> 
+        você obterá uma lista com os valores possíveis de cores.
+    </p>
+    <p>
+        No entanto esse método é limitado, pois uma terna moderna pode exibir cerca de 65M de cores.
+    </p>
+    <p>
+        Para conseguirmos mais possibilidades devemos recorrer aos códigos hexadecimais ou às funções CSS <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code> ou <code>hsla()</code>. 
+        Para fazer isso, seleciona qualquer uma das cores iniciais e passe o mouse sobre o nome da cor, uma janela especial surgirá.
+    </p>
+    <p>
+        <img src="mudando-cores.png" alt="Mudando cores">
+    </p>
+    <p>
+        Nessa janela você pode alterar a cor, o tom e a transparência conforme desejar.
+    </p>
+
+    <h3>Como representar uma cor</h3>
+    <p>
+        As cores em uma tela são compostas da junção de 3 cores primárias: <strong>azul</strong>, <strong>vermelho</strong> e <strong>verde</strong>. A junção dessas cores gera outras cores como 
+        <strong>magenta</strong>, <strong>amarelo</strong> e <strong>ciano</strong>. A junção das 3 cores primárias ao máximo gera o <strong>branco</strong>, já a junção delas ao mínimo gera o <strong>preto</strong>.
+    </p>
+    <p>
+        <img src="cores-compoem-tela-pc.png" alt="Cores que compoem as telas de dispositivos">
+    </p>
+    <p>
+        Cada cor primária pode ter um valor <strong>entre 0 e 255</strong>, resultando em 256 possibilidades para cada elemento.
+    </p>
+    <p>
+        Vamos usar um exemplo, a cor <strong>Teal</strong> possuí o seguinte código <code>rgb (0, 171, 169)</code>, isso indica que existe uma quantidade <strong>0</strong> de vermelho nela, <strong>171</strong> de verde e 
+        <strong>169</strong> de azul. No código <code>hexidecimal</code> (iniciando sempre com #) indica que <strong>00</strong> é a quantidade de vermelho, <strong>AB</strong> é a quantidade de verde e <strong>A9</strong> é a quantidade de azul.
+    </p>
+    <p>
+        Ela também pode ser representada baseada na maneira como enxergamos as cores: o padrão <strong>HSL</strong>. A função <code>hsl (179, 100%, 34%)</code> indica que temos 179 de <strong>hue</strong> (matiz), 100% de <strong>saturation</strong> 
+        e 34% de <strong>lightness</strong> (liminância).
+    </p>
+    <p>
+        Para conseguir versões transparentes de cores basta arrastar a barra de transparência, isso fará surgir o valor <strong>alpha</strong>, que será adicionado ao código.
+    </p>
+    <p>
+        <img src="codigo-cores.png" alt="Código de cores">
+    </p>
+
+    <h2>Usando Gradientes em CSS</h2>
+    <p>
+        Podemos criar gradientes e aplicarmos a componentes visuais usando as CSS. Ex: <br>
+        <pre><code>
+            &ltstyle&gt
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    background-image: linear-gradient(90deg, yellow, red);
+                    color: black;
+                }
+        </code></pre>
+    </p>
+    <p>
+        Pode parecer estranho, mas esse gradiente é considerado uma imagem pelo nevegador, por isso usamos a propriedade <code>background-image</code>. A função <code>linear-gradient</code>
+         gera um gradiente linear angular. O primeiro parâmetro da função indica o a^ngulo de 90 graus e as seguintes indicam as cores do degradê.
+    </p>
+    <p>
+        Também é possível criar gradientes radiais: <br>
+        <pre><code>
+            background-image: radial-gradient(circle, red, yellow, green);
+        </code></pre>
+    </p>
+
+    <h2>Encontrei um cor bonita, como descubro o código dela?</h2>
+    <p>
+        Existe uma extensão gratuita do chrome chamada <strong>Colorzilla</strong>, basta voce^ir na stor do chrome e baixar ela. Nela existe uma ferramenta chamada <em>Pick Color From Page</em>,
+         que consiste em clicar na cor que te chamou atenção que ela vai aparecer em formato <code>rgb()</code> e com seu código hexadecimal, aí 
+        basta copiar o código e colocar ele na folha de estilo.
+    </p>
+    <p>
+        Com isso aprendemos bastante, mas ainda falta muito para dominar CSS, daqui pra frente vamos ver algumas coisas como design, especialmente conceitos sobre fontes.
+    </p>
+</body>
+</html>

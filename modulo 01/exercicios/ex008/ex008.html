@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link favicon="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <title>Listas HTML</title>
+</head>
+<body>
+    <h1>Listas com HTML5</h1>
+    <p>
+        <strong>Caso você queira deixar um comentário em seu código basta usar a tag &lt!-- --&gt</strong>. <!--Desse jeito-->
+        <br>Caso você queira alterar várias tags ao mesmo tempo, basta você clicar em uma das tags e segurar o "alt", a partir do momento que você clicou no 
+        "alt" basta mantê-lo pressionado enquanto vai clicando nas outras tags que quer alterar, isso fará com que você consiga alterar várias linhas ao mesmo tempo.
+    </p>
+    <h2>O poder das listas</h2>
+    <p>
+        As listas são muito importantes, pois elas simplificam e sintetizam o conteúdo a ser passado, 
+        além disso elas fazem a demarcação de cada item para facilitar a vizualização.
+    </p>
+    <p>
+        Pensando nisso, a HTML disponibiliza vários tipos de listas, para deixar nosso conteúdo mais claro 
+        e eficiente.
+    </p>
+    <br>
+    <h2>Listas Ordenadas</h2>
+    <p>
+        São as listas ondem a ordem dos itens é muito importante, como um passo-a-passo para fazer um bolo.
+    </p>
+    <p>
+        Para criar uma <em>ordered list</em>, deve-se utilizar a tag &ltol&gt para delimitar a lista e a tag 
+        &ltli&gt (<em>list item</em>) para identificar cada item da lista. Exemplo: <br>
+        <ol>
+            <li>2 colheres de açúcar</li>
+            <li>1 colher de azeite</li>
+            <li>3 ovos</li>
+            <li>1/2 xícara de leite</li>
+            <li>1 xícara de farinha de trigo</li>
+        </ol>
+        <br>
+        Vale ressaltar que a tag &ltli&gt é de fechamento opcional no HTML5, diferente da tag&ltol&gt.
+    </p>
+    <p>
+        A tag &ltol&gt possui um parâmetro type, onde é possível configurar o tipo de marcador de lista a ser utilizado. 
+        As opções possíveis para esse parâmetro são:
+        <ol>
+            <li>1 - Valor padrão. Listas númeradas: 1, 2, 3, ...</li>
+            <li>A - Listas alfabéticas em maiúsculas: A, B, C, ...</li>
+            <li>a - Listas alfabéticas em minúsculas: a, b, c, ...</li>
+            <li>I - Listas com algoritmos romanos maiúsculos: I, II, III, ...</li>
+            <li>i - Listas com algoritmos romanos minúsculos: i, ii, iii, ...</li>
+        </ol>
+    </p>
+    <p>
+        Também é possível indicar o início da contagem usando o parâmetro "start". <br>
+        Ex: A tag &ltol type="I" start = "5"&gt vai fazer com que alista seja numerada a partir 
+        do número "5" em romano.
+    </p>
+    <h2>Listas não Ordenadas</h2>
+    <p>
+        São usadas quando a ordem dos itens não influencia no significado da lista. É uma ótima maneira 
+        de organizar os itens que não apresentam, necerrariamente, uma classificação.
+    </p>
+    <p>
+        Para criar uma <em>unordered list</em> basta utilizar a tag &ltul&gt para delimitar a lista e a tag 
+        &ltli&gt para criar cada um de seus itens. Ex:
+        <ul>
+            <li>Carro</li>
+            <li>PC Gamer</li>
+            <li>Bujão de gás cromado</li>
+            <li>Waifu</li>
+        </ul>
+    </p>
+    <p>
+        Nesse tipo de lista o marcador comum é a bolinha totalmente preenchida (circle), mas é possível configurar 
+        a a propriedade <em>type</em> dessa tag. É possível escolher os seguintes valores:
+        <ul>
+            <li>disc - Padrão, bola totalmente preta</li>
+            <li>circle - Uma cola com a borda preta mas sem preenchimento</li>
+            <li>square - Um pequeno quadrado totalmente preto</li>
+        </ul>
+    </p>
+    <h2>Listas Mistas</h2>
+    <p>
+        É possível criar listas mistas, para isso basta configurar uma lista dentro de outra lista. Ex: <br>
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <ol>
+                <li>Item 2.1</li>
+                <li>Item 2.2</li>
+            </ol>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ol>
+    </p>
+    <p>
+        É possível notar que os itens da lista interna estão deslocados para a direita em relação a lista externa.
+    </p>
+    <h3>Lista dos meus jogos favoritos</h3>
+    <p>
+        <ul>
+            <li>Playstation</li>
+            <ol type="a">
+                <li>God of War 1</li>
+                <li>God of War 4</li>
+                <li>GTA do Miranha</li>
+            </ol>
+            <li>Computador</li>
+            <ol type="a">
+                <li>AQW</li>
+                <li>Hollow Knight</li>
+                <li>Minecraft</li>
+                <li>Paladins</li>
+                <li>FNAF's 1</li>
+                <li>FNAF's 3</li>
+                <li>FNAF's 4</li>
+                <li>FNAF's 6</li>
+            </ol>
+        </ul>
+    </p>
+    <h2>Lista de Definições</h2>
+    <p>
+        É basicamente um dicionário, nela se colocam os termos e suas descrições, ela não tem demarcadores mas ainda sim é bem útil!
+    </p>
+    <p>
+        Para fazer uma <em>definition list</em> basta usar a tag &ltdl&gt. Nela cada termo é um &ltdt&gt (<em>definition term</em>) e 
+        cada descrição é um &ltdd&gt (<em>definition description</em>). Assim como o <em>item list</em> essas duas últimas tags possuem 
+        fechamento opcional. Ex: <br>
+        <dl>
+            <dt>HTML</dt>
+            <dd>Linguagem de marcação utilizada para criar o conteúdo de sites.</dd>
+
+            <dt>CSS</dt>
+            <dd>Linguagem de marcação para a especificação de estilos em sites.</dd>
+
+            <dt>JavaScript</dt>
+            <dd>Linguagem de programação para criar interatividade em sites.</dd>
+        </dl>
+    </p>
+    <p>Cada navegador pode apresentar essa lista de forma diferente, mas o que importa é a relação entre Termo e Descricição, que o significado dessa lista.</p>
+    </body>
+</html>

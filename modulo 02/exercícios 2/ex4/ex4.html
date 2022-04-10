@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon1.ico" type="image/x-icon">
+    <title>Seletores Personalizados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1 id="principal">Título Principal</h1>
+        <h1>Seletores Personalizados em CSS</h1>
+        <p>
+            Agora vamos falar um pouco sobre formatações especiais que permitem organizar os conteúdos na tela, 
+            indicando seus tamanhos, espaçamentos, sombras, etc.
+        </p>
+        <p>
+            Acima eu defini um dos títulos h1 como "principal" utilizando um <code>id</code>, por isso foi possível alterar somente ele.
+        </p>
+
+        <h2 class="topico">Personalizando Seletores</h2>
+        <p class="texto destaque">
+            Para criar estilos personalizados usamos o seletor de <code>id (#)</code> (Só pode ter um id na página, é uma regra) e de <code>class (.)</code> 
+            de maneira eficiente. No HTML podemos <strong>identificar</strong> um determinado elemento com um <code>id</code> 
+            único, você também pode <strong>agrupar</strong> elementos semelhantes com um <code>class</code>. Exemplos de propriedades 
+            classificadores:
+        </p>
+        <pre><code>
+            &ltbody&gt
+                &lth1 id="titulo-principal"&gtAprenda Desenvolvimento Web&lt/h1&gt
+                &lth1&gtAprenda HRML&lt/h1&gt
+                &lth2 class="topico"&gtSemântica Web&lt/h2&gt
+                &ltp class="texto"&gtLorem ipsum, ...?&lt/p&gt
+                &lth1&gtAprenda CSS&lt/h1&gt
+                &lth2 class="topico"&gtEstilos Web&lt/h2&gt
+                &ltp&gtLorem ipsum dolor sit, ...ducimus.&lt/p&gt
+        </code></pre>
+
+        <p>
+            Na <strong>primeira linha</strong> vimos que o h1 principal possuí um <code>id</code> diferente dos outros.
+        </p>
+        <p>
+            Nas <strong>linhas 3 e 6</strong> consuimos ver que ambos os h2 possuem a mesma <code>class</code>.
+        </p>
+        <p>
+            Um <code>id</code> vai identificar um elemento único dentro da página atual, permitindo criar estilos especiais para o elemento isolado.
+        </p>
+        <p>
+            Uma <code>class</code> vai identificar uma classe que pode haver um ou mais elementos pertencentes, compartilhando características em comum 
+            entre eles.
+        </p>
+        <p>
+            <strong>OBS:</strong> Só pode usar um <code>id</code> para um único elemento, não podemos ter mais elementos com um mesmo <code>id</code> dentro 
+            de uma mesma página. Mas podemos atribuir uma <code>class</code> para vários elementos que possuam essa mesma característica.
+        </p>
+        <p>
+            Você pode ver que mesmo que eu tenha aplicado um <code>id</code> no primeiro h1, ele continua igual aos demais, para alterar elementos com <code>id</code> 
+            ou <code>class</code> faça o seguinte:
+        </p>
+        <pre><code>
+            #titulo-principal {
+                background-color: darkgreen;
+                color: white;
+                text-align: center;
+            }
+
+            .topico {
+                text-align: right;
+            }
+
+            .texto {
+                text-align: justify;
+            }
+        </code></pre>
+
+        <p>
+            Anteriormente, na primeira linha, nós criamos um seletor personalizado para identificar o h1 principal como <code>titulo-principal</code>. Para fazer modificações em <code>id</code> 
+            colamos primeiro o símbolo # em seguida do nome único atribuído ao elemento.
+        </p>
+        <p>
+            Nas linhas 7 e 11 estamos fazendo alterações nas classes recebidas pelas linhas 3, 4 e 6 do exemplo anterior. Para fazer alterações em uma <code>class</code> usamos o símbolo . seguido 
+            do nome da classe que se deseja alterar.
+        </p>
+
+        <h2>Propriedades herdadas</h2>
+        <p>
+            Dar um <code>id</code> fará com que as alterações feitas nos demais não influencie os resultados no elemento, caso essas características conflitem entre si. Ou seja, as alterações no <code>id</code> 
+            se sobressaem sobre as alterações feitas para todos.
+        </p>
+
+        <h2>Pseudo-classes e pseudo-elementos</h2>
+        <p>
+            Uma <code>pseudo-class CSS</code> é uma palavra-chave adicionada às declarações de um seletor após um sinal de <em>dois pontos</em> e especificam um estado especial de um elemento. Existem várias pseudo-classes 
+            para estilos, alguns exemplos são: <code>:hover</code>, <code>:visited</code>, <code>:active</code>, <code>:checked</code>, <code>:empty</code> e <code>:focus</code>.
+        </p>
+        <p>
+            Um <code>pseudo-elemento CSS</code> é uma palavra-chave adicionada às delcarações de um seletor após <em>dois sinais de dois pontos</em>, permitindo que você formate um pedaço específico do elemento referenciado, elas estão relacionados ao estado do elemento atual, se eles está ativo, vazio, etc. 
+            Os principais pseudo-elementos usados são: <code>::before</code>, <code>::after</code>, <code>::first-letter</code>, <code>::first-line</code>.
+        </p>
+        <p>
+            A seguir um exemplo simples, mas bastante usado, para exemplificar o uso de pseudo-classes e pseudo-elementos: a personalização de links.
+        </p>
+        <pre><code>
+            &ltbody&gt
+                &lth1&gtPersonalizando um link&lt/h1&gt
+                &ltp&gt
+                    Para aprender HTML5 e CSS3, acesse o 
+                    &lta href="https://gustavoguanabare.github.io"&gt
+                    &lt/a&gt
+                &lt/p&gt
+                &ltp&gt
+                    Se quiser conhecer mais sobre os padrões, visite o site do 
+                    &lta href="https://www.wec.br"&gtEscritório do W3C no Brasil&lt/a&gt
+                &lt/p&gt
+                &ltp&gt
+                    Para acompanhar os cursos, acesse o 
+                    &lta href="https://www.youtube.com/cursoemvideo/" class="especial"&gt
+                        canal do cursoemvideo
+                    &lt/a&gt
+                &lt/p&gt
+        </code></pre>
+        <p>
+            O primeiro passo é criar corpo do documento, contendo só HTML, criar os textos, parágrafos e, por fim, o link. Nesse exemplo o último link recebeu a atribuição de uma classe específica. O resultado está a seguir:
+        </p>
+        <p>
+            <img src="personalizando-link.png" alt="Personalizando link">
+        </p>
+    </main>
+        <p style="text-align: right;">
+            <a href="ex4-1.html" target="_self" rel="next"><img src="../ex1/ex1-1/ir.png" alt="Ir para a próxima página"></a>
+        </p>
+</body>
+</html>
