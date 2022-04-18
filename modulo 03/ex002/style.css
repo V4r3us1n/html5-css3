@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-image: url(imagens-cap19/pattern001.png);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    width: 700px;
+    background-color: rgb(22, 22, 22);
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 10px 0px;
+    text-align: justify;
+}
+
+main h1, main h2, main p {
+    margin: 10px 20px;
+}
+
+main > h1 {
+    text-align: center;
+}
+main > p {
+    text-indent: 20px;
+}
+
+div.quadrado {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: azure;
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+}
+
+div#q1 {
+    background-image: url(imagens-cap19/pattern004.png);
+}
+
+div#q2 {
+    background-image: url(imagens-cap19/pattern002.png);
+}
+
+div#q3 {
+    background-image: url(imagens-cap19/pattern003.png);
+}
+
+div#q4 {
+    background-image: url(imagens-cap19/wallpaper002.jpg);
+}
