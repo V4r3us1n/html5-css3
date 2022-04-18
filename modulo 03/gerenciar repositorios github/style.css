@@ -45,5 +45,11 @@ main p {
     color: var(--cor-letra1);
     text-align: justify;
     margin: 5px 20px;
+    margin-bottom: 10px;
     text-indent: 20px;
+}
+
+main li {
+    color: var(--cor-letra1);
+    margin:10px 20px 10px 40px;
 }
