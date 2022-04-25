@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body {
+    background-image: url(https://i.pinimg.com/originals/00/db/2e/00db2e51ea28e1225dabbca572675797.jpg);
+    background-size: 100%;
+    background-repeat: repeat-y;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+main {
+    background-color: white;
+    width: 700px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+main h1 {
+    text-align: center;
+}
+
+main p {
+    text-indent: 20px;
+}
