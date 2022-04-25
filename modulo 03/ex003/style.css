@@ -40,6 +40,14 @@ main p {
     height: 200px;
 }
 
+#imagem3 {
+    height: 300px;
+}
+
+#imagem4 {
+    height: 300px;
+}
+
 .imagem {
     text-align: center;
 }

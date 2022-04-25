@@ -103,6 +103,40 @@
             Se você for usar essa shorthand com o size, saiba que você tem que tirar ele, caso contrário sua imagem de fundo irá sumir. Segundo o manual da W3C ele deveria funcionar, mas a opção <strong>cover</strong> não funciona.
         </p>
 
+        <h2>Centralização Vertical de Caixas</h2>
+        <p>
+            Quando aplicamos imagens a um background de uma caixa, nós provavelmente vamos colocar um conteúdo junto, por isso precisamos saber fazer a centralização vertical deles.
+        </p>
+        <p>
+            A propriedade margim consegue centralizar horizontalmente, mas não verticalmente infelizmente. Mas fique tranquilo, existe uma forma de fazer isso!
+        </p>
+
+        <p>
+            Você tem que deixar a div que vai abrigar a outra div com a <strong>position: relative</strong>, já  a div de dentro vai ter a <strong>position: absolute</strong>. Se você fizer apenas isso vai ver que nada mudou, mas quando você 
+            coloca um posicionamento <strong>absoluto</strong> em um elemento você pode configurar duas propriedades: left & top. Ou seja, você consegue ajustar a distância que essa div vai ter da esquerda da div maior e do topo da mesma.
+        </p>
+        <p>
+            Você pode usar <strong>porcentagem</strong> para centralizar a imagem, mas lembre-se que as porcentegens vão ver aplicados ao <strong>canto superior esquerdo</strong> da imagem, ou seja, se você usar <strong>top/left: 50%</strong> vai ocorrer o seguinte:
+        </p>
+        <p class="imagem">
+            <img id="imagem3" src="position-relative&position-absolute.jpg" alt="Centralizando verticalmente uma div dentro de outra div">
+        </p>
+
+        <p>
+            Você pode resolver isso usando o <strong>transform</strong> (mexer em qualquer caixa, causando uma transformação nela), onde você pode mover a imagem do jeito que você quer até ela ficar centralizada. Nesse caso iremos usar o <strong>transform: translate(x, y)</strong> 
+            que serve para você deslocar a imagem, a partir do ponto em que se encontra, na horizontal e vertical. Lembre-se que valores positivos vão mover a imagem para direita/baixo e negativos mexem para esquerda/cima.
+        </p>
+        <p>
+            Para centralizá-lo, basta usar <strong>transform: translate(-50%, -50%)</strong>.
+        </p>
+
+        <p class="imagem">
+            <img id="imagem4" src="transform-translate.jpg" alt="Usando transform: translate() para centralizar o exemplo anterior">
+        </p>
+        <p>
+            Parabéns, agora você tem uma centralização tanto horizontal quanto vertical!
+        </p>
+
     </main>
 
 </body>
