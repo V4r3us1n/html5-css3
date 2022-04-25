@@ -61,6 +61,24 @@
             OBS: Na hora de colocar o background-position use a seguinte norma: o primeiro nome indica a coluna (direito, centro, esquerdo) e depois a linha (cima, centro, baixo).
         </p>
         
+        <h2>background-size:</h2>
+        <p>
+            Sempre que usamos uma imagem, ocorre situações em que ela se quebra na vertical, para poder ficar do tamanho da tela. Para evitar isso usamos a propriedade <strong>background-size</strong> que nos permite alterar 
+            o tamanho da imagem de fundo para o tamanho da tela, mas para que isso ocorra temos que alterar os dois valores, altura e largura, usando o seguinte comando: <code>background-size: 100% 100%</code>. No entanto, se a tela 
+            for diminuída a imagem será deformada de acordo, o que estrada com seu site.
+        </p>
+        <p>
+            Para corrigir isso podemos usar dois valores:
+        </p>
+        <ul>
+            <li><strong>contain</strong>: mostra a imagem 100% exibida, sem nenhum corte nela (no nosso caso, fundo006, isso não resolve</li>
+            <li><strong>cover</strong>: cobre a tela inteira, mesmo que tenha que cortar a imagem para isso (não exibe 100% da imagem mas ocupa 100% da viewport).</li>
+        </ul>
+
+        <p>
+            No entanto, se seu conteúdo for grande, vai chegar um momento em que a imagem vai terminar e vai ficar apenas um fundo branco (ou a cor que você colocou) ou a imagem vai se repetir. 
+        </p>
+
     </main>
 
 </body>
