@@ -18,7 +18,7 @@
         
         <h2>background-size:</h2>
         <p>
-            A função background-size permite você modificar o tamanho da imagem de fundo. Independente do tamanho da tela a imagem terá o mesmo tamanho, sendo repetidas o tanto necessário para ocupar toda a tela.
+            A propriedade background-size permite você modificar o tamanho da imagem de fundo. Independente do tamanho da tela a imagem terá o mesmo tamanho, sendo repetidas o tanto necessário para ocupar toda a tela.
         </p>
         <p>
             Se você usar ele em <strong>100%</strong> a largura do site vai ter o mesmo tamanho da largura da imagem.
@@ -35,9 +35,32 @@
             <li><strong>repeat</strong>: vai repetir a imagem até preencher todo o fundo.</li>
         </ul>
 
+        <p class="imagem">
+            <img id="imagem1" src="background-repeat.jpg" alt="tipos de background-repeat">
+        </p>
+
         <p>
             Lembrando que, por padrão, as imagens de fundo são colocadas no canto superior esquerdo do site, mas isso pode ser alterado!
         </p>
+
+        <h2>background-position:</h2>
+        <p>
+            Essa propriedade permite com que você defina a posição da imagem no fundo do seu site (top, bottom, right, left)
+        </p>
+        <p>
+            Veja o <code>fundo003.html</code> para visualizar isso na prática. Abaixo estão todos os tipos de <code>background-position</code> que você pode usar!
+        </p>
+        <p class="imagem">
+            <img id="imagem2" src="background-position.jpg" alt="tipos de background-position">
+        </p>
+        <p>
+            Ocorreu um pequeno erro ao colocar a imagem de fundo como "background-position: center center", isso ocorre qaundo o conteúdo do "body" é muito pequeno. Para corrigir isso basta você definir o 
+            <strong>height</strong> do body como <strong>100vh</strong>, ou menos para corrigir a barra de navegação que pode vir a aparecer.
+        </p>
+        <p>
+            OBS: Na hora de colocar o background-position use a seguinte norma: o primeiro nome indica a coluna (direito, centro, esquerdo) e depois a linha (cima, centro, baixo).
+        </p>
+        
     </main>
 
 </body>

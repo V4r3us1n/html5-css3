@@ -24,3 +24,15 @@ main h1 {
 main p {
     text-indent: 20px;
 }
+
+#imagem1 {
+    height: 300px;
+}
+
+#imagem2 {
+    height: 200px;
+}
+
+.imagem {
+    text-align: center;
+}
