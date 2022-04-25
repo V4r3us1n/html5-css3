@@ -2,10 +2,15 @@
 
 body {
     height: 100vh;
+    background: url(https://i.pinimg.com/originals/00/db/2e/00db2e51ea28e1225dabbca572675797.jpg) center top no-repeat fixed;
+    /*
+    background-color: black;
     background-image: url(https://i.pinimg.com/originals/00/db/2e/00db2e51ea28e1225dabbca572675797.jpg);
-    background-size: cover;
     background-position: center top;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    */
+    background-size: cover;
     margin: 0;
     padding: 0;
     border: 0;

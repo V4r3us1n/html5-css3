@@ -79,6 +79,30 @@
             No entanto, se seu conteúdo for grande, vai chegar um momento em que a imagem vai terminar e vai ficar apenas um fundo branco (ou a cor que você colocou) ou a imagem vai se repetir. 
         </p>
 
+        <h2>background-attachment:</h2>
+        <p>
+            Essa propriedade permite você vincular sua imagem de fundo no texto ou deixá-lo fixo. Para isso usamos <strong>background-attachment</strong> e escolhemos entre duas opções: 
+        </p>
+        <ul>
+            <li><strong>scroll</strong>: o fundo rola junto com o conteúdo.</li>
+            <li><strong>fixed</strong>: o fundo fica fixo.</li>
+        </ul>
+
+        <p>
+            Você também pode usar shorthands para o <strong>background</strong> sendo ela na seguinte ordem:
+        </p>
+        <ol>
+            <li>color</li>
+            <li>image</li>
+            <li>position</li>
+            <li>repeat</li>
+            <li>[size] (não funciona na prática, faça ele separado)</li>
+            <li>attachment</li>
+        </ol>
+        <p>
+            Se você for usar essa shorthand com o size, saiba que você tem que tirar ele, caso contrário sua imagem de fundo irá sumir. Segundo o manual da W3C ele deveria funcionar, mas a opção <strong>cover</strong> não funciona.
+        </p>
+
     </main>
 
 </body>
