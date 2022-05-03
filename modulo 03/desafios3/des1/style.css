@@ -19,6 +19,7 @@ header h1 {
     font-size: 72px;
     font-weight: 400;
     color: white;
+    font-variant: small-caps;
 }
 
 header p {
@@ -41,6 +42,7 @@ main p {
     font-family: 'Sriracha', 'cursive';
     font-size: 25px;
     padding: 10px 5px;
+    width: auto;
 }
 
 section {
@@ -48,25 +50,33 @@ section {
 }
 
 section > p {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 div {
+    display: inline-block;
     color: white;
     background-color: rgba(0, 0, 0, 0.774);
     height: auto;
-    margin: 40px 0px 40px 20px;
+    margin: 60px auto 60px 20px;
 }
 
 section#flor {
     margin: 0;
     background-image: url(pacote-d012/imagens/background001.jpg);
-    background-position: center center;
+    background-position: right center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 80px;
 }
 
 section#folhas {
     margin: 0;
     background-image: url(pacote-d012/imagens/background002.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 80px;
 }
 
 footer {
@@ -75,6 +85,10 @@ footer {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     text-align: center;
+}
+
+footer p {
+    padding: 10px;
 }
 
 a {
