@@ -11,12 +11,14 @@ html, body {
 }
 
 :root {
-    
+    --cor-normal: white;
+    --cor-especial: black;
+    --cor-especial-imagem: rgba(0, 0, 0, 0.849);
 }
 
 header {
-    background-color: black;
-    color: white;
+    background-color: var(--cor-especial);
+    color: var(--cor-normal);
     text-align: center;
 }
 
@@ -30,7 +32,7 @@ header > p {
 }
 
 a {
-    color: white;
+    color: var(--cor-normal);
     text-decoration: none;
     font-weight: bolder;
 }
@@ -47,8 +49,8 @@ section {
 }
 
 section.normal {
-    background-color: white;
-    color: black;
+    background-color: var(--cor-normal);
+    color: var(--cor-especial);
 }
 
 section.imagem {
@@ -56,14 +58,14 @@ section.imagem {
 }
 
 section.imagem > p {
-    background-color: rgba(0, 0, 0, 0.849);
+    background-color: var(--cor-especial-imagem);
     width: 400px;
     padding-left: 10px;
 }
 
 footer {
-    background-color: black;
-    color: white;
+    background-color: var(--cor-especial);
+    color: var(--cor-normal);
     text-align: center;
     padding: 10px;
 }
