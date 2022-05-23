@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas em HTML</title>
+    <link rel="shortcut icon" href="../../../modulo 02/desafio 2/favicon1.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Ainda podemos usar tabelas em HTML?</h1>
+        <p>
+            Muitas pessoas dizem que tabelas são inúteis para um site, mas isso não é verdade, veremos adiante qual a função de uma tabela em um site!
+        </p>
+        <p>
+            Já vou deixar bem claro uma coisa aqui: VOCÊ NÃO PODE USAR TABELA PARA CRIAR A ESTRUTURA DO SEU SITE.
+        </p>
+        <p>
+            Você pode usar tabelas para apresentar dados, por exemplo, nome de países, habitantes, bandeira, etc...
+        </p>
+
+        <h2>Sua primeira tabela em HTML</h2>
+        <p>
+            A primeira coisa que precisamos fazer é criar uma tag <code>&lttable></code>, que vai delimitar a sua tabela.
+        </p>
+
+        <p>
+            Vamos ver a Hierarquia de uma Tabela Simples:
+        </p>
+
+        <ul>
+            <li>table (tabela)
+                <ul>
+                    <li>[tr] table row (linha da tabela)
+                        <ul>
+                            <li>[th] table header (cabaçalho da tabela)</li>
+                            <li>[td] table data (dados da tabela)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>
+            Exemplo de tabela (essa não tem cabeçalho)
+        </p>
+
+        <table>
+            <tr> <!-- Primeira linha da tabela -->
+                <td>A1</td> <!-- Primeira célula da 1ª linha -->
+                <td>B1</td> <!-- Segunda célula da 1ª linha -->
+                <td>C1</td> <!-- Terceira célula da 1ª linha -->
+            </tr>
+            <tr class="linha"> <!-- Segunda linha da tabela -->
+                <td>A2</td> <!-- Primeira célula da 2ª linha -->
+                <td>B2</td> <!-- Segunda célula da 2ª linha -->
+                <td>C2</td> <!-- Terceira célula da 2ª linha -->
+            </tr>
+            <tr> <!-- Terceira linha da tabela -->
+                <td>A3</td> <!-- Primeira célula da 3ª linha -->
+                <td>B3</td> <!-- Segunda célula da 3ª linha -->
+                <td>C3</td> <!-- Terceira célula da 3ª linha -->
+            </tr>
+            <tr> <!-- Quarta linha da tabela -->
+                <td>A4</td> <!-- Primeira célula da 4ª linha -->
+                <td class="celula">B4</td> <!-- Segunda célula da 4ª linha -->
+                <td>C4</td> <!-- Terceira célula da 4ª linha -->
+            </tr>
+        </table>
+
+
+        <p>
+            OBSERVAÇÃO: o W3C diz que é opcional o fechamento das tags <code>&lttr></code> e <code>&lttd></code>. Além disso, vale a pena citar que se a hierarquia não for respeitada os dados podem aparecer ou antes ou depois da tabela, e não dentro da mesma.
+        </p>
+        <p>
+            Originalmente ela não se parece tanto com uma tabela, para resolver isso vamos colocar um pouco de estilo nela!
+        </p>
+        <p>
+            DICA: você pode usar o "<code>border-collapse: collapse;</code>" para unir as bordas das células, porque, caso você coloque uma borda elas vão ter um espaçamento entre elas.
+        </p>
+
+        <h2>Alinhando o conteúdo em Tabelas</h2>
+        <p>
+            Vamos para um próximo exemplo, dessa fez vamos aumentar também a altura da tabela...
+        </p>
+
+        <table id="tabela-centro">
+            <tr> <!-- Primeira linha da tabela -->
+                <td>A1</td> <!-- Primeira célula da 1ª linha -->
+                <td>B1</td> <!-- Segunda célula da 1ª linha -->
+                <td>C1</td> <!-- Terceira célula da 1ª linha -->
+            </tr>
+            <tr> <!-- Segunda linha da tabela -->
+                <td>A2</td> <!-- Primeira célula da 2ª linha -->
+                <td>B2</td> <!-- Segunda célula da 2ª linha -->
+                <td>C2</td> <!-- Terceira célula da 2ª linha -->
+            </tr>
+            <tr> <!-- Terceira linha da tabela -->
+                <td>A3</td> <!-- Primeira célula da 3ª linha -->
+                <td>B3</td> <!-- Segunda célula da 3ª linha -->
+                <td>C3</td> <!-- Terceira célula da 3ª linha -->
+            </tr>
+            <tr> <!-- Quarta linha da tabela -->
+                <td>A4</td> <!-- Primeira célula da 4ª linha -->
+                <td>B4</td> <!-- Segunda célula da 4ª linha -->
+                <td>C4</td> <!-- Terceira célula da 4ª linha -->
+            </tr>
+        </table>
+
+        <p>
+            Para fazer um alinhamento horizontal basta usar o "<code>text-align: center;</code>".
+        </p>
+        <p>
+            Para fazer o alinhamento vertical basta usar o "<code>vertical-align: ;</code>", onde as opções são "top", "bottom" e "middle".
+        </p>
+
+    </main>
+</body>
+</html>
