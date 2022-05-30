@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    background-image: url(../ex004/anime-fundo.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main {
+    width: 700px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+main h1 {
+    text-align: center;
+}
+
+main p {
+    text-align: justify;
+    text-indent: 20px;
+}
+
+table {
+    width: 500px;
+    margin: auto;
+    border-collapse: collapse; /* Une as bordas das células que antes estavam separadas! */
+}
+
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+thead, tfoot {
+    background-color: gray;
+    color: aliceblue;
+}
+
+tr {
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 3px;
+}
+
+.Norte {
+    color: green;
+}
+
+.Nordeste {
+    color: rebeccapurple;
+}
+
+.Centro-Oeste {
+    color: orangered;
+}
+
+.Sudeste {
+    color: red;
+}
+
+.Sul {
+    color: royalblue;
+}
