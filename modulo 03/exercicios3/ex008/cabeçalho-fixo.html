@@ -9,28 +9,18 @@
 </head>
 <body>
     <main>
-        <h1>Efeito Zebrado em Tabelas</h1>
-        <p>Muitas vezes, quando as tabelas são muito grandes, fica difícil relacionar cada célula da tabela com sua linha, pensando nisso foi criado o efeito zebrado.</p>
-        <p>O efeito zebrado nada mais é do que linhas de cor diferente que facilita essa relação entre célula x linha!</p>
-
-        <p>Para aplicar o efeito zebrado você tem que ter em mente que ele só pode ser aplicado no corpo da tabela, então:</p>
-
-        <pre><code>
-            tbody tr {
-                background-color: lightgray;
-            }
-        </code></pre>
-
-        <p>O código acima faz com que todas as linhas do corpo da tabela fiquem com a cor cinza, mas não é isso que queremos. Para resolvermos isso nós vamos usar uma <strong>pseudo-classe</strong> chamada  <strong>:nth-child()</strong>, veja:</p>
+        <h1>Cabeçalho Fixo em Tabelas</h1>
+        <p>Vale citar que esse recurso não está funcionando perfeitamente em todos os navegadores, pelo menos no Google Chrome ele funciona :T</p>
+        <p>Quando se trata de tabelas grandes, vai chegar um ponto em que você não vai mais conseguir ver o cabeçalho, é para isso que serve esse recuros!</p>
+        <p>Para poder utilizá-lo sua tabela tem que ter <code><strong>position: relative</strong></code> depois disso você aplica as seguintes configurações:</p>
 
         <pre><code>
-            tbody tr:nth-child(2n) {
-                background-color: lightgray;
+            thead > tr > th {
+                position: sticky; //Deixei ele como comentário pq ele ficar vermelho (como um erro) tava me incomando
+                top: -1px; //Usei -1 invés do zero pq com o zero fica uma linha de um px branca loco acima do cabeçalho quando ele desce!
+                background-color: ; //Use a mesma cor que a de fundo da linha do cabeçalho!
             }
         </code></pre>
-
-        <p>Ou seja, a cada duas linhas uma delas terá a cor de fundo cinza-claro!</p>
-        <p>OBS: se você quiser que a cor de fundo fique nos números impares ao invés de colocar <code>":nth-child(2n)"</code> você vai colocar <code>":nth-child(odd)"</code>, caso queira colocar nos pares (padrão) você pode usar também o <code>:nth-child(even)</code>.</p>
 
         <table>
             <caption>População das Unidades Federativas do Brasil</caption>

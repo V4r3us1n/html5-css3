@@ -34,6 +34,7 @@ table {
     width: 500px;
     margin: auto;
     border-collapse: collapse; /* Une as bordas das células que antes estavam separadas! */
+    position: relative;
 }
 
 caption {
@@ -46,6 +47,12 @@ caption {
 thead, tfoot {
     background-color: gray;
     color: aliceblue;
+}
+
+thead > tr > th {
+    /*position: sticky;*/ /* Está assim pq ainda não funciona bem em todos os navegadores, eu acho... */
+    top: -1px;
+    background-color: gray; /*Use a mesma cor que a de fundo da linha do cabeçalho!*/
 }
 
 tbody tr:nth-child(2n) {
