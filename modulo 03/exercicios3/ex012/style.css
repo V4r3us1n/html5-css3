@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    background-image: url(../../exercicios3/ex004/anime-fundo.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+main h1 {
+    text-align: center;
+}
+
+main p {
+    text-align: justify;
+    text-indent: 20px;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse; /* Une as bordas das células que antes estavam separadas! */
+}
+
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+
+}
+
+tr th {
+    background-color: lightgray;
+}
+
+tr {
+    text-align: center;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: lightgray;
+}
+
+th {
+    border: 1px solid black;
+    padding: 3px;
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+    width: auto;
+}
+
+div#container {
+    overflow-x: auto;
+}

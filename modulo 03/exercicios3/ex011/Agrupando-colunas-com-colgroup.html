@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrupando Colunas com colgroup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Agrupando colunas usando o colgroud</h1>
+        
+        <p>Não conseguimos personalizar colunas de uma forma eficiente, diferentemente do exemplo abaixo, onde é aplicado um fundo em uma linha inteira:</p>
+
+        <table>
+            <caption>Cadastro (Personalizando uma Linha)</caption>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Profissão</th>
+            </tr>
+            <tr>
+                <td>Ósni</td>
+                <td>M</td>
+                <td>16</td>
+                <td>Estudante?</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>F</td>
+                <td>15</td>
+                <td>Menor Aprendiz</td>
+            </tr>
+            <tr>
+                <td>Xandão</td>
+                <td>M</td>
+                <td>27</td>
+                <td>Streammer</td>
+            </tr>
+            <tr class="destaque">
+                <td>Gustavo</td>
+                <td>M</td>
+                <td>35</td>
+                <td>Professor</td>
+            </tr>
+            <tr>
+                <td>Ana</td>
+                <td>F</td>
+                <td>21</td>
+                <td>Advogada</td>
+            </tr>
+            <tr>
+                <td>Jefferson</td>
+                <td>M</td>
+                <td>22</td>
+                <td>Vagabundo</td>
+            </tr>
+        </table>
+
+        <p>Isso foi possível por causa da classe que foi aplicada ao "<strong>tr</strong>" (linha inteira), mas não existe um "<strong>tc</strong>" (table colum), isso dificulta a personalização de dados em uma coluna específica. Uma forma de fazer isso é você ir em cada dado dessa coluna e adicionar uma classe para aí então personalizá-los, mas isso levaria muito tempo.</p>
+        <p>Quando a tabela é pequena isso não é um problema, mas e se ela for enorme? Como personalizar a coluna inteira sem ter que agir em cada dado da mesma individualmente?</p>
+        <p>No HTML 5 tem uma nova tag de tabela, voce^pode colocar ela em qualquer lugar, ela se chama <strong><code>colgroup</code></strong>, nele você cria uma <strong>tag col</strong> para cada coluna de sua tabela. Você pode dar uma classe para cada uma das colunas e personalizá-las individualmente!</p>
+    
+        <table>
+            <caption>Cadastro (Personalizando uma Coluna)</caption>
+            <colgroup>
+                <col class="colnome">
+                <col class="colsexo">
+                <col class="colidade">
+                <col class="colprof">
+            </colgroup>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Profissão</th>
+            </tr>
+            <tr>
+                <td>Ósni</td>
+                <td>M</td>
+                <td>16</td>
+                <td>Estudante?</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>F</td>
+                <td>15</td>
+                <td>Menor Aprendiz</td>
+            </tr>
+            <tr>
+                <td>Xandão</td>
+                <td>M</td>
+                <td>27</td>
+                <td>Streammer</td>
+            </tr>
+            <tr>
+                <td>Gustavo</td>
+                <td>M</td>
+                <td>35</td>
+                <td>Professor</td>
+            </tr>
+            <tr>
+                <td>Ana</td>
+                <td>F</td>
+                <td>21</td>
+                <td>Advogada</td>
+            </tr>
+            <tr>
+                <td>Jefferson</td>
+                <td>M</td>
+                <td>22</td>
+                <td>Vagabundo</td>
+            </tr>
+        </table>
+
+        <p><strong>OBS</strong>: A tag <strong>&ltcol&gt</strong> dentro de <strong>&ltcolgroup&gt</strong> <strong>não</strong> tem fechamento (&lt/col&gt)</p>
+        <p>Além disso, você pode aplicar a estilização a mais de uma coluna simultaneamente, basta fazer algo como "col.csexo, col.cidade", mas voce^também pode criar uma classe "<strong>cgrupo</strong>" e configura a classe dessa coluna com "<strong>span="2"</strong>", dessa forma você pode criar menas colunas em <strong>colgroup</strong>, mas elembrando que isso só se aplica a colunas ao lado direito da mesma!</p>
+        
+    </main>
+</body>
+</html>
