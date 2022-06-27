@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurando iframes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        iframe {
+            width: 300px;
+            height: 300px;
+            border: 5px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Configurando iframes</h1>
+        
+        <p>Nem todos os navegadores para celular tem suporte para iframe, por isso é bom você colocar um comentário entre a abertura e fechamento do iframe, essa mensagem irá aparecer apenas se o navegador não for compatível!</p>
+        <p>Você pode botar no lugar da mensagem o link apra o site que você exibe no iframe.</p>
+
+        <p> Acessando site do guanabara, 
+            <iframe src="http://cursoemvideo.com" frameborder="0">
+                <a href="http://cursoemvideo.com" target="_blank">o CursoemVideo</a>
+            </iframe>
+        </p>
+        <p>O <strong>tamanho padrão</strong> de um iframe é de <strong>300x150</strong>. Você pode alterar o tamanho e largura dele diretamente no html, apenas usando <strong>height=""</strong> e <strong>width=""</strong> ou você pode alterá-los no CSS.</p>
+        <p>Se você fazer alterações de altura e alrgura em um iframe tanto no <strong>HTML</strong> como no <strong>CSS</strong>, as alterações do CSS vão prevalecer!</p>
+        <p>Pode aparecer uma <strong>scroll-bar</strong> dentro do iframe, para modificá-la você pode usar o <strong>scrolling</strong>, que possuíalgumas variações:</p>
+        <ul>
+            <li><strong>'auto'</strong>: se o conteúdo for maior que o frame  a barra de roalgem será gerada, caso contrário não.</li>
+            <li><strong>'yes'</strong>: mesmo que o conteúdo coubesse apareceria a barra de rolagem.</li>
+            <li><strong>'no'</strong>: não vai haver a barra de rolagem, só será mostrado o que couber no tamanho do iframe.</li>
+        </ul>
+
+        <p>Só consegui usar o <strong>scrolling</strong> direto no HTML, no CSS isso não foi possível!</p>
+
+        <p> Acessando site do guanabara, 
+            <iframe src="http://cursoemvideo.com" frameborder="0" scrolling="no">
+                <a href="http://cursoemvideo.com" target="_blank">o CursoemVideo</a>
+            </iframe>
+        </p>
+
+        <p>Em alguns navegadores alguns parâmetros podem não funcionar.</p>
+        <p>Existe outro parâmetro chamado <strong>frameboarder</strong> que aceita basicamente dois valores: <strong>0</strong> ou <strong>1</strong>. POr mais que você tente colocar uma borda maior que 1px somente ela será gerada.</p>
+        <p>Você pode personalizar a borda do iframe usando um simples <strong>border</strong> ao invés do <strong>frameborder</strong>.</p>
+        <p>Tá, mas se vários sites bloqueam o iframe então pra que vou usá-lo?</p>
+        <p>Bom, você pode colocar <strong>seu próprio conteúdo</strong> dentro do iframe</p>
+
+    </main>
+</body>
+</html>
