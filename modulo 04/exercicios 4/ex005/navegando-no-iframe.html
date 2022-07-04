@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegação no Iframe</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        iframe {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed black;
+            display: block;
+            margin: auto;
+        }
+
+        iframe#tela {
+            width: 95%;
+            border: 2px solid black;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Navegação no Iframe</h1>
+        <p>E se quisermos colocar no iframe páginas que não estão na mesma pasta que se encontra o site?</p>
+        <p>Bom, para isso basta você colocar o caminho da pasta, veja:</p>
+
+        <pre><code>
+            &ltiframe src="paginas extras/pag-001.html">&lt/iframe>
+        </code></pre>
+
+        <iframe src="paginas extras/pag-001.html"></iframe>
+
+
+        <p>Veja o que será feito a seguir:</p>
+        <p>O objetivo é fazer com que, se você clicar em um desses links, será mostrado o site correspondente no iframe abaixo!</p>
+
+        <ul>
+            <li><a href="paginas extras/pag-001.html" target="frame">Primeira Página</a></li>
+            <li><a href="paginas extras/pag-002.html" target="frame">Segunda Página</a></li>
+            <li><a href="paginas extras/pag-003.html" target="frame">Terceira Página</a></li>
+        </ul>
+
+        <iframe id="tela" name="frame" src="">[ERRO!] Infelizmente seu navegador não  é compatível :(</iframe>
+    
+        <p>No entanto, se você clicar no link normalmente ele será carregado na tela inteira, como fazer ele carregar apenas no iframe?</p>
+        <p>Para isso basta você usar um <strong>name</strong> no iframe e colocar  um <strong>target</strong> no link puxando o nome desse frame!</p>
+        <p>Tente clicar em um dos links para ver!</p>
+
+        <p>Ou seja, conseguimos criar uma interação na página usando iframe. Só lembre-se que para isso ser possível o <strong>iframe</strong> precisa de um <strong>name</strong> e o <strong>target</strong> precisa de um <strong>link</strong>!</p>
+
+    </main>
+</body>
+</html>

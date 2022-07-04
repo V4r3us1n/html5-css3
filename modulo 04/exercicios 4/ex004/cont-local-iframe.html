@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurando iframes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        iframe {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed black;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Conteúdo Local no Iframe</h1>
+        <p>Como podemsoc arregar nosso próprio conteúdo em nossos próprios iframes.</p>
+        
+        <p>Para fazer isso vamos criar uma página de teste, como faz para colocar ela em um iframe?</p>
+        <p>Bom, basta fzr o seguinte:</p>
+
+        <pre><code>
+            &ltiframe src="pag-001.html">&lt/iframe>
+        </code></pre>
+        
+        <p>Veja agora esse código na prática!</p>
+        <iframe src="pag-001.html">[EERO!] Infelizmente seu Navegador não é compatível :(</iframe>
+
+        <p>Você pode, por exemplo, colocar uma tabela que você fez para ser exibida aqui através do iframe, veja:</p>
+        <iframe src="../../../modulo 03/exercicios3/ex012/Tabelas-responsivas.html">[EERO!] Infelizmente seu Navegador não é compatível :(</iframe>
+
+        <p>Veja outro exemplo:</p>
+
+        <iframe src="../../../../exemplos/modelo site/modelo site 2/flex1.html">[EERO!] Infelizmente seu Navegador não é compatível :(</iframe>
+    
+        <p>Mas é melhor fazer alterações utilizando a tabela do que o iframe, pois existe um problema de indexação e relacionamento de conteúdo pelos mecanismos de busca quando se usa iframe. Ou seja, quando o conteúdo acima está relacionado com o que será colocado no iframe, como uma <strong>tabela</strong>, 
+            vale mais a pena você colocar ele em uma div separada do que no iframe!
+        </p>
+        <p>O iframe te dá a liberdade de que o conteúdo dentro dele não precisa estar na mesma formatação que o conteúdo do site em si!</p>
+
+    </main>
+</body>
+</html>
