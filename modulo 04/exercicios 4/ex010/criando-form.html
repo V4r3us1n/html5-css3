@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando o Primeiro Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Criando o Primeiro Formulário</h1>
+
+        <h2>O que é um Formulário?</h2>
+        <p>É um local onde você pode colocar dados.</p>
+
+        <h2>Como funcionam os Formulários Online</h2>
+        <p>Quando você quer comprar algo numa loja online, como shopee ou mercado livre, você tem que prencher algumas informações suas, essas informações são os dados que eles necessitam para concluir a operação.</p>
+        <p>Até mesmo quando você vai criar uma conta em uma rede social você tem que preencher um formulário.</p>
+
+
+        <h2>Meu Primeiro Formulário</h2>
+        <p>Todo formulário tem que estar dentro da pag "<strong>&ltform>&lt/form></strong>".</p>
+        <p>Lembre-se que nem sempre porque você fez funcionar que essa é a melhor forma de fazer, como o exemplo que vamos criar agora.</p>
+        <p>Para criar a caixa onde o usuário vai inserir seus dados você usa o <strong>input</strong></p>
+        <p>Claro, todo formulário precisa ter um <strong>botão para enviar</strong> os dados inseridos pelo usuário. Para criar ele você precisa usar o <strong>&ltinput type="submit" value="Enviar">&lt/input></strong>, você coloca em <strong>value</strong> o texto que você quer que apareça no botão de envio.</p>
+        <p>Se você apertar em "Enviar" vai ver que a página vai caregar e vai permanecer igual, mas a pergunta é: para onde foram esses dados?</p>
+        <P>Se você reparar vai ver que não existe uma conexão entre a palavra "Nome" e a caixa que está ao seu lado, não existe uma ligação entre eles. Essa ligação é importante para que os mecanismos de busca saibam que existe uma ligação entre eles.</P>
+        <p>É esse tipo de configuração que teremos que fazer para tornar nosso formulário útil.</p>
+
+        <h3>Exemplo</h3>
+
+        <form>
+            <p>Nome: <input type="text" name="nome" id="nome"></p>
+            <p>Sobrenome: <input type="text" name="sobrenome" id="sobrenome"></p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+
+        <p>Na próxima aula veremos as configurações que precisamos fazer, para onde vão os dados que enviamos, o formato de envio e como criar uma ligação entre campos.</p>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando Caixas de Texto e de Senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Criando Caixas de Texto e de Senha</h1>
+
+        <form action="cadastro.php" method="post" autocomplete="off">
+            <p><label for="inome">Nome:</label>
+                <input type="text" name="nome" id="inome">
+            </p>
+            <p><label for="isobrenome">Sobrenome:</label>
+                <input type="text" name="sobrenome" id="isobrenome">
+            </p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+
+        <p>Como já vimos na aula anterior, as informações enviadas pelo formulário acima não tem proteção alguma, sendo fácil extrair essas informações.</p>
+        <p>Outros erro notável é que o formulário está sendo enviado mesmo sem ter nenhuma de suas área preenchidas.</p>
+    
+        <h2>Teste Formulário</h2>
+        <form action="cadastro.php" method="post">
+            <p>
+                <label for="iusu">Usuário: </label>
+                <input type="text" name="usu" id="iusu">
+            </p>
+            <p>
+                <label for="isenha">Senha: </label>
+                <input type="password" name="senha" id="isenha">
+            </p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </form>
+
+        <p>No exemplo acima é possível ver que só de alterar o tipo do input para <strong>password</strong> o que é escrito nele é ocultado.</p>
+        <p>Inputs do tipo <strong>reset</strong> servem para limpar as caixas de texto do formulário.</p>
+        <p>No entanto, após enviar o formulário é possível ver as informações inseridas no mesmo através da URL do site. Por isso lembre-se sempre de usar no <strong>form</strong> o <strong>method="POST"</strong>.</p>
+        <p>Mas ainda da de contornar essa pequena barreira ao inspecionar as informações do site, para isso é necessário <strong>aprender HTTPS</strong>.</p>
+
+        <h3>Como colocar atributos OBRIGATÓRIOS para o envio do fromulário</h3>
+        <p>Para definir um campo do formulário como <strong>obrigatório</strong> basta você adicionar ao input correspondente <strong>required</strong>. Veja:</p>
+
+        <form action="cadastro.php" method="post">
+            <p>
+                <label for="iusu">Usuário: </label>
+                <input type="text" name="usu" id="iusu" required maxlength="15" size="10" placeholder="Nome do usuário" autocomplete="off">
+            </p>
+            <p>
+                <label for="isenha">Senha: </label>
+                <input type="password" name="senha" id="isenha" required minlength="5" size="15" placeholder="Mínimo 5 letras">
+            </p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </form>
+
+        <p>Se você não preencher um dos campos obrigatórios irá aparecer uma mensagem preparada pelo próprio navegador avisando que você precisa preencher esse campo para enviar o formulário.</p>
+        <p>Você pode definir outros requisitos como tamanho mínimo do que deve ser inserido em determinado campo (<strong>minlength=""</strong>) ou caso você queira definir um valor máximo (<strong>maxlength=""</strong>)</p>
+        <p><strong>OBS: </strong> é sempre bom você definir <strong>minlength</strong> e <strong>maxlength</strong> dos campos do seu formulário.</p>
+        <p>Você pode alterar o tamanho da caixa do input usando <strong>size=""</strong> o valor inserido equivale a quantas letras cabem na caixa, podem ser digitadas mais letras, mas não vai aparecer todas elas.</p>
+        <p>Caso você queira inserir dicas do que preencher no campo você usa o <strong>placeholder=""</strong>, veja no exemplo acima.</p>
+        <p>Para tirar o auto-completar basta usar o <strong>autocomplete="off"</strong>. O <strong>autocomplete</strong> dentro do formulário só pode receber os valores <strong>on</strong> e <strong>off</strong>, já no <strong>input</strong> ele possui muitas outras possibilidades. Para colocar autocomplete no input tem que ter o autocomplete ligado no form.</p>
+
+        
+    </main>
+</body>
+</html>

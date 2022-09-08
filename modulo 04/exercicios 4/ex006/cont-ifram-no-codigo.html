@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo no iframe por Código</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Conteúdo no iframe por Código</h1>
+        <p>Na aula anterior fizemos um iframe que permitia com que exibíssemos diferentes conteúdos dentro dele através de links vínculados em um mesmo <strong>target</strong>.</p>
+        <ul>
+            <li><a href="paginas extras/pag-001.html" target="frame">Primeira Página</a></li>
+            <li><a href="paginas extras/pag-002.html" target="frame">Segunda Página</a></li>
+            <li><a href="paginas extras/pag-003.html" target="frame">Terceira Página</a></li>
+        </ul>
+
+        <iframe id="tela" name="frame" src="">[ERRO!] Infelizmente seu navegador não  é compatível :(</iframe>
+        
+        <p>No entanto, quando iniciamos a página o iframe começa vazio, e isso não é muito atrativo.</p>
+        <p>Poderíamos colocar um dos arquivos para ficar lá pronto para ser alterado se necessário, apenas colocando no <strong>src</strong> do iframe o link de uma das páginas criadas, mas vamos fazer outra coisa.</p>
+        <p>Existe um parâmetro chamado <strong>srcdoc</strong>, esse parâmetro permite você colocar dentro dele <strong>HTML</strong>, veja:</p>
+
+        <pre><code>
+            &ltiframe id="tela" name="frame" srcdoc="&lth1>Escolha uma das opções acima&lt/h1>">
+        </code></pre>
+
+        <p>O resultado será o seguinte:</p>
+
+        <iframe id="tela" name="frame" srcdoc="<h1>Escolha uma das opções acima</h1><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpiWGRjuaUpv0nwL8c89_i-59yDGcDnBA3-g&usqp=CAU'></img>"></iframe>
+        
+        <p>Para adicionar parâgrafos ou mais conteúdo você terá de colocar eles na mesma linha, ex:</p>
+        <p><code>&lth1>Oi&lt/h1>&ltp>eu sou o goku&lt/p></code></p>
+        <p>Se você precisar adicionar uma imagens ou algo que você precise usar aspas, lembre-se de <strong>usar aspas diferentes dentro do srcdoc, use aspas simples dentro dele.</strong></p>
+        <p>Esse conteúdo que colocamos só poderá ser exibido dnv se a página for recarregada.</p>
+        <p>Sendo sincero, para coisas mais complexas vale mais a pena <strong>Criar um arquivo separado do que usar o srcdoc para exibir uma imagem</strong> no iframe.</p>
+        <p>Agora vamos nos aprofundar um pouco mais no iframe, pode pular essa parte por agora se quiser, mas terá que voltar para ela mais tarde de qualquer jeito, então a escolha é sua :T</p>
+    </main>
+</body>
+</html>

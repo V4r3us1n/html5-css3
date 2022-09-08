@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos "GET" e "POST" para Formulários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Métodos Get e Post para Formulário</h1>
+        <p>Vamos ver aqui 2 métodos de envio de formulários, sendo eles "get" e "post".</p>
+
+        <form action="cadastro.php" autocomplete="off">
+            <p><label for="inome">Nome:</label>
+                <input type="text" name="nome" id="inome">
+            </p>
+            <p><label for="isobrenome">Sobrenome:</label>
+                <input type="text" name="sobrenome" id="isobrenome">
+            </p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+
+        <p>Na últime aula vimos que quando inserimos nossos dados no formulário e o enviamos, os mesmos ficam expostos no endereço do site. Pode conferir no formulário acima, é só olhar após o "<strong>.php?</strong>" da url.</p>
+        <p>Não é um problema eles estarem expostos assim? Sim, é, mas temos algumas soluções para isso querido gafanhoto!</p>
+        <p>Existem métodos mais avançados, que precisam de linguagens de programação, mas vamos focar só no HTML/CSS ok?</p>
+        <p>No HTML existem 2 métodos de envio de formulários, o "<strong>padrão</strong>", que é o método <strong>GET</strong>, e o método <strong>POST</strong> que oculta os dados enviados na url, mas eles ainda estão ali, só não estão sendo jogados na sua cara.</p>
+        <p>Existe uma maneira de ainda ver essas informações, que é você inspecionar a página, escolher a aba superior "Network", e  digitar os dados no site. Se você olhar em <strong>Network</strong> você vai acessar a última chamada que foi realizada, vai em "<strong>Headers</strong>", lá será exibida a URL completa, incluindo os dados que foram "ocultados" pelo método POST.</p>
+        
+        <form action="cadastro.php" method="post" autocomplete="off">
+            <p><label for="inome">Nome:</label>
+                <input type="text" name="nome" id="inome">
+            </p>
+            <p><label for="isobrenome">Sobrenome:</label>
+                <input type="text" name="sobrenome" id="isobrenome">
+            </p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+
+        <p>O <strong>POST</strong> não protege seus dados, para você protegê-los você precisa criptografá-los, e para isso você precisa usar o <strong>HTTPS</strong>, um protocólo mais seguro do que o que estamos utilizando, que é o <strong>HTTP</strong>.</p>
+        
+        <h2>Quando Usar GET e POST</h2>
+        <p>Você pode usar o <strong>GET</strong> quando os dados a serem inseridos não forem sensíveis, como Nome, Idade, etc. Você também pode utilizá-lo quando você quiser que o <strong>link seja compartilhável</strong>, como uma pesquisa no google, etc.</p>
+        <p><strong>OBS:</strong> quando você envia dados usando o método GET você pode enviar até 3000 bytes (3000 letras), se o valor for superior a isso então sugiro que use outro método <strong>:T</strong>.</p>
+        <p>Você <strong>NÃO</strong> deve usar o GET quando os <strong>dados forem sensíveis</strong> ou quando for enviado através do formulário <strong>Fotos</strong>, <strong>envio de arquivos</strong>, etc.</p>
+    
+    </main>
+</body>
+</html>

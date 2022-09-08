@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tornando iframes mais Seguros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Tornando iframes mais Seguros</h1>
+
+        <h2>Sandbox</h2>
+
+        <iframe src="paginas extras/pag-004.html">
+            [ERRO!] Seu navegador não é compatível com isso...
+        </iframe>
+
+        <p>No exemplo acima o iframe está levando para um formulário, se você inserir informações nele e enviar esse outro site estará recebendo dados.</p>
+        <p>Para bloquear as ações maliciosas dos sites que você coloca no iframe, basta você usar a configuração chamada <strong>Sandbox</strong>, veja:</p>
+
+        <pre><code>
+            &ltiframe src="paginas extras/pag-004.html" sandbox="sandbox">
+                [ERRO!] Seu navegador não é compatível com isso...
+            &lt/iframe>
+        </code></pre>
+
+        <p>quando você faz isso será bloqueado todo e qualquer acesso que outros sites no iframe tentem fazer. Tente clicar  no exemplo abaixo:</p>
+    
+        <iframe src="paginas extras/pag-004.html" sandbox="sandbox">
+            [ERRO!] Seu navegador não é compatível com isso...
+        </iframe>
+
+        <p>Viu? Diferente do primeiro exemplo esse aqui não vai enviar os dados, isso criar uma proteção maior contra ataques, pois você não está mais capturando nenhum tipo de informação.</p>
+    
+        <h2>Referpolity</h2>
+    
+        <p>O parâmetro <strong>Referrerpolicy</strong> é, como o nome diz, a política de referência, o valor padrão é <strong>no-refer-when-downgrade</strong>, se voce^quer tornar o que está dentro do iframe um pouco mais limitado é só você colocar o valor <strong>no-referrer</strong>.</p>
+        <p>Usar o <strong>referrerpolicy="no-referrer"</strong> impede que o conteúdo carregado dentro do iframe colete qualquer tipo de informação do usuário.</p>
+
+        <pre><code>
+            &ltiframe src="paginas extras/pag-004.html" sandbox="sandbox" referrerpolicy="no-referrer">
+                [ERRO!] Seu navegador não é compatível com isso...
+            &lt/iframe>
+        </code></pre>
+
+        <iframe src="paginas extras/pag-004.html" sandbox="sandbox" referrerpolicy="no-referrer">
+            [ERRO!] Seu navegador não é compatível com isso...
+        </iframe>
+
+        <h2>Um pouco mais de Sandbox</h2>
+
+        <p>Mas vamos supor que você quer que ele execute um formulário em um iframe, existem algumas configurações que você pode fazer:</p>
+
+        <ul>
+            <li><strong>sandbox="sandbox"</strong>: segurança máxima, não é possível enviar dados;</li>
+            <li><strong>sandbox="allow-same-origin"</strong>: permite enviar dados para conteúdos que sejam da mesma origem que o site.</li>
+            <li><strong>sandbox="allor-same-origin allow-forms allw-scripts"</strong>: você pode aplicar mais de uma configuração no sandbox, nesse exemplo estamos permitindo tanto enviar dados para site de mesma origem qunaot formulários e scripts.</li>
+        </ul>
+
+        <iframe src="paginas extras/pag-004.html" sandbox="allow-same-origin allow-forms allow-scripts" referrerpolicy="no-referrer">
+            [ERRO!] Seu navegador não é compatível com isso...
+        </iframe>
+
+        <p>Use isso com moderação para poder deixar seu site seguro!</p>
+    
+        <h2>Javascript</h2>
+
+        <iframe src="paginas extras/pag-005.html">
+            [ERRO!] Seu navegador não é compatível...
+        </iframe>
+
+        <p>No exemplo acima nós colocamos uma página, que executa um script, dentro do nosso iframe. Essa página pode acabar rodando um script malicioso, o que é problemático. Para bloquear o script basta você usar o <strong>referrerpolicy="no-referrer" && sandobx="sandbox"</strong>.</p>
+    
+        <iframe src="paginas extras/pag-005.html" referrerpolicy="no-referrer" sandbox="sandbox">
+            [ERRO!] Seu navegador não é compatível...
+        </iframe>
+
+        <p>Caso você queira permitir o script então você pode usar <strong>sandbox="allow-scripts"</strong></p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label no Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Usar Label vai Melhorar seus Formulários</h1>
+
+        <p><strong>OBS:</strong> caso você queira tirar a opção de auto completar basta você colocar na tag <strong>form</strong> <code>autocomplete="off"</code></p>
+
+        <h2>Temos Problemas a Resolver</h2>
+        <ul>
+            <li>O formulário não está indo para lugar nenhum</li>
+            <li>Ligar os campos aos seus nomes</li>
+        </ul>
+
+       <h2>Para onde enviamos os dados?</h2>
+        <p>Normalmente eles são enviados para alguma <strong>linguagem de programação</strong>, como java, php, etc. Vamos usar o <strong>PHP</strong> como exemplo.</p>
+        <p>Para enviar ele você adiciona na tag <strong>form</strong> <code>action="cadastro.php"</code>, onde <strong>cadastro.php</strong> é um script feito separadamente para cadastrar os dados.</p>
+        <p><strong>Obs:</strong> se você tentar enviar vai dizer que <strong>o arquivo não foi encontrado</strong>, isso é poruqe não temos esse script, ao menos não ainda, quem sabe no futuro...    <strong>:P</strong></p>
+        <br>
+
+        <h2>Fazendo a Ligação entre Campos</h2>
+        <p>Para ficar fácil diferenciar quando estamos usando <strong>Id</strong> ou <strong>Name</strong>, vamos colocar no em cada Id um "<strong>I</strong>" na antes da palavra.</p>
+        <p>Para fazer a ligação precisamos utilizar ETIQUETAS, também conhecidas como <strong>Label</strong>, para usar o Label basta você</p>
+        <p>Seleciona o texto que você quer ligar ao <strong>input</strong> e coloca ele dentro de um <strong>label</strong>, ao fazer isso ele vai pedir um parâmetro, o <strong>for</strong>, que é o que você vai usar (<strong>id</strong> ou <strong>name</strong>/p>
+        <p><strong>Obs:</strong> quando trabalhamos com <strong>php</strong> e <strong>html</strong> vamos utilizar mais o <strong>name</strong>, já no <strong>js</strong> é usado mais o <strong>id</strong> para fazer essa ligação. Basta você colocar nele <strong>o id da palavra que você quer que esteja relacionada com ele</strong>.</p>
+        <br>
+        <p>Após essas alterações você vai ver que visualmente ele ficou igual, mas fazer isso é extremamente importante. Uma detalhe importante é que agora, sempre que você clicar no nome que está ralacionado ao input o mesmo será selecionado! Isso é muito bom para dispositivos como celulares, onde a tela é pequena.</p>
+
+        <p><strong>Sempre use Label em seus Formulários!</strong></p>
+
+        <h3>Exemplo</h3>
+
+        <form action="cadastro.php" autocomplete="off">
+            <p><label for="inome">Nome:</label>
+                <input type="text" name="nome" id="inome">
+            </p>
+            <p><label for="isobrenome">Sobrenome:</label>
+                <input type="text" name="sobrenome" id="isobrenome">
+            </p>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+
+
+        <p>Quando você enviar o formulário, se você olhar onde é exibido o endereço que você está, você verá os seus dados ali, veja:</p>
+
+        <code>cadastro.php?nome=Vexx&sobrenome=xxeV</code>
+        <p>A interroção que aparece acima divide o que é o <strong>endereço</strong> do arquivo que foi aberto e os <strong>parâmetros</strong> que foram enviados</p>
+        <br>
+        <p>Tá, mas e se pedirmos usuário e <strong>senha</strong>, ela será exibida ali em cima também?</p>
+        <p>Tem como <strong>tirar as informações</strong> dali?</p>
+        <p>Vamos ver sobre isso na próxima aula. Onde vamos aprender quais são os <strong>Metódos de Envios de Dados</strong> através de Formulários.</p>
+    </main>
+</body>
+</html>
