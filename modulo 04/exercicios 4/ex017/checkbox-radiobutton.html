@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox e Radio button HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Checkbox e Radio button em HTML</h1>
+
+        <p>
+            O input do tipo <strong>Checkbox</strong> é usado em áreas onde você pode selecionar vários tópicos diferente, como no o que foi usado no exemplo abaixo.
+        </p>
+        <p>
+            Já os inputs do tipo <strong>Radio</strong> são usados em situações onde existem várias opções mas você só pode selecionar uma delas,  como gênero.
+        </p>
+        <p>
+            No entanto para que você possa selecionar apenas um você deve deixar todos os inputs do tipo <strong>radio</strong> com o <strong>mesmo name</strong>, só o id deles que tem que ser diferente.
+        </p>
+        <p>
+            Em inputs do tipo <strong>radio</strong> recomenda-se <strong>adicionar valores</strong> para cada input, para esse valor ser enviado junto com o formulário. No formulário abaixo os gêneros "<em>Feminino</em>" e "<em>Masculino</em>" receberam os valores <em>fem</em> e <em>masc</em>, respectivamente.
+        </p>
+        <p>
+            Para deixar um dos  <strong>input do tipo radio</strong> já marcado quando a página carregar, basta adicionar a um deles a propriedade <strong>checked</strong>. Essa propriedade também pode ser usada em inputs do tipo <strong>checkbox</strong>.
+        </p>
+        <p>
+            Você consegue deixar mais de um input do tipo <strong>checkbox</strong> marcado, quando a página carrega, utilizando a propriedade <strong>checked</strong> neles. No entanto, caso tente colocar essa propriedade em inputs do tipo <strong>radio</strong> apenas <strong>um</strong> deles ficará <strong>selecionado</strong> quando a página carregar, veja no exemplo abaixo.
+        </p>
+
+        <form action="cadastro.php">
+            <fieldset>
+                <legend>Sexo</legend>
+                <input type="radio" name="sexo" id="isxmas" value="masc" checked> <label for="isxmas">Masculino</label>
+                <input type="radio" name="sexo" id="isxfem" value="fem" checked> <label for="isxfem">Feminino</label>
+            </fieldset>
+            <fieldset>
+                <legend>Esportes Favoritos</legend>
+                <input type="checkbox" name="esbas" id="iesbas"> <label for="iesbas">Basquete</label>
+                <br>
+                <input type="checkbox" name="esfut" id="iesfut" checked> <label for="iesfut">Futebol</label>
+                <br>
+                <input type="checkbox" name="esnat" id="iesnat"> <label for="iesnat">Natação</label>
+                <br>
+                <input type="checkbox" name="esten" id="iesten"> <label for="iesten">Tênis</label>
+            </fieldset>
+
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
+        </form>
+    </main>
+</body>
+</html>

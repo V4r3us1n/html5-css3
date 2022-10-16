@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos color, range e file HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Elementos Color, Range e File em HTML</h1>
+
+        <h2>Color</h2>
+
+        <p>O <strong>input to tipo color</strong> serve para que você posso selecionar uma cor em um <strong>sistema de cor</strong> (<strong>HSL</strong>, <strong>RGB</strong>, <strong>Hexadecimal</strong>), os valores serão enviados de acordo com o sistema de cor escolhido e o valor selecionado, ex:</p>
+        <p>
+            Cor vermelha:
+        </p>
+        <ul>
+            <li>RGB: 255, 0, 0</li>
+            <li>HSL: 0, 100%, 50%</li>
+            <li>Hex: #FF0000</li>
+        </ul>
+
+        <p>
+            Independente do sistema de cor que for utilizado, o <strong>valor representativo enviado</strong> será no sistema <strong>hexadecimal</strong>, no exemplo acima seria enviado <strong>%23ff0000</strong>, o <strong>%</strong> representa a <strong>#</strong> usado.
+        </p>
+        <p>Caso queira deixar uma cor predefinida assim q o site carrega, basta colocar no input um <strong>value com o valor hexadecimal da cor</strong></p>
+
+        <h2>Range</h2>
+
+        <p>Em inputs do tipo <strong>range</strong> é necessário algumas informações a mais, mas ele é basicamente uma barra q vc pode subir o valor dela (puxando a bolinha para a direita) ou descer o valor (puxando para a esquerda). Se colocarmos no valor mínimo e enviarmos, esse valor será representado por <strong>0</strong> na URL, porém se colocarmos ele no máximo ele será <strong>100</strong>.</p>
+        <p>Esse tipo de input é usado normalmente para avaliar coisas, dando uma nota.</p>
+        <p>Ao configurar o <strong>range</strong> você pode colocar valor mínimo e máximo ao mesmo, o valor que ele vêm carregado é o 3, que corresponde a metade. Com os valores utilizados no exemplo é possível notar que independente da direção em que a barra é buxado seu movimento é mais rígido, diferente de antes.</p>
+        <p>Se você quer que ele comece em um valor predefinido basta adicionar um <strong>value</strong> com o valor que você deseja.</p>
+
+        <h2>File</h2>
+        <p>Quando utilizar <trong>controles de envio de arquivo</trong>, como inputs do tipo <strong>file</strong>, você não pode utilizar no formulário o <strong>method="get"</strong> (aguenta só até 3000 bytes, menor que muitas imagens), você deve utilizar o <strong>method="post"</strong> para que os arquivos sejam realmente enviados.</p>
+        <p>Dessa forma a imagem será enviado também <strong>em forma de dados</strong> para o servidor.</p>
+
+
+        <h2>Avisos!</h2>
+        <p>Vale a pena ressaltar que esses 2 inputs podem ser apresentados de forma diferente em outras navegadores, podendo virar até mesmo caixas de texto.</p>
+        <p>Por isso lembre de testar eles em múltiplos navegadores antes de lançar seu site.</p>
+
+        <h2>Formulário</h2>
+
+        <form action="cadastro.php" method="post" autocomplete="on">
+            <p>
+                <label for="icor">Cor: </label>
+                <input type="color" name="cor" id="icor" value="#ff0000">
+            </p>
+
+            <p>
+                <label for="inivel">Nível de Satisfação: </label>
+                <input type="range" name="nivel" id="inivel" min="0" max="5">
+            </p>
+
+            <p>
+                <label for="ifoto">Foto de perfil: </label>
+                <input type="file" name="foto" id="ifoto">
+            </p>
+
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
+        </form>
+
+        <p>Próximo autla vamos ver outros controles usados em form, fora os inputs.</p>
+    </main>
+</body>
+</html>

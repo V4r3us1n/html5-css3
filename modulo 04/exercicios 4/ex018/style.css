@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(anime-fundo.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-indent: 20px;
+}
+
+form > p {
+    text-indent: 0px;
+}
+
+legend {
+    text-align: center;
+}
