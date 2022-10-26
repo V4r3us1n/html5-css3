@@ -10,6 +10,156 @@
 <body>
     <main>
         <h1>Select, Datalist e Textarea em HTML</h1>
+        <p>Agora nós vamos ver outros elementos que vão no formulário e que não são <strong>input</strong>.</p>
+
+        <h2>Select</h2>
+        <p>Imagine uma situação onde você quer que o usuário insira o estado onde ele mora, seria bem interessante que ele clicasse ali e visse a lista com os estados para ele escolher. Nesse caso usamos o <strong>select</strong>.</p>
+        <p>A tag <strong>select</strong> precisa de um <strong>name</strong> e <strong>id</strong> assim como o input, além disso, diferente do input, ele <strong>é uma tag que precisa ser fechada</strong> (<code>&ltselect>&lt/select></code>).</p>
+        <p>Dentro do select nós precisamos colocar opções para o usuário escolher, essas opções são inseridas nele através da tag <strong>option</strong> que também é uma tag que precisa ser fechada. Além disso, nela você precisará colocar um <strong>value</strong> para cada option e o nome que será exibido no select. Ex:</p>
+        
+        <pre><code>
+                &ltselect>
+                    &ltoption value="SP">São Paulo&lt/option>
+                    &ltoption value="RJ">Rio de Janeiro&lt/option>
+                &lt/select>
+        </code></pre>
+
+        <p>Veja agora como ele aparece na tela do usuário:</p>
+
+        <form action="cadastro.php">
+            <p>
+                <label for="iestado">Selecione seu Estado: </label>
+                <select name="estado" id="iestado">
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                </select>
+            </p>
+        </form>
+
+        <p>Você também pode <strong>formar grupos entre os options</strong>, nesse caso você poderia separar eles por região. Para fazer isso nós utilizamos o <strong>optgroup</strong>.</p>
+        <p>No <strong>optgroup</strong> você pode colocar um <strong>label</strong> que serve como <strong>atributo</strong>, diferente dos outros casos que vimos até agora onde ele era usado como <strong>elemento</strong>.</p>
+        <p>Ficaria mais ou menos assim no seu código:</p>   
+
+        &ltselect>
+                &ltoptgroup label="Região Sudeste">
+                    &ltoption value="SP">São Paulo&lt/option>
+                    &ltoption value="RJ">Rio de Janeiro&lt/option>
+                &lt/optgroup>
+                &ltoptgroup label="Região Sul">
+                    &ltoption value="SC">Santa Catarina&lt/option>
+                    &ltoption value="RS">Rio Grande do Sul&lt/option>
+                &lt/optgroup>
+            &lt/select>
+
+        <p>O código exibido acima aparece da seguinte forma para o usuário:</p>
+
+        <form action="cadastro.php">
+            <label for="iestad">Escolha seu Estado: </label>
+            <select name="estad" id="iestad">
+                <optgroup label="Região Sudeste">
+                    <option value="SP" selected>São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                </optgroup>
+                <optgroup label="Região Sul">
+                    <option value="SC">Santa Catarina</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </optgroup>
+            </select>
+        </form>
+
+        <p>Caso você queira que uma opção específica já venha selecionada basta você adicionar <strong>selected</strong> dentro dessa option.</p>
+        <p>Outra coisa que é comum ocorrer é colocar <strong>um option vazio pré selecionado</strong>.</p>
+        <p><strong>Tá, mas e se eu quiser digitar outro estado que não esteja na lista?</strong></p>
+        <p>Nesse caso, vamos para a próxima tag...</p>
+
+        <h2>Datalist</h2>
+        <p>Para fazer um <strong>datalist</strong> você vai precisar de um <strong>input do tipo text</strong>, nele você vai colocar o <strong>atributo list</strong> com o valor correspondente ao <strong>id do datalist</strong>. Ele ficaria dessa forma no seu código:</p>
+
+        <pre><code>
+            &ltlabel for="idprof">Profissão: &lt/label>
+            &ltinput type="text" name="prof" id="idprof" list="lprof">
+            &ltdatalist id="lprof">
+                &ltoption value="ADM">Administrador&lt/option>
+                &ltoption value="CONT">Contador&lt/option>
+                &ltoption value="DEV">Desenvolvedor&lt/option>
+                &ltoption value="prof">Professor&lt/option>
+            &lt/datalist>
+        </code></pre>
+
+        <p>Ele apareceria dessa forma para o usuário: </p>
+
+        <form action="cadastro.php">
+            <label for="idprof">Profissão: </label>
+                <input type="text" name="prof" id="idprof" list="lprof">
+                <datalist id="lprof">
+                    <option value="ADM">Administrador</option>
+                    <option value="CONT">Contador</option>
+                    <option value="DEV">Desenvolvedor</option>
+                    <option value="prof">Professor</option>
+                </datalist>
+        </form>
+
+        <p>Caso você tire o <strong>value</strong> das options, não será mais exibido o valor que aparece sobre a profissão. Não é algo que você deva se preocupar, apenas deixe o value ali mesmo.</p>
+        <p>"<em>Mas qual a diferença entre ele e o select?</em> Bom, caso não tenha sua profissão, nesse exemplo, <strong>você pode adicionar ela ao datalist</strong>, caso você tenha que preencher novamente o formulário sua profissão já estará lá. Vale a pena ressaltar que isso só vale para você, se outra pessoa colocar outra opção em outro dispositivo ele não vai aparecer para você, entendeu?</p>
+
+        <h2>Textarea</h2>
+        <p>A tag <strong>textarea</strong> é usada quando você quer que o usuário digite algo de forma livre, nessa tag você deve informar o <strong>name</strong>, <strong>id</strong>, <strong>número de colunas que serão exibidas na tela (col)</strong> e o <strong>número de linhas que serão exibidas na tela (rol)</strong>.</p>
+        
+        <pre><code>
+            &ltlabel for="imensagem">Mensagem: &lt/label>
+            &lttextarea name="mensagem" id="imensagem" cols="30" rows="10">&lt/textarea>
+        </code></pre>
+
+        <p>Ele aparece da seguinte forma para o usuário:</p>
+
+        <form action="cadastro.php" method="post">
+            <label for="imensagem">Mensagem: </label>
+            <textarea name="mensagem" id="imensagem" cols="30" rows="10"></textarea>
+        </form>
+
+        <p>Vale a pena ressaltar que o nº de linhas e colunas que você coloca no textarea não limita o quanto o usuário pode digitar. Você também consegue alterar o tamanho da caixa de texto <strong>segurando e puxando o canto inferior direito</strong> da caixa de texto.</p>
+        <p>Quando você for usar <strong>textarea</strong> no seu formulário, é recomendado que você use no formulário o <strong>method="post"</strong>, para não ter problema com tamanho limite que nem o método <strong>get</strong>(padrão).</p>
+        <p>Outra coisa que vale citar é que não funciona <strong>placeholder</strong> no textarea, a única forma de colocar uma mensagem dentro dele é se você colocar a mensagem dentro da tag dele, mas o usuário teria que apagar essa mensagem quando quisesse escrever algo, isso não seria muito legal por isso <strong>não coloque mensagens dentro do textarea</strong>.</p>
+
+        <h2>Formulário</h2>
+        <form action="cadastro.php"  method="post">
+            <p>
+                <label for="iest">Estado: </label>
+                <select name="est" id="iest">
+                    <option value="vazio"  selected>---- Escolha o Estado ----</option>
+                    <optgroup label="Região Sudeste">
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="MG">Minas Gerais</option>
+                    </optgroup>
+                    <optgroup label="Região Sul">
+                        <option value="SC">Santa Catarina</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="PR">Paraná</option>
+                    </optgroup>
+                </select>
+            </p>
+            <p>
+                <label for="iprof">Profissão: </label>
+                <input type="text" name="prof" id="iprof" list="listprof">
+                <datalist id="listprof">
+                    <option value="ADM">Administrador</option>
+                    <option value="CONT">Contador</option>
+                    <option value="DEV">Desenvolvedor</option>
+                    <option value="prof">Professor</option>
+                </datalist>
+            </p>
+            <p>
+                <label for="imsg">Mensagem: </label>
+                <textarea name="msg" id="imsg" cols="30" rows="1"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
+        </form>
+
+        <p>Na próxima aula vamos ver um pouco sobre <strong>output</strong> :)</p>
     </main>
 </body>
 </html>
