@@ -10,6 +10,8 @@
     --cor-fundo-menu-hover: rgb(22, 22, 36);
     --cor-fundo-menu: rgb(19, 19, 34);
     --cor-itens-menu-header: rgb(29, 29, 41);
+    --cor-fundo-nav: rgb(16, 16, 26);
+    --cor-fundo-iframe: rgba(22, 22, 31, 0.589);
 }
 
 * {
@@ -18,6 +20,13 @@
     box-sizing: border-box;
     color: var(--cor-fonte-padrao);
     font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 /*Editando o header*/
@@ -149,19 +158,24 @@ div.menu-header ul li.menu-header {
 div.menu-header ul li.menu-header ul.menu-header {
     display: none;
     position: absolute;
-    top: 48px;
-    right: 20px;
+    top: 28px;
+    right: -10px;
     padding-top: 30px;
 }
 
 div.menu-header ul li.menu-header ul.menu-header li.triangulo-menu {
+    position: relative;
     background-image: url(../imagens/triangulo-menu-header.png);
+    background-position: center center;
     background-size: cover;
-    height: 20px;
-    width: 20px;
+    height: 50px;
+    width: 50px;
 }
 
 div.menu-header ul li.menu-header ul.menu-header li ul {
+    position: absolute;
+    top: 25px;
+    right: -25px;
     background-color: var(--cor-fundo-menu-hover);
     width: 100px;
     padding: 5px;
@@ -174,12 +188,86 @@ div.menu-header ul li.menu-header ul.menu-header li ul li {
     border-radius: 5px;
 }
 
-/*Editando o body*/
+/*Editando conteúdo da página*/
 
-body {
-    background-color: var(--cor-fundo);
-    width: 100vw;
+div.principal {
+    display: flex;
 }
+
+/*     EDITANDO O LADO ESQUERDO DA PÁGINA     */
+
+div.cont-esquerda {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    min-width: 70%;
+    height: 500px;
+}
+
+/*Editando o Nav*/
+
+nav {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: var(--cor-fundo-header);
+}
+
+nav ul.nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--cor-fundo-header);
+}
+
+nav ul.nav li {
+    width: 100%;
+}
+
+nav ul.nav li {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.3em;
+    border-right: 1px solid var(--cor-fonte-padrao); 
+} 
+
+nav ul.nav li a.menu-nav {
+    text-decoration: none;
+    padding: 12px 80px;
+}
+
+/*Editando o Main*/
+
+main {
+    width: 100%;
+    align-items: center;
+    padding: 5%;
+}
+
+iframe#iframe-conteudo {
+    background-color: var(--cor-fundo-iframe);
+    padding: 50px 40px 20px 40px;
+    border-radius: 20px;
+    width: 100%;
+    height: 420px;
+    margin: auto;
+}
+
+/*    EDITANDO O LADO DIREITO DA PÁGINA    */
+
+div.cont-direita {
+    max-width: 30%;
+    min-width: 30%;
+    background-color: blueviolet;
+}
+
+/*Section lado direito*/
+
 
 /*Checkbox seguir checked*/
 
@@ -236,4 +324,73 @@ div.menu-header:hover ul li.menu-header ul.menu-header {
 
 div.menu-header ul li.menu-header ul.menu-header li ul li:hover {
     background-color: var(--cor-itens-menu-header);
+}
+
+nav ul.nav li:hover {
+    background-color: var(--cor-fundo-nav);
+}
+
+@media screen and (max-width: 1250px) {
+
+    /*Deixando o nav responsivo*/
+
+    nav ul.nav li a.menu-nav {
+        text-decoration: none;
+        padding: 12px 60px;
+        background-color: aqua;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+
+    /*Deixando o nav responsivo*/
+
+    nav ul.nav li a.menu-nav {
+        text-decoration: none;
+        padding: 12px 40px;
+        background-color: aqua;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    /*Deixando o nav responsivo*/
+
+    nav ul.nav li a.menu-nav {
+        text-decoration: none;
+        padding: 12px 20px;
+        background-color: aqua;
+    }
+}
+
+@media screen and (max-width: 730px) {
+
+    /*Deixando o nav responsivo*/
+
+    nav ul.nav li a.menu-nav {
+        text-decoration: none;
+        padding: 12px 10px;
+        background-color: aqua;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    /*Deixando o nav responsivo*/
+
+    nav ul.nav li {
+        font-size: 110%;
+    }
+
+    nav ul.nav li a.menu-nav {
+        text-decoration: none;
+        padding: 12px 10px;
+        background-color: aqua;
+    }
+}
+
+@media screen and (max-width: 570px) {
+
+    /*Mudar o formato do site nesse aqui*/
+
 }

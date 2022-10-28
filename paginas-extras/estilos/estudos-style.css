@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;800&display=swap');
+
+:root {
+    --cor-fundo: rgb(9, 9, 19);
+    --cor-fundo-header: rgb(12, 12, 22);
+    --cor-fonte-padrao: rgb(224, 222, 222);
+    --cor-borda-image: black;
+    --cor-shadow-header: rgba(0, 0, 0, 0.274);
+    --cor-fundo-menu-hover: rgb(22, 22, 36);
+    --cor-fundo-menu: rgb(19, 19, 34);
+    --cor-itens-menu-header: rgb(29, 29, 41);
+    --cor-fundo-nav: rgb(16, 16, 26);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--cor-fonte-padrao);
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    width: 90vw;
+}
+
+ul li ul {
+    display: none;
+}
+
+ul li:hover ul {
+    display: block;
+}
+
+ul li:hover ul li ul {
+    display: none;
+}
+
+ul li:hover ul li:hover ul {
+    display: block;
+}
+
+ul li:hover ul li:hover ul li ul {
+    display: none;
+}
+
+ul li:hover ul li:hover ul li:hover ul {
+    display: block;
+}
+
+ul li:hover ul li:hover ul li:hover ul li ul {
+    display: none;
+}
+
+ul li:hover ul li:hover ul li:hover ul li:hover ul {
+    display: block;
+}
+
+ul > li {
+    display: inline;
+    position: relative;
+    display: block;
+}
+
+li.lista div.setas-menu {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    background-image: url(../imagem/seta-branca-baixo.png);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+div.setas-menu:hover {
+    background-image: url(../imagem/seta-branca-hover-cima.png);
+}
+
+ul li:hover div.setas-menu {
+    background-image: url(../imagem/seta-branca-hover-cima.png);
+}
