@@ -1,0 +1,239 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;800&display=swap');
+
+:root {
+    --cor-fundo: rgb(9, 9, 19);
+    --cor-fundo-header: rgb(12, 12, 22);
+    --cor-fonte-padrao: rgb(224, 222, 222);
+    --cor-borda-image: black;
+    --cor-shadow-header: rgba(0, 0, 0, 0.274);
+    --cor-fundo-menu-hover: rgb(22, 22, 36);
+    --cor-fundo-menu: rgb(19, 19, 34);
+    --cor-itens-menu-header: rgb(29, 29, 41);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--cor-fonte-padrao);
+    font-family: 'Rubik', sans-serif;
+}
+
+/*Editando o header*/
+
+header {
+    background-color: var(--cor-fundo-header);
+    height: 350px;
+    box-shadow: 0px 15px 20px var(--cor-shadow-header);
+}
+
+div.mudar-imagem {
+    background-image: url(../imagens/mudar-imagem.jpg);
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+    border: 2px solid var(--cor-borda-image);
+    border-radius: 50%;
+}
+
+header div.imagem-capa {
+    position: relative;
+    height: 200px;
+    border-bottom: 2px solid var(--cor-fonte-padrao);
+    background-image: url(../imagens/imagem-fundo.jpg);
+    background-position: center center;
+}
+
+header div.imagem-capa div.mudar-imagem {
+    position: absolute;
+    right: 10px;
+    top: 65%;
+}
+
+header img.imagem-perfil {
+    position: absolute;
+    left: 30px;
+    top: 70px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--cor-fonte-padrao);
+}
+
+header div.header {
+    position: relative;
+    height: 150px;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    margin-left: 300px;
+    align-items: center;
+    font-size: 3em;
+}
+
+/*Botão de Seguir*/
+
+header div.header div.mudar-imagem {
+    position: absolute;
+    left: 40px;
+    top: 60px;
+}
+
+div.seguir {
+    background-color: var(--cor-fundo-menu);
+    position: absolute;
+    align-items: center;
+    top: 80px;
+    right: 30px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+div.seguir > div {
+    justify-content: space-between;
+    margin: 5px 15px;
+    display: flex;
+}
+
+div.seguir div hr {
+    padding: 0px;
+    width: 0.3px;
+    margin: 0px 5px;
+}
+
+input[type="checkbox"] {
+    margin-top: 2px;
+    height: 25px;
+    width: 25px;
+    appearance: none;
+    background-image: url(../imagens/seguir.png);
+    background-size: cover;
+}
+
+p.seguindo {
+    display: none;
+}
+
+/*Menu do Header*/
+
+ul {
+    list-style: none;
+}
+
+div.menu-header {
+    position: absolute;
+    top: 80px;
+    right: 200px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--cor-fundo-menu);
+    border-radius: 5px;
+}
+
+div.menu-header ul {
+    position: relative;
+}
+
+div.menu-header ul li.menu-header {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    font-size: 40px;
+}
+
+div.menu-header ul li.menu-header ul.menu-header {
+    display: none;
+    position: absolute;
+    top: 48px;
+    right: 20px;
+    padding-top: 30px;
+}
+
+div.menu-header ul li.menu-header ul.menu-header li.triangulo-menu {
+    background-image: url(../imagens/triangulo-menu-header.png);
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+}
+
+div.menu-header ul li.menu-header ul.menu-header li ul {
+    background-color: var(--cor-fundo-menu-hover);
+    width: 100px;
+    padding: 5px;
+}
+
+div.menu-header ul li.menu-header ul.menu-header li ul li {
+    background-color: var(--cor-fundo-menu-hover);
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/*Editando o body*/
+
+body {
+    background-color: var(--cor-fundo);
+    width: 100vw;
+}
+
+/*Checkbox seguir checked*/
+
+input[type="checkbox"]:checked {
+    margin-top: 4px;
+    background-image: url(../imagens/seguindo2.png);
+    filter: invert(100%);
+}
+
+div label:checked p.seguir {
+    display: none;
+}
+
+div label:checked p.seguindo {
+    display: block;
+}
+
+/*hover*/
+
+header img.imagem-perfil:hover {
+    border: 4px solid var(--cor-fonte-padrao);
+}
+
+div.mudar-imagem:hover {
+    filter: invert(95%);
+    cursor: pointer;
+}
+
+div.seguir:hover {
+    background-color: var(--cor-fundo-menu-hover);
+    cursor: pointer;
+}
+
+div.seguir div label:hover {
+    cursor: pointer;
+}
+
+div.seguir div input:hover {
+    cursor: pointer;
+}
+
+div.menu-header:hover {
+    cursor: pointer;
+    background-color: var(--cor-fundo-menu-hover);
+}
+
+div.menu-header:hover ul li.menu-header ul {
+    display: block;
+}
+
+div.menu-header:hover ul li.menu-header ul.menu-header {
+    display: block;
+}
+
+div.menu-header ul li.menu-header ul.menu-header li ul li:hover {
+    background-color: var(--cor-itens-menu-header);
+}
