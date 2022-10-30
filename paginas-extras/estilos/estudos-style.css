@@ -11,6 +11,10 @@
     --cor-fundo-menu: rgb(19, 19, 34);
     --cor-itens-menu-header: rgb(29, 29, 41);
     --cor-fundo-nav: rgb(16, 16, 26);
+    --cor-lista-cursos: rgb(11, 11, 27);
+    --cor-lista-modulo-curso: rgb(11, 11, 35);
+    --cor-lista-hover: rgba(29, 29, 58, 0.527);
+    --cor-link-hover: rgb(171, 169, 173);
 }
 
 * {
@@ -25,10 +29,111 @@ body {
     width: 90vw;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* Colocando cor de fundo e estilizando um pouco os itens da lista */
+
+div.item {
+    background-color: var(--cor-lista-cursos);
+    max-width: 150px;
+    min-width: 150px;
+    padding: 4px;
+}
+
+div.item2 {
+    background-color: var(--cor-lista-modulo-curso);
+    max-width: 150px;
+    min-width: 150px;
+    padding: 4px;
+}
+
+div.item-lista {
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.item-lista:hover {
+    background-color: var(--cor-lista-hover);
+    border-radius: 4px;
+    color: var(--cor-link-hover);
+}
+
+li.lista:hover > div div.item-lista div.seta {
+    background-image: url(../../imagens/seta-branca-hover-cima.png);
+}
+
+div.item-lista:hover div.seta {
+    filter: invert(30%);
+}
+
+div.seta {
+    margin-top: 4px;
+    height: 15px;
+    width: 10px;
+    background-image: url(../../imagens/seta-branca-baixo.png);
+    background-position: bottom center;
+    background-size: cover;
+}
+
+
+
+/* Editando a lista */
+
+ul {
+    list-style: none;
+}
+
+ul.cursos {
+    margin-top: 20px;
+}
+
 ul li ul {
     display: none;
 }
 
+ul li:hover ul.submenu0 {
+    display: block;
+}
+ul.submenu0 li {
+    position: relative;
+}
+
+ul.submenu0 li:hover ul.submenu1 {
+    display: block;
+    position: absolute;
+    width: 70px;
+    top: 0px;
+    left: 150px;
+}
+
+ul.submenu1 li {
+    position: relative;
+}
+
+ul.submenu1 li:hover ul.submenu2 {
+    display: block;
+    position: absolute;
+    width: 100px;
+    top: 40px;
+    left: 0px;
+}
+
+ul.submenu2 li {
+    position: relative;
+}
+
+ul.submenu2 li:hover ul.submenu3 {
+    display: block;
+    position: absolute;
+    width: 100px;
+    top: 0px;
+    left: 150px;
+}
+
+/*
 ul li:hover ul {
     display: block;
 }
@@ -56,27 +161,4 @@ ul li:hover ul li:hover ul li:hover ul li ul {
 ul li:hover ul li:hover ul li:hover ul li:hover ul {
     display: block;
 }
-
-ul > li {
-    display: inline;
-    position: relative;
-    display: block;
-}
-
-li.lista div.setas-menu {
-    display: flex;
-    width: 15px;
-    height: 15px;
-    background-image: url(../imagem/seta-branca-baixo.png);
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-}
-
-div.setas-menu:hover {
-    background-image: url(../imagem/seta-branca-hover-cima.png);
-}
-
-ul li:hover div.setas-menu {
-    background-image: url(../imagem/seta-branca-hover-cima.png);
-}
+*/
