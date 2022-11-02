@@ -46,6 +46,10 @@ div.mudar-imagem {
     border-radius: 50%;
 }
 
+input.mudar-imagem {
+    display: none;
+}
+
 header div.imagem-capa {
     position: relative;
     height: 200px;
