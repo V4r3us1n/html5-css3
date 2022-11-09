@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;800&display=swap');
+
+:root {
+    --cor-fundo: rgb(9, 9, 19);
+    --cor-fundo-header: rgb(12, 12, 22);
+    --cor-fonte-padrao: rgb(224, 222, 222);
+    --cor-borda-image: black;
+    --cor-box-shadow: rgba(0, 0, 0, 0.493);
+    --cor-fundo-menu-hover: rgb(22, 22, 36);
+    --cor-fundo-menu: rgb(19, 19, 34);
+    --cor-itens-menu-header: rgb(29, 29, 41);
+    --cor-fundo-nav: rgb(16, 16, 26);
+    --cor-div-link-projetos: rgb(27, 27, 54);
+    --cor-borda-div-link-projetos: rgb(34, 34, 61);
+    --cor-div-link-projetos-hover: rgb(27, 27, 69);
+    --cor-borda-div-link-projetos-hover: rgb(34, 34, 80);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--cor-fonte-padrao);
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    width: 90vw;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    width: 400px;
+    height: 50px;
+    position: relative;
+    margin: 20px auto;
+}
+
+li a {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: var(--cor-div-link-projetos);
+    border-radius: 20px;
+    border: 2px solid var(--cor-borda-div-link-projetos);
+    box-shadow: 0px 5px 15px var(--cor-box-shadow);
+}
+
+li a:hover {
+    width: 370px;
+    padding: 12px;
+    font-size: 1.1em;
+    background-color: var(--cor-div-link-projetos-hover);
+    border: 2px solid var(--cor-borda-div-link-projetos-hover);
+    border-radius: 24px;
+}

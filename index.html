@@ -10,13 +10,13 @@
 <body>
     <header>
         <div class="imagem-capa">
-            <label for="imudar-imagem1"><div class="mudar-imagem"></div></label>
-            <input type="file" title="mudar imagem" id="imudar-imagem1" class="mudar-imagem">
+            <label for="imudar-imagem-capa"><div class="mudar-imagem"></div></label>
+            <input type="file" title="mudar imagem" id="imudar-imagem-capa" class="mudar-imagem" accept="image/png, image/jpg" onchange="mudarImagemCapa()">
         </div>
         <img class="imagem-perfil" src="imagens/tengen.jpg" alt="Foto de Perfil">
         <div class="header">
-            <label for="imudar-imagem2"><div class="mudar-imagem"></div></label>
-            <input type="file" title="mudar imagem" id="imudar-imagem2" class="mudar-imagem">
+            <label for="imudar-imagem-perfil"><div class="mudar-imagem"></div></label>
+            <input type="file" title="mudar imagem" id="imudar-imagem-perfil" class="mudar-imagem" accept="image/png, image/jpg" onchange="mudarImagemPerfil()">
             <h1>V4r3us1n</h1>
             <div class="seguir">
                 <div>
@@ -65,5 +65,6 @@
             </section>
         </div>
     </div>
+    <script src="script/script.js"></script>
 </body>
 </html>
