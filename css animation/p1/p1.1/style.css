@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Configuração básica das divs */
+
+.parent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    background-color: hsla(200, 100%, 20%);
+    height: 250px;
+    width: 250px;
+}
+
+.child {
+    background-color: red;
+    height: 50%;
+    width: 50%;
+}
+
+/* Transform: Translate */
+
+#parent1:hover #child1 {
+    transform: translate(100%);
+}
+
+/* Transition: Transform */
+
+#child2 {
+    transition: transform 1s;
+}
+
+#parent2:hover #child2 {
+    background-color: green;
+    transform: translateX(100%);
+}
+
+/* Transition Color */
+
+#child3 {
+    transition: 1s;
+}
+
+#parent3:hover #child3 {
+    background-color: green;
+    transform: translateX(100%);
+}
+
+/* Transition no :hover */
+
+#parent4:hover #child4 {
+    background-color: green;
+    transform: translateX(100%);
+    transition: 1s;
+}

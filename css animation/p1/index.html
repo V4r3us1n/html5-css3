@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>CSS Animation</h1>
+        <p>No iframe abaixo temos um exemplo bem simples: <strong>uma div dentro de outra div</strong>. A  primeira div (<strong>div.parent</strong>) é maior e abriga a segunda div (<strong>div.child</strong>), ambas de coloração distintas, ao passar o mouse sobre a <strong>div.parent</strong> a <strong>div.child</strong> irá <strong>deslocar 100% de seu tamanho para a direita</strong>. Esse deslocamento é realizado através da propriedade <strong><code>transform: translateX(100%)</code></strong>.</p>
+        
+        <div class="container">
+            <div class="parent" id="parent1">
+                <div class="child" id="child1"></div>
+            </div>
+        </div>
+        <p>No CSS existem 2 formas de fazer uma animação, através da <strong>propriedade transition</strong>, muito boa para fazer animações simples, e também tem a <strong>propriedade animation</strong> que é mais complexa mas ótima para fazer animações mais elaboradas.</p>
+
+        <h2>Propriedade Transition:</h2>
+        <p>O maior erro que iniciantes cometem é achar que devem colocar a propriedade <strong>transition</strong> no <strong>:hover</strong> da div.parent, mas na verdade ela deve ser aplicada na <strong>div.child</strong>.</p>
+        <p>Essa propriedade possui os seguintes valores:</p>
+        <ul>
+            <li><strong>transition-delay</strong>;</li>
+            <li><strong>transition-duration</strong>;</li>
+            <li><strong>transition-property</strong>;</li>
+            <li><strong>transition-timing-function</strong>;</li>
+        </ul>
+        <p>Use apenas <strong>transition</strong> para fazer um <strong>shorthand</strong> desses valores.</p>
+        <pre><code>
+            .child {
+                background-color: red;
+                height: 50%;
+                width: 50%;
+                transition: transform;
+            }
+
+            .parent:hover .child {
+                transform: translateX(100%);
+            }
+        </code></pre>
+
+        <p>No pedaço de código acima, dissemos ao transition para animar apenas a opção <strong>transform</strong>, propriedade essa que só receberá valor quando <strong>passarmos o mouse</strong> sobre a div.parent, ou seja, <strong>a animação só ocorrerá quando o mouse passar sobre a div.parent</strong>. Após isso devemos especificar em <strong>quanto tempo a animação vai acontecer</strong>, o valor pode ser dado em <strong>ms</strong> e <strong>s</strong>. Veja:</p>
+        
+        <div class="container">
+            <div class="parent" id="parent2">
+                <div class="child" id="child2"></div>
+            </div>
+        </div>
+
+        <p>Mesmo que você retire o <strong>transform</strong> de dentro do <strong>transition</strong>, deixando apenas o tempo de duração da animação, a animação ainda será feita porque o valor <strong>default</strong>, dado quando não é colocado nenhuma propriedade, executa todas as propriedades de <strong>transition</strong>.</p>
+        <p>Se você colocar para <strong>mudar a cor</strong> da div.child enquanto <strong>transform</strong> estiver dentro de <strong>transition</strong>, como no caso <strong>acima</strong>, haverá uma transição dura de cor, assim que o <strong>transform</strong> for acionado a <strong>cor mudará instanteneamente</strong>. No entanto, se <strong>não</strong> colocarmos  o <strong>transform</strong> dentro de <strong>transition</strong> ocorrerá uma <strong>transição suave de cores</strong>, veja:</p>
+
+        <div class="container">
+            <div class="parent" id="parent3">
+                <div class="child" id="child3"></div>
+            </div>
+        </div>
+
+        <p>Você pode <strong>selecionar as propriedades</strong> que você quer que <strong>sofram uma transição suave</strong>, o restante sofrerá uma <strong>transição instantânea</strong>.</p>
+        
+        <h3>Por quê não usar o transition no :hover?</h3>
+        <p>Se você colocar o <strong>transition</strong> dentro de um <strong>:hover</strong> a transição só ocorrerá <strong>enquanto o objeto em que o :hover está aplicado</strong> tiver o mouse sobre ele, caso <strong>o mouse seja tirado</strong> durante a transição o bloco que sofre a transição <strong>voltará</strong> para sua <strong>posição inicial</strong> de forma brusca. Veja:</p>
+
+        <div class="container">
+            <div class="parent" id="parent4">
+                <div class="child" id="child4"></div>
+            </div>
+        </div>
+
+        <p>Outras coisas que podemos especificar na <strong>transição</strong> é o <strong>delay</strong> e o <strong>timing-function</strong>. Onde:</p>
+        <ul>
+            <li><strong>timing-function</strong>: determina como a sua transição será executada;</li>
+            <li><strong>delay</strong>: quanto tempo leva para a animação ocorrer após sua ativação;</li>
+        </ul>
+
+        <h3>Transition: timeing-function</h3>
+        <p>Essa propriedade possui alguns valores pre-determinados, como o <strong>linear</strong> (padrão, se move em velocidade constante de um lado para o outro) e o <strong>ease-in-out</strong> (o inicio e fim do trajeto do objeto é devagar, o espaço entre eles  o objeto vai na velocidade padrão).</p>
+        <p>Além desses valores você também pode criar uma forma,para isso basta você <strong>inspecionar</strong> a página, ver a propriedade <strong>transition</strong> de seu bloco  e clicar em um quadrado com uma imagem que se encontra nele, lá você pode definir a velocidade durante a trajetória desse objeto, os valores dessa transição serão representados com <strong>cubic-bazier(1, 0.03, 0.56, 1.36)</strong> (exemplo), veja:</p>
+
+        <div class="container">
+            <div class="parent" id="parent5">
+                <div class="child" id="child5"></div>
+            </div>
+        </div>
+
+        <h3>Transition: delay</h3>
+        <p>Essa propriedade, como dito anteriormente, serve para dar um atraso na animação, dessa forma ela não será executada no exato momento de sua ativação. Veja:</p>
+
+        <div class="container">
+            <div class="parent" id="parent6">
+                <div class="child" id="child6"></div>
+            </div>
+        </div>
+
+        <p>Infelizmente não é possível fazer muito mais do que isso com a propriedade <strong>transition</strong>, é aí que entra a propriedade <strong>animation</strong>, onde você pode trabalhar com várias etapas.</p>
+
+        <h2>Propriedade Animation:</h2>
+        <p>A propriedade <strong>animation</strong> possui muitas mais  opções do que a propriedade <strong>transition</strong>. Além disso sua sintaxe é mais simples do que a de transition. Por exemplo, para realizar um movimento da esquerda para a direita, em ambos os casos, veja:</p>
+
+        <pre><code>
+            /* Transition */
+            .child {
+            transform: translateX(100%);
+            }
+            .parent:hover .child {
+                transition: transform 1s ease-in;
+            }
+
+            /* Animation */
+
+            .parent:hover .child {
+                animation: left-to-right 1s ease-in;
+            }
+        </code></pre>
+
+        <p>A estrutura da propriedade <strong>animation</strong> é relativamente mais simples, não acha? No entanto ainda tem uma coisa faltando, para que uma animação funcione é preciso dar um nome a ela, é aí que o <strong>@keyframes</strong> entra em ação.</p>
+        <p>Você coloca ele no CSS normalmente e <strong>dê um o nome a sua animation</strong> (nesse caso left-to-right), dê um nome que faça sentido com o que ela faz. Dentro das chaves é onde a animation é feita, você pode determinar o comportamento da animação desde o <strong>início</strong> (0%) até seu <strong>fim</strong> (100%), podendo <strong>definir</strong> como será <strong>seu trajeto dentro desse perído</strong>. Veja:</p>
+
+        <pre><code>
+            /* Animation */
+
+            .parent:hover .child {
+                animation: left-to-right 1s ease-in;
+            }
+
+            @keyframes left-to-right {
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+        </code></pre>
+
+        <p>Caso você não adicione o valor de <strong>0%</strong>, como <strong>default</strong> ele vai pegar os valores dados para a <strong>.child</strong>, veja um exemplo prático dessa vez:</p>
+
+        <div class="container">
+            <div class="parent" id="parent7">
+                <div class="child" id="child7"></div>
+            </div>
+        </div>
+
+        <p>Uma coisa que é possível notar nessa animação é que quando seu trajeto acaba ela teleporta novamente para o início, ao invés de ficar no final até que o mouse seja retirado de dentro da <strong>div.parent</strong>. Para corrigir isso existe uma propriedade chamada <strong>animation-fill-mode</strong> e ela possui as seguintes opções:</p>
+        <ul>
+            <li><strong>backwards</strong>: antes da animação começar, aplicar todas as propriedades do <strong>keyframe 0%</strong>, se estiver em <strong>default</strong> irá voltar a sua posição original;</li>
+            <li><strong>forwards</strong>: manter as propriedades do <strong>keyframe 100%</strong> após o término da animação enquanto sua <strong>condição de ativação</strong> (:hover) estiver ativa;</li>
+            <li><strong>both</strong>: aplicará as propriedades tanto do <strong>keyframe 0%</strong> quanto do <strong>keyframe 100%</strong>, até que sua <strong>condição de ativação</strong> (:hover) seja disfeita;</li>
+            <li><strong>none</strong>: após o término da animação nenhuma das propriedades dos <strong>keyframes</strong> será aplicada ao objeto;</li>
+        </ul>
+
+        <p>Uma coisa que muitas pessoas não pensam quando se trata de <strong>animações css</strong> é performance, por isso tenha cuidado para não fazer uma <strong>animação ruim</strong>.</p>
+        <p>Vamos melhorar um pouco as coisas, que tal, ao invés de fazermos a div ir apenas da esquerda para direita, fazermos ela ir da esquerda para direita, baixo, esquerda, cima, voltando a sua posição original?</p>
+
+        <div class="container">
+            <div class="parent" id="parent8">
+                <div class="child" id="child8"></div>
+            </div>
+        </div>
+
+        <p>Para fazer essa animação foi colocado 5 atapas no <strong>keyframes</strong>, em cada etapa o objeto da animação ia para uma posição específica e alterava sua cor, definimos que essa animação ocorrerá <strong>infinitamente</strong> (usando a propriedade <strong>animation-iteration-count</strong>) até que sua <strong>condição de ativação</strong> seja desfeita, esse foi o código utilizado:</p>
+
+        <pre><code>
+            .parent {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: 0 auto;
+                background-color: hsla(200, 100%, 20%);
+                height: 250px;
+                width: 250px;
+            }
+
+            .child {
+                background-color: red;
+                height: 50%;
+                width: 50%;
+            }
+
+            .parent:hover .child {
+                animation: move-around 1s ease-in forwards infinite;
+            }
+
+            @keyframes move-around{
+                0% {
+                    background-color: aqua;
+                    transform: translateX(0%);
+                }
+                25% {
+                    transform: translateX(100%);
+                    background-color: purple;
+                
+                50% {
+                    transform: translate(100%, 100%);
+                    background-color: orange;
+                
+                75% {
+                    transform: translate(0%, 100%);
+                    background-color: darkred;
+                }
+                100% {
+                    transform: translateY(0%);
+                    background-color: magenta;
+                }
+            }
+        </code></pre>
+
+        <p>Podemos também especificar a direção da animação utilizando a propriedade <strong>animation-drection</strong>, por exemplo, podemos fazer ela <strong>alternar</strong> entre ida e volta, veja:</p>
+        <p>Outra coisa que podemos fazer é definir se a <strong>animação vai estar em ação ou parada</strong>, para isso podemos usar a propriedade <strong>animation-play-state</strong>. Vamos para um exemplo, caso você queira que a animação ocorra infinitamente, parando só quando você <strong>passar o mouse</strong> sobre o objeto, você pode colocar essa propriedade junto com o <strong>hover</strong>.</p>
+
+        <div class="container">
+            <div class="parent" id="parent9">
+                <div class="child" id="child9"></div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

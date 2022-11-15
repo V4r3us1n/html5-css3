@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+:root {
+    --cor-fundo-body: rgb(17, 17, 17);
+    --cor-fonte-principal: rgb(231, 229, 229);
+    --cor-fundo-main: rgb(39, 39, 39);
+    --cor-fundo-codigo: rgb(27, 27, 27);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-fonte-principal);
+}
+
+body {
+    width: 98vw;
+    background-color: var(--cor-fundo-body);
+    overflow-x: hidden;
+}
+
+main {
+    margin: 50px auto;
+    padding: 30px 20px;
+    background-color: var(--cor-fundo-main);
+    width: 800px;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-indent: 20px;
+    margin-bottom: 15px;
+}
+
+p {
+    text-indent: 20px;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+div.container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+
+pre {
+    padding-top: 10px 20px;
+    background-color: var(--cor-fundo-codigo);
+    margin: 30px 20px;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Configuração dos blocos de animação */
+
+.parent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    background-color: hsla(200, 100%, 20%);
+    height: 250px;
+    width: 250px;
+}
+
+.child {
+    background-color: red;
+    height: 50%;
+    width: 50%;
+}
+
+.parent:hover .child {
+    background-color: green;
+}
+
+/* Transform: Translate */
+
+#parent1:hover #child1 {
+    transform: translate(100%);
+}
+
+/* Transition: Transform */
+
+#child2 {
+    transition: transform 1s;
+}
+
+#parent2:hover #child2 {
+    transform: translateX(100%);
+}
+
+/* Transition Color */
+
+#child3 {
+    transition: 1s;
+}
+
+#parent3:hover #child3 {
+    transform: translateX(100%);
+}
+
+/* Transition no :hover */
+
+#parent4:hover #child4 {
+    transform: translateX(100%);
+    transition: 1s;
+}
+
+/* Transition timing-function */
+
+#child5 {
+    transition: 1s cubic-bezier(1, 0.03, 0.56, 1.36);
+}
+
+#parent5:hover #child5 {
+    transform: translateX(100%);
+}
+
+/* Transition Delay */
+
+#child6 {
+    transition: 1s cubic-bezier(1, 0.03, 0.56, 1.36) 1s;
+}
+
+#parent6:hover #child6 {
+    transform: translateX(100%);
+}
+
+/* Animation left-to-right */
+
+#child7 {
+    transition: transform 1s ease-in;
+}
+
+#parent7:hover #child7 {
+    animation: left-to-right 1s ease-in forwards;
+}
+
+/* Animation Circle */
+
+#child8 {
+    transition: transform 1s ease-in;
+}
+
+#parent8:hover #child8 {
+    animation: move-around 1s ease-in forwards infinite;
+}
+
+/* Animation Circle Alternative */
+
+#child9 {
+    transition: transform 1s ease-in;
+    animation: move-around 2s ease-in forwards infinite alternate;
+}
+
+#parent9:hover #child9 {
+    animation-play-state: paused;
+}
+
+@keyframes left-to-right {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes move-around {
+
+    0% {
+        background-color: aqua;
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(100%);
+        background-color: purple;
+    }
+
+    50% {
+        transform: translate(100%, 100%);
+        background-color: orange;
+    }
+
+    75% {
+        transform: translate(0%, 100%);
+        background-color: darkred;
+    }
+
+    100% {
+        transform: translateY(0%);
+        background-color: magenta;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    main {
+        width: 90%;
+    }
+}
