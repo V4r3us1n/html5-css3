@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Elements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>::before & ::after</h1>
+        <p>Esses pseudo-elementos permitem com que você adicione elementos ao seu HTML <strong>diretamente</strong> pelo CSS e, como você viu, pseudo-elementos possuem <strong>::</strong> antes de seus nomes. Veja um exemplo de código:</p>
+        <pre><code>
+            div.teste-before {
+                width: 250px;
+                margin: 10px auto;
+                padding: 10px;
+                background-color: rgb(73, 0, 0);
+            }
+            
+            div.teste-before::before {
+                display: block;
+                height: 30px;
+                width: 10px;
+                background-color: rgb(0, 0, 36);
+            }
+        </code></pre>
+        <p>Agora, veja como ele aparece no site:</p>
+        <div class="teste-before">Olhe aqui atrás o ::before :D</div>
+        <p>Notou? O que foi escrito no <strong>::before</strong> não apareceu, isso ocorre porque <strong>pseudo-elementos requerem que você use o atributo "content"</strong> para definir o que o conteúdo dentro do <strong>::before</strong> vai ser, em nosso caso vamos usar apenas <strong>''</strong> já que não queremos nenhum conteúdo.</p>
+        <div class="teste-before teste-before2">Olhe aqui atrás o ::before :D</div>
+        <p>O <strong>::after</strong> funciona da mesma forma, ficaria algo assim:</p>
+        <div class="teste-before teste-before2 teste-after">Olhe aqui atrás o ::before e na frente o ::after :D</div>
+        <p>Caso você inspecione o elemento usando o <strong>Chrome</strong> você vai ver que esses <strong>pseudo-elementos</strong> não estão antes/depois a <strong>div</strong>, mas sim <strong>dentro</strong> dela. Isso significa que elementos que não possuem <strong>tag de fechamento</strong>, como input, não podem utilizar <strong>pseudo-elementos</strong></p>
+    
+        <h2>Como e Onde Posso Usá-los?</h2>
+        <p>Para <strong>sinalizar cmapos obrigatórios</strong> em formulários, podemos usar o <strong>::after</strong>, aí é só colocar uma classe em todos os campos obrigatórios e utilizá-lo nessa classe para adicionar o " <strong>*</strong> " após o nome do campo.</p>
+        <p>Pode ser usado para fazer bordas animadas :D</p>
+        <p><strong>OBSERVAÇÃO:</strong> cada elemento da sua página pode ter apenas um <strong>::before</strong> e <strong>::after</strong>.</p>
+    </main>
+</body>
+</html>
