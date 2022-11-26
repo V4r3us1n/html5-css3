@@ -13,16 +13,16 @@
             <label for="imudar-imagem-capa"><div class="mudar-imagem"></div></label>
             <input type="file" title="mudar imagem" id="imudar-imagem-capa" class="mudar-imagem" accept="image/png, image/jpg" onchange="mudarImagemCapa()">
         </div>
-        <img class="imagem-perfil" src="imagens/tengen.jpg" alt="Foto de Perfil">
+        <div class="container-image"><img class="imagem-perfil" src="imagens/tengen.jpg" alt="Foto de Perfil"></div>
         <div class="header">
             <label for="imudar-imagem-perfil"><div class="mudar-imagem"></div></label>
             <input type="file" title="mudar imagem" id="imudar-imagem-perfil" class="mudar-imagem" accept="image/png, image/jpg" onchange="mudarImagemPerfil()">
             <h1>V4r3us1n</h1>
-            <div class="seguir">
-                <div>
+            <div class="seguir" onclick="seguirPerfil()">
+                <div id="div-seguir">
                     <input type="checkbox" name="seguir" id="iseguir">
                     <hr>
-                    <label for="iseguir"><p class="seguir">Seguir</p><p class="seguindo">Seguindo</p></label>
+                    <label for="iseguir" id="label-seguir">Seguir</label>
                 </div>
             </div>
             <div class="menu-header">

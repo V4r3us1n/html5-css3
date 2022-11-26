@@ -51,3 +51,22 @@ function checarResponsividadeIframe() {
         }
     }
 }
+
+function seguirPerfil() {
+    let seguindo = document.getElementById("iseguir");
+    let div_seguir = document.getElementById("div-seguir");
+    let label_seguir = document.getElementById("label-seguir");
+
+    if (seguindo.checked == true) {
+        label_seguir.innerHTML = "Seguindo";
+        label_seguir.style.fontSize = "20px";
+        label_seguir.style.marginTop = "3px";
+        div_seguir.style.margin = "5px 10px";
+        
+    } else {
+        label_seguir.innerHTML = "Seguir";
+        label_seguir.style.fontSize = "25px";
+        label_seguir.style.marginTop = "0px";
+        div_seguir.style.margin = "5px 15px";
+    }
+}
