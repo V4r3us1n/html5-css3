@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.829);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        main {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Operadores do JS (Parte 1)</h1>
+        <p>
+            Existem várias famílias de operadores no JS, mas vamos focar apenas nos seguintes:
+        </p>
+        <ul>
+            <li>Aritméticos</li>
+            <li>Atribuição</li>
+            <li>Relacionais</li>
+            <li>Lógicos</li>
+            <li>Ternário</li>
+        </ul>
+
+        <p>
+            Nessa priemira parte vamos abordar apenas 2, os operadores <strong>aritméticos</strong> e os de <strong>atribuição</strong>.
+        </p>
+
+        <h2>Operadores Aritméticos</h2>
+        <p>
+            VocÊ já deve conhecer o que são operadores aritméticos, então, sem mais delongas, aqui estão os operadores aritméticos usados no JS:
+        </p>
+        <ul>
+            <li><strong>+</strong> Soma</li>
+            <li><strong>-</strong> Subtração</li>
+            <li><strong>*</strong> Multiplicação</li>
+            <li><strong>/</strong> Divisão</li>
+            <li><strong>%</strong> Resto da Divisão Inteira</li>
+            <li><strong>**</strong> Exponenciação (Potência)</li>
+        </ul>
+        <p>
+            Assim na matemática existe a precedência de operadores, quais operações se realizam primeiro. Caso você a ordem de precedência o código vai rodar, mas não vai fornecer o 
+            resultado esperado. O código só apresenta erro se houver um erro na sintaxe dele, ex: <code>5 + / 2</code>. 
+        </p>
+        <p>
+            Só porque o programa não apresentou erros não quer dizer que ele esteja certo, você pode ter cometido algum erro sintático.
+        </p>
+        <p>
+            Utilizando os "()" você consegue alterar a ordem de precedência, que será exibida a seguir:
+        </p>
+
+        <ul>
+            <li>()</li>
+            <li>**</li>
+            <li>* / %</li>
+            <li>+ -</li>
+        </ul>
+
+        <p>Caso os operadores tenham a mesma posição na linha de precedência eles serão excutados da esquerda para a direita.</p>
+
+        <h2>Operadores de Atribuição</h2>
+        <p>
+            E se eu quiser realizar o cálculo e armazenar ele? Como faço?
+        </p>
+        <p>
+            Para isso você usa os <strong>Operadores de Atribuição</strong>, também conhecidos como <strong>variáveis</strong>.
+        </p>
+
+        <p>
+            Lembrando que é possível você dar novos valores a uma variável que já esteja ocupada, por exemplo:
+        </p>
+        <pre><code>
+            var n = 3;
+            n = n + 4;
+            alert(n);
+        </code></pre>
+
+        <p>
+            No exemplo acima o <strong>n</strong> que antes possuía valor 3 passou a possuir o seu valor anterior + 4.
+        </p>
+        <p>
+            Também é possível simplicar essas auto-atribuições, que no caso seria assim: <strong>n += 4</strong>.
+        </p>
+        <p>
+            Lembrando que isso só pode ser usado para auto-atribuições, podendo ser usado com qualquer operador, não necessariamente a soma, e também é aceito pela maioria das linguagens.
+        </p>
+        
+        <h2>Operadores de Incremento</h2>
+        <p>
+            Esse tipo de operador serve para simplificar ainda mais essas operações. Ex:
+        </p>
+        <pre><code>
+            var x = 5;
+            x = x + 1;
+            x += 1;
+            x ++;
+        </code></pre>
+
+        <p>
+            Essa simplificação vai sempre adicionar, ou tirar, 1 do valor da variável. No entanto se atente a uma coisa, caso você use o <code>x ++</code> o valor só será atribuída na próxima vez que 
+            você sumonar a variável. Se você que isso se aplique na hora você só troca a ordem para <code>++ x</code>. Chamamos isso de Pós-Incremento (x ++) e Pré-Incremento (++ x).
+        </p>
+        
+        
+    </main>
+    <script>
+
+    </script>
+</body>
+</html>

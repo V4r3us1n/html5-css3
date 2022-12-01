@@ -24,3 +24,7 @@
 body {
     width: 90vw;
 }
+
+p {
+    text-indent: 20px;
+}

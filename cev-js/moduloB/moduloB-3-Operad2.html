@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.829);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        main {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Operadores do JS (Parte 2)</h1>
+        <p>
+            Vamos abordar agora os últimos 3 operadores, os operadores <strong>relacionais</strong>, <strong>lógicos</strong> e <strong>ternário</strong>.
+        </p>
+
+        <h2>Operadores Relacionais</h2>
+        <p>
+            Os operadores realacionais do JS são os da maioria das linguagens de programação, sendo eles:
+        </p>
+        <ul>
+            <li><strong>></strong> Maior que</li>
+            <li><strong>&lt</strong> Menor que</li>
+            <li><strong>>=</strong> Maior ou igual a</li>
+            <li><strong>&lt=</strong> Menor ou igual a</li>
+            <li><strong>==</strong> Igual a</li>
+            <li><strong>!=</strong> Diferente de</li>
+        </ul>
+
+        <p>
+            Vale citar que qualquer expressão que contenha um operador relacional vai gerar um valor <strong>booleano</strong>, Verdadeiro ou Falso. Ex:
+        </p>
+        <ul>
+            <li>5 > 2 == True</li>
+            <li>7 &lt 4 == False</li>
+            <li>8 >= 8 == True</li>
+            <li>9 &lt 7 + 1 == False</li>
+            <li>5 == 5 == True</li>
+            <li>4 != 4 == False</li>
+        </ul>
+
+        <p>
+            Lembrando, sempre que você tiver em uma expressão <strong>operadores relacionais</strong> e <strong>operadores aritméticos</strong>, primeiro serão realizados os operadores airtmáticos!
+        </p>
+        <p>
+            Também temos que citar os operadores relacionais conhecidos como "operadores de identidade". Ex:
+        </p>
+
+        <pre><code>
+            5 == 5 (true)
+            5 == '5' (true)
+        </code></pre>
+
+        <p>
+            O que acontece aqui é que o JS avalia se eles tem a mesma grandeza, e diz que eles são iguais.
+        </p>
+        <p>
+            Para isso existe o <strong>operador de identidade</strong> ('===') ele testa se eles tem o mesmo valor e o mesmo tipo, ficando algo assim:
+        </p>
+
+        <pre><code>
+            5 === '5' (false)
+            5 === 5 (true)
+        </code></pre>
+
+        <p>
+            Existem também o <strong>operador desigual restrito</strong> ('!=='), que não serve para avaliar o tipo, mas sim o valor interno deles, se forem iguais então é true.
+        </p>
+
+        <pre><code>
+            5 !== 5 (false)
+            5 !== '5' (true)
+        </code></pre>
+
+        <p>
+            Agora vamos abordar os próximos operadores, que são os relacionais!
+        </p>
+
+        <h2>Operadores Lógicos</h2>
+        <p>
+            Os operadores lógicos são os seguintes:
+        </p>
+        <ul>
+            <li><strong>!</strong> Negação ('não' lógico)</li>
+            <li><strong>&&</strong> Conjunção ('e' lógico)</li>
+            <li><strong>||</strong> Disjunção ('ou' lógico)</li>
+        </ul>
+        <p>
+            Quero uma caneta mas ela não(!) pode ser azul.
+        </p>
+        <p>
+            Quero uma caneta azul e(&&) uma caneta vermelha.
+        </p>
+        <p>
+            Quero uma caneta azul ou(||) uma caneta vermelha.
+        </p>
+
+        <p>
+            Vamos começar com o  Negação <strong>!</strong>.
+        </p>
+        <p>
+            Nele você só pode colocar uma expressão que vai dar 'true' ou 'false', ele normalmente vêm junto com um operador aritmético (ex: != [não igual]). 
+        </p>
+        <p>
+            Uma coisa que não é verdadeira é falsa e uma coisa que não é falsa é verdadeira.
+        </p>
+
+        <p>
+            Vamos para o segundo, a Conjunção <strong>&&</strong>
+        </p>
+        <p>
+            Ele é um operador binário, precisa de dois valores lógicos, um de cada lado. A expressão só será verdadeira se os dois valores lógicos forem atentidos (sejam verdadeiros).
+        </p>
+
+        <p>
+            Por último, mas não menos importante, a Disjunção <strong>||</strong>.
+        </p>
+        <p>
+            Também é um operador binário, no entanto ele precisa que pelo menos um dos dois valores lógicos for atendido, se tornando falsa somente quando os dois forem falsos.
+        </p>
+
+        <p>
+            Quando se tem os 3 operadores lógicos em uma expressão a ordem é a seguinte (da esquerda para direita): <strong>!</strong> > <strong>&&</strong> > <strong>||</strong>.
+        </p>
+
+        <p>
+            Veja este exemplo:
+        </p>
+
+        <pre><code>
+            a > b && b % 2 == 0
+        </code></pre>
+
+        <p>
+            Quando se tem operadores lógicos, relacionais e aritméticos na mesma expressão a ordem é a seguinte: aritméticos, relacionais e lógicos.
+        </p>
+        <p>
+            No exemplo acima a resposta é 'false', pq apenas um dos lados é verdadeiro.
+        </p>
+
+        <pre><code>
+            alert('Estamos realizando uma seleção, responda as perguntas abaixo: ')
+            idade = Number(prompt('Informe sua idade: '));
+            estado = String(prompt('Informe a sigla do seu estado: [ex: RJ]'));
+            salario = Number(prompt('Informe seu salário: '));
+            sexo = String(prompt('Informe seu sexo: [M/F]'));
+
+            if((idade >= 15 && idade &lt= 17) && (estado == 'RJ' || estado == 'SP') && (salario > 1500 && sexo != 'M')) {
+                alert('Você passou na seleção!');
+            } else {
+                alert('Você não passou na seleção!');
+            }   
+            alert('Fim da pesquisa :)');
+        </code></pre>
+
+        <p>
+            Vamso agora para o último tipo de operador.
+        </p>
+
+        <h2>Operador Ternário</h2>
+        <p>
+            É composto por  2 símbolos que aparecem na mesma expressão, sendo eles:
+        </p>
+        <ul>
+            <li><strong>?</strong></li>
+            <li><strong>:</strong></li>
+        </ul>
+
+        <p>Ele se chama ternário porque tem 3 partes:</p>
+
+        <pre><code>
+            teste <strong>?</strong> true <strong>:</strong> false
+        </code></pre>
+
+        <p>Onde:</p>
+
+        <ul>
+            <li><strong>Bloco teste</strong>: é um teste lógico, um resultado que pode dar verdadeiro ou falso.</li>
+            <li><strong>Bloco verdadeiro</strong>: é o que vai acontecer quanto o "Bloco teste" for verdadeiro.</li>
+            <li><strong>Bloco falso</strong>: é o que vai acontecer quando o "Bloco teste" for falso.</li>
+        </ul>
+
+        <p>Ex:</p>
+
+        <pre><code>
+            nota1 = Number(prompt('Informe sua primeira nota: '));
+            nota2 = Number(prompt('Informe sua segunda nota: '));
+            media = (nota1 + nota2) / 2;
+            alert(media >= 7.0 ? "Aprovado" : "Reprovado");
+        </code></pre>
+
+        <p>Outro exemplo para você entender:</p>
+
+        <pre><code>
+            x = Number(prompt('Informe um valor: '));
+            var res = x % 2 == 0 ? 5 : 9;
+            alert(res);
+        </code></pre>
+
+        <p>Se o resto da divisão de 'x por 2' for 0 então o valor de "res" será '5', senão ele será '9'.</p>
+
+    </main>
+
+    <script>
+        x = Number(prompt('Informe um valor: '));
+            var res = x % 2 == 0 ? 5 : 9;
+            alert(res);
+    </script>
+</body>
+</html>

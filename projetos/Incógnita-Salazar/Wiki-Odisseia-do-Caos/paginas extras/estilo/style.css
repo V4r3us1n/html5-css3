@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    overflow-y: hidden;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: auto;
+}
+
+ul li {
+    text-align: center;
+    height: 100px;
+    width:100px;
+    color: purple;
+    background-color: blue;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+ul li:hover {
+    cursor: pointer;
+}

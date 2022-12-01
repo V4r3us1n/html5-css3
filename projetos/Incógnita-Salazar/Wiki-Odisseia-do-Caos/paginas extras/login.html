@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="estilo/style-login.css">
+    <link rel="shortcut icon" href="../imagem/Simbolo-odisseia.ico" type="image/x-icon">
+</head>
+<body>
+    <main class="container">
+        <h1>Login</h1>
+        <hr>
+        <form action="login.php" method="post" autocomplete="on">    
+            <fieldset class="info">
+                <p class="texto">
+                    <label for="itext">Nome: </label>
+                    <input type="text" name="text" id="itext" class="inserir-info" required>
+                </p>
+                <p class="texto">
+                    <label for="ipassword">Senha: </label>
+                    <input type="password" name="password" id="ipassword" class="inserir-info" required>
+                </p>
+                <p class="checkbox">
+                    <input type="checkbox" name="check" id="icheck">
+                    <label for="icheck">Manter-se conectado</label>
+                </p>
+            </fieldset>
+            <hr class="fim-fieldset-info">
+            <fieldset class="button">
+            <div class="container">
+                <div class="position-relative">
+                    <div class="botao"><input type="submit" value="Entrar" class="entrar"></div>
+                </div>
+                <p>OU</p>
+                <div class="position-relative">
+                    <div class="botao">
+                        <div class="entrar"><a class="botao-cadastro" href="cadastro.html" target="_self">Cadastre-se</a></div>
+                    </div>
+                </div>
+            </div>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

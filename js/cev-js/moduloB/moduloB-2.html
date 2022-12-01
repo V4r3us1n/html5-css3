@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamentos</title>
+    <style>
+        body {
+            background-color: rgb(62, 112, 252);
+            color: rgb(255, 187, 0);
+            font-size: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulação de Dados</h1>
+    
+    <p>
+        Observe o seguinte código:
+    </p>
+    <pre><code>
+        //Guardando uma informação
+        prompt('Qual é seu nome?')
+    </code></pre>
+
+    <p>
+        Ele solicita uma informação para o usuário, mas essa informação não vai apra lugar algum. 
+        Como podemos fazer para que essa  informação fique armazenada em algum lugar??
+    </p>
+
+    <p>
+        Para armazenar essas informação basta você colocá-la em uma variável, ex: <code><strong>var nome = prompt('Qual é seu nome?')</strong></code> <br>
+        OBS: você pode usar também, ao invés de <code>var</code>, o comando <code>let</code> ou <code>const</code>, há uma diferença entre eles que iremos ver mais pra frente então por enquanto use <code>var</code>
+    </p>
+    <p>
+        Dessa forma, sempre que você precisar trazer essa iformação à tona basta você usar o nome da variável que a armazenou.
+    </p>
+
+    <p>Veja o ex2, ex3 e ex4</p>
+
+    <p>
+        Quero que o usuário digite 2 números, então:
+    </p>
+    <pre><code>
+        var n1 = prompt('Digite um número: ');
+        var n2 = prompt('Digite outro número: ');
+        var s = n1 + n2;
+        alert('A soma é ' + s);
+    </code></pre>
+
+    <p>
+        Porquê ocorreu uma concatenação e não soma já que se tratam de números??? <br>
+        É porque em nenhum momento foi específicado para o JS que aquela informação se tratava de um número.
+    </p>
+    <p>
+        Veja o ex3 para mais informações...
+    </p>
+
+
+    <script>
+        //Guardando uma informação
+        var n1 = prompt('Digite um número: ');
+        var n2 = prompt('Digite outro número: ');
+        var s = n1 + n2;
+        alert('A soma é ' + s);
+    </script>
+</body>
+</html>

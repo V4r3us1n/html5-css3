@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="estilo/style-cadastro.css">
+    <link rel="shortcut icon" href="../imagem/Simbolo-odisseia.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="formulario">
+        <header>
+            <h1>Cadastrar-se</h1>
+        </header>
+        <hr class="header">
+        <main>
+            <form action="cadastro.php" method="post" autocomplete="on">
+                <div class="form">
+                    <fieldset class="info-conta">
+                        <p  class="p-text">
+                            <label for="iname">Nome de Usuário:</label>
+                            <input type="text" name="name" id="iname" class="text" placeholder="Julian Pereira Joias" required>
+                        </p>
+                        <p  class="p-text">
+                            <label for="iemail">Email:</label>
+                            <input type="email" name="email" id="iemail" class="text" placeholder="email@gmail.com" required>
+                        </p>
+                        <div>
+                            <p  class="p-text">
+                                <label for="isenha">Senha:</label>
+                                <input type="password" name="senha" id="isenha" class="senha text" minlength="10" placeholder="**********" required>
+                            </p>
+                            <p  class="p-text">
+                                <label for="irsenha">Confirmar Senha:</label>
+                                <input type="password" name="rsenha" id="irsenha" class="senha text" minlength="10" placeholder="**********" required onblur="checarSenha()">
+                            </p>
+                            <p class="checkbox">
+                                <input type="checkbox" name="check" id="icheck" onclick="mostrarSenha()">
+                                <label for="icheck" onclick="mostrarSenha()">Exibir senha</label>
+                            </p>
+                        </div>
+                    </fieldset>
+                        <hr>
+                    <fieldset class="info-pessoal">
+                        <p>
+                            Gênero:
+                            <div class="genero">
+                                <div class="gen-1">
+                                    <p>
+                                        <input type="radio" name="gen" id="imasc" checked>
+                                        <label for="imasc">Masculino</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" name="gen" id="ifem">
+                                        <label for="ifem">Feminino</label>
+                                    </p>
+                                </div>
+                                <div class="gen-1">
+                                    <p>
+                                        <input type="radio" name="gen" id="ioutro">
+                                        <label for="ioutro">Outro</label>
+                                    </p>
+                                    <p>
+                                        <input type="radio" name="gen" id="inao-dizer">
+                                        <label for="inao-dizer">Prefiro não dizer</label>
+                                    </p>
+                                </div>
+                            </div>
+                        </p>
+                        <p class="p-text">
+                            <label for="idata">Data de Nascimento:</label>
+                            <input type="date" name="data" id="idata" class="text" required>
+                        </p>
+                    </fieldset>
+                </div>
+                <hr class="footer">
+                <div class="container">
+                    <input type="submit" value="Cadastrar" class="cadastro">
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>

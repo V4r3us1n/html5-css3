@@ -15,6 +15,7 @@
     --cor-borda-div-link-projetos: rgb(34, 34, 61);
     --cor-div-link-projetos-hover: rgb(27, 27, 69);
     --cor-borda-div-link-projetos-hover: rgb(34, 34, 80);
+    --cor-fundo-iframe: #10101A;
 }
 
 * {
@@ -27,6 +28,17 @@
 
 body {
     width: 100vw;
+    background-color: var(--cor-fundo-iframe);
+}
+
+p {
+    text-indent: 20px;
+}
+
+label {
+    display: block;
+    text-align: center;
+    margin: auto;
 }
 
 ul {

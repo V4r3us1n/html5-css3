@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições (Parte 2)</title>
+    <link rel="stylesheet" href="../../estilo/style.css">
+</head>
+<body>
+    <h1>Condições (Parte 2)</h1>
+    <p>
+        Não existem apenas condições onde você ou faz uma coisa ou outra. Existem também situações em que existem várias outras possibilidades.
+    </p>
+    <p>
+        Mas é possível mesclar essas coisas veja um exemplo:
+    </p>
+    <pre><code>
+        if (cond1){
+            [bloco1]
+        } else {
+            if (cond2){
+                [bloco2]
+            } else {
+                [bloco3]
+            }
+        }
+    </code></pre>
+
+    <p>
+        É possível ver no exemplo acima, condições dentro de outra condições, é uma prática muito utilizado pelos programadores que é chamada de aninhamento e é feito dando um tab no código a ser aninhado.
+    </p>
+    <p>
+        Isso é tão comum que o próprio JS tem um comando especial chamado "elseif".
+    </p>
+
+    <p>
+        Vamos fazer alguns exercícios (ex011, ex012)
+    </p>
+
+    <p>
+        Vejo que descobriu como pegar a hora do sistema, não? Aqui para se lembrar:
+    </p>
+    <pre><code>
+        var agora = new Date()
+        var hora = agora.getHours()
+    </code></pre>
+
+    <p>
+        Além das <strong>Condições Aninhadas</strong> existem também as <strong>Condições Múltiplas</strong> que serve para valores fixos! Ela não serve muito intervalo de valores (ex: entre 1 e 5).
+    </p>
+    <p>
+        Ela te não te limita apenas a "sim" e "não", ela fornece vários valores fixos. Diferente do "if/else" ela não serve para todo tipo de situação, mas ela é muito útil para situações específicas.
+    </p>
+    <p>
+        Existem um comando no JS que se chama <strong>switch</strong> que funciona da seguinte forma:
+    </p>
+
+    <pre><code>
+        switch (expressão) {
+            case valor 1:
+                [bloco1]
+                break
+            case valor 2:
+                [bolco2]
+                break
+            case valor 3:
+                [bloco3]
+                break
+            default:
+                [bloco4]
+                break
+        }
+    </code></pre>
+
+    <p>
+        Como visto acima o "switch" é uma <strong>expressão</strong>, onde cada opção dela é colocada em um <strong>case</strong>, no final de tudo tem o <strong>default</strong> que funciona da mesma forma que o "else". 
+        Vale ressaltar que após cada bloco tem que usar o comando <strong>break</strong> antes de ir para a próxima "case", no "default" ele é opcional.
+    </p>
+    <p>
+        O <strong>break</strong> serve para que, após o bloco ser executado o programa pule o switch e continue o resto do código, caso contrário ele vai entrar nas "cases" a baixo até encontrar o "break" ou chegar no final do "switch".
+    </p>
+    <p>
+        Vamos apra mais um pouco de prática (ex013).
+    </p>
+
+    <script>
+        var agora = new Date();
+var diaSem = agora.getDay()
+
+switch (diaSem) {
+    case 0:
+        alert("Hoje é Domingo!");
+        break;
+    case 1:
+        alert("Hoje é Segunda!");
+        break;
+    case 2:
+        alert("Hoje é Terça!");
+        break;
+    case 3:
+        alert("Hoje é Quarta!");
+        break;
+    case 4:
+        alert("Hoje é Quinta!");
+        break;
+    case 5:
+        alert("Hoje é Sexta!");
+        break;
+    case 6:
+        alert("Hoje é Sábado!");
+        break;
+    default:
+        alert("[ERRO] Dia Inválido!");
+        break;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com DOOM</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.781);
+            color: white;
+            font: normal 14px Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> no JavaScript</p>
+
+    <div id="msg">Clique aqui</div>
+
+    <script>
+        //var corpo = document.body
+        var p1 = document.getElementsByTagName('p')[0]; //Selecionar o primeiro parágrafo que aparecer
+        document.write('Está escrito assim: ' + p1.innerText);
+        //corpo.style.background = 'blue';
+        p1.style.color = 'Blue';
+
+        var d = document.getElementById('msg');
+        d.style.background = 'gold';
+        d.style.color = 'blue';
+        d.innerText = 'Estou aguardando...';
+
+    </script>
+</body>
+</html>

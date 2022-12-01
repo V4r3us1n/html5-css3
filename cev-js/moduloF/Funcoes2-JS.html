@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções JS</title>
+    <link rel="stylesheet" href="../estilo/style.css">
+</head>
+<body>
+    <h1>Uso de Funções em JS</h1>
+
+    <p>Nós já aprendemso a criar e usar funções simples, mas está na hora de subir de nível, ainda temos que falar sobre: <strong>passagem de parâmetros</strong> e <strong>retorno de resultados</strong>.</p>
+    <p>O JS é uma linguagem que funcional sobre um <strong>paradigma funcional</strong>, por isso que função, em JS, é algo muito importante.</p>
+    <p>Imagine a seguinte situação:</p>
+    <ol>
+        <li>Sua mãe te chama e te dá uma ordem, como ir comprar eleite (<strong>chamada</strong>, não precisa ser algo dito, pode ser por um evento: se "chover" recolha a roupa do varal)</li>
+        <li>Sua mãe te dá dinheiro para você poder comprar leite (dinheiro, o que sua mãe quer == <strong>parâmetro</strong>)</li>
+        <li>Você vai no emrcado, compra o leite e volta (<strong>ação</strong>)</li>
+        <li>Você chega em casa e entrega o leite para sua mãe (<strong>retorno</strong>)</li>
+    </ol>
+
+    <p>Ou seja, uma função pode ter os seguintes fatores: <strong>chamada</strong>, <strong>conjunto de parâmetros</strong>, <strong>ação</strong> e <strong>retorno</strong>. Nem toda função usa parâmetros ou possuí retorno, mas isso dá mais funcionalidades a sua tarefa.</p>
+    <p>Aqui a definição de uma função:</p>
+    <p>"<cite>Funções são <strong>ações</strong> executadas assim que são <strong>chamadas</strong> ou em decorrência de algum <strong>evento</strong>.</cite>"</p>
+    <p>"<cite>Uma <strong>função</strong> pode receber <strong>parâmetros</strong> e retornar um <strong>resultado</strong>.</cite>"</p>
+    
+    <p>Para você ver como é na prática, aqui está um modelo de função:</p>
+
+    <pre><code>
+        function <strong>ação</strong>(<strong>param</strong>) {
+            [bloco]
+            return <strong>res</strong>
+        }
+
+        <strong>ação</strong>(<strong>5</strong>)
+    </code></pre>
+
+    <p>No modelo acima você criou a função <strong>ação</strong> e, posteriormente, chamou ela (<strong>ação(5)</strong>) utilizando como parâmetro o <strong>número 5</strong>. Após executar a função utilizando o parâmetro solicitado será enviado o resultado da função dentro da <strong>variável res</strong> (<strong>return res</strong>)</p>
+
+    <p>Vamos ver uma função de verdade, para ver como funciona na prática:</p>
+
+    <pre><code>
+        function parimp(n) {
+            if (n % 2 == 0) {
+                return "PAR";
+            } else {
+                return "IMPAR";
+            }
+        }
+
+        let res = parimp(11);
+    </code></pre>
+
+    <p>Uma função em JS só pode ter um <strong>return</strong>, a função de cima tem dois porquê eles estão dentro de if/else, ou seja, apenas um deles será <strong>retornado</strong>!</p>
+    <p>Veja a função acima sendo posta em prática em "<strong>Funcoes2-JS.js</strong>"</p>
+
+    <p>Se você criar uma função que exija dois parâmetros mas apenas um deles seja fornecido a função não irá funcionar direito. Pense que é uma função de <strong>soma</strong>, com  apenas um parâmetro vai ficar <strong>n1 + undefined = NaN</strong>, e não tem como usarmos isso.</p>
+    <p>Uma solução para esse problema é preestabelecer valores para caso não seja passado um valor para os parâmetros, você faz isso da seguinte forma:</p>
+
+    <pre><code>
+        function soma(n1=0, n2=0) {
+            return n1 + n2;
+        }
+
+        let s = soma(1);
+        console.log(s);
+    </code></pre>
+
+    <p>Caso seja passado um novo parâmetro o n1 e n2 deixam de possuir valor 0!</p>
+
+    <p>Outra coisa que você pode fazer é colocar uma <strong>função dentro de uma variável</strong>, isso é possível no JS. Veja um exemplo:</p>
+
+    <pre><code>
+        let v = function(x) {
+            return x*2;
+        }
+        
+        console.log(v(5));
+    </code></pre>
+
+    <p>Nesse caso, você passa um parâmetro para a variável e ela executará uma função, nesse caso ela retornará como resposta o dobro de <strong>5</strong>, ou seja, <strong>10</strong>.</p>
+
+    <p>Existem muitas outras sintaxes de funções no JS, mas esse curso é apenas sobre o básico de JS, então não vamos entrar mais a fundo!</p>
+
+    <p>Tem um exemplo de <strong>recursividade</strong> mostrado nesse arquivo <strong>.js</strong>, vale a pena ver!</p>
+
+    <script>
+
+    </script>
+</body>
+</html>

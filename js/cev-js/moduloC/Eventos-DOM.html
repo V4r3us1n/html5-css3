@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <link rel="stylesheet" href="../estilo/style.css">
+    <style>
+        div#area {
+            height: 40px;
+            width: 200px;
+            background-image: linear-gradient(to right, rgb(255, 0, 242), black 85%);
+            color: white;
+            border-radius: 20px;
+            border: 3px solid gray;
+            line-height: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        div#area p {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos DOM</h1>
+    <p>
+        DOM é um facilitador, que existe em seu navegador, para dar acesso aos elementos diretamente para o JS.
+    </p>
+
+    <div id="area">
+        <p>Interaja</p>
+    </div>
+
+    <p>
+        Vamos usar como exemplo essa div, um "Evento" é tudo aquilo que pode acontecer com essa div. Os mais comuns são eventos de mouse, quando o mouse entrar na div vai disparar um evento chamado "<strong>mouseenter</strong>", além disso você poe também continuar movendo o mouse 
+    dentro da div, disparando várias vezes o evento "<strong>mousemove</strong>". Se você clicar e segurar pode disparar o evento do "<strong>mousedown</strong>" e no momento que você soltar o botão do mouse você dispara o "<strong>mouseup</strong>". Além disso também tem o movimento do click 
+    inteiro, clicar e solter rapidamente, que é o evento de "<strong>click</strong>". E por fim, assim que você tira o mouse de dentro da div você dispara o evento do "<strong>mouseout</strong>".
+</p>
+
+    <p>
+        Todos os eventos mencionados anteriormente acontecem só com o uso do mouse, existe vários eventos dentro do JS. Pesquise por JS DOM Events para mais informações.
+    </p>
+    <p>
+        Mas para disparar um evento, para tratar um evento, você tem que saber o que é uma função. Uma <strong>Função</strong> é um conjunto de linhas que vão ser executadas só quando o evento ocorrer.
+    </p>
+    <p
+    >Pense da seguinte forma, você programou 10 linhas, o que chamamos de bloco, diferentemente do que fizemos até agora esse bloco só será executado quando algo específico ocorrer. Para essas 10 linhas serem executadas apenas quando o evento ocorrer você tem que colocar elas dentro de um bloco, 
+    que é delimitado por um par de <strong>{}</strong>. Você tem que nomear esse bloco como uma <strong>Function</strong> antes do bloco. No JS existem <strong>funções anônimas</strong> que são aquelas que não tem um nome, mas para o método funcionar a função precisa de um nome. Geralmente o nome da 
+    são ações, você coloca o nome da "ação()". Ficando algo assim:
+    </p>
+    <pre><code>
+        function ação() {
+            Linhas de Código :)
+        }
+    </code></pre>
+
+    <p>
+        Além disso, opcionalmente, dentro dos parênteses você pode colocar alguns <strong>Parâmetros</strong>, que serão abordados depois.
+    </p>
+    <p>
+        Vamos fazer um exemplo de evento de click. Lembrando que os eventos podem ser disparados tanto na parte HTML quanto na parte do JS. Veja na DIV que criamos anteriormente como isso é feito no HTML.
+    </p>
+
+    <p>
+        Fazendo isso usando o HTML ficaria algo assim:
+    </p>
+    <pre><code>
+        &lthtml>
+            &lthead>&lt/head>
+            &ltbody>
+                &ltdiv id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+                    &ltp>Interaja&lt/p>
+                &lt/div>
+                &ltscript>
+                    //Nesse exemplo foi criado a variável fora das funções para ela ser global, mas isso pode acabar gerando uns problemas com memório por isso não é muito recomendado.
+
+                    var a = document.querySelector('div#area');
+
+                    function clicar() {
+                        //Essa função só será chamado quando o "clicar" for ativado
+                        a.innerText = 'Clicou XD';
+                        a.style.background = 'black';
+                    }
+
+                    function entrar() {
+                        //Essa função vai ser chamada quando "passar o mouse" sobre a div
+                        a.innerText = 'Entrou :D';
+                    }
+
+                    function sair() {
+                        //Essa função vai ser chamada quando "tirar o mouse" de dentro da div
+                        a.innerText = 'Saiu D:';
+                        a.style.background = 'rgb(255, 0, 242)';
+                    }
+                &lt/script>
+            &lt/body>
+        &lt/html>
+    </code></pre>
+
+    <p>
+        Você tembém pode disparar os eventos usando "<strong>listeners</strong>" que ficam dentro do JS. Ex:
+    </p>
+    <pre><code>
+        //Nesse exemplo foi criado a variável fora das funções para ela ser global, mas isso pode acabar gerando uns problemas com memória por isso não é muito recomendado.
+
+        var a = document.querySelector('div#area');
+
+        //Tem que colocar um Listener para cada Evento!
+
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar() {
+            //Essa função só será chamado quando o "clicar" for ativado
+            a.innerText = 'Clicou XD';
+            a.style.background = 'black';
+        }
+
+        function entrar() {
+            //Essa função vai ser chamada quando "passar o mouse" sobre a div
+            a.innerText = 'Entrou :D';
+        }
+
+        function sair() {
+            //Essa função vai ser chamada quando "tirar o mouse" de dentro da div
+            a.innerText = 'Saiu D:';
+            a.style.background = 'rgb(255, 0, 242)';
+        }
+    </code></pre>
+
+    <p>
+        Preste bastante atenção em seu código, pois o JS não avisa que ocorreu um erro, se algo estiver errado ele não avisa. Como achar esse erro então? Bom, basta dar um "inspecionar" na página, na parte 
+        superior do inspecionar vai ser notificado que houve um erro, em 'Console' ele vai mostrar o tipo de erro e vai apontar onde se encontra o erro, aí basta você corrigí-lo.
+    </p>
+    <p>
+        Veja o arquivo 'ex7', onde vão ser solicitados ao usuário 2 valores e esses valores serão somados ao clicar em um botão!
+    </p>
+
+
+    <script>
+        //Nesse exemplo foi criado a variável fora das funções para ela ser global, mas isso pode acabar gerando uns problemas com memória por isso não é muito recomendado.
+
+        var a = document.querySelector('div#area');
+
+        //Tem que colocar um Listener para cada Evento!
+
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar() {
+            //Essa função só será chamado quando o "clicar" for ativado
+            a.innerText = 'Clicou XD';
+            a.style.background = 'black';
+        }
+
+        function entrar() {
+            //Essa função vai ser chamada quando "passar o mouse" sobre a div
+            a.innerText = 'Entrou :D';
+        }
+
+        function sair() {
+            //Essa função vai ser chamada quando "tirar o mouse" de dentro da div
+            a.innerText = 'Saiu D:';
+            a.style.background = 'rgb(255, 0, 242)';
+        }
+    </script>
+</body>
+</html>

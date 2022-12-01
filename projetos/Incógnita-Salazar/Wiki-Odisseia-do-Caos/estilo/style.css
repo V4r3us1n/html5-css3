@@ -1,0 +1,843 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;800&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --cor-fonte-padrão: white;
+    --cor-gradiente-container-esquerdo-1: rgb(6, 6, 65);
+    --cor-gradiente-container-esquerdo-2: rgb(47, 2, 56);
+    --cor-fundo-imagens-nav-container-esquerdo: rgb(24, 24, 24);
+    --cor-logo-odisseia-gradiente-1: rgb(6, 6, 65);
+    --cor-logo-odisseia-gradiente-2: rgb(56, 2, 56);
+    --cor-gradiente-container-esquerdo-3: #179e9e;
+    --cor-menu-invisivel: rgb(49, 48, 48);
+    --cor-link-hover: rgb(148, 2, 148);
+    --cor-section: rgb(6, 20, 61);
+    --cor-background-menu-link-hover: rgb(145, 143, 143);
+    --transparente: rgba(0, 0, 255, 0);
+    --cor-container-esquerdo-1-550px: rgba(6, 6, 65, 0.521);
+    --cor-container-esquerdo-2-550px: rgb(47, 2, 56, 0.521);
+    --cor-container-esquerdo-menor: rgba(17, 2, 41, 0.863);
+}
+
+body {
+    width: 104vw;
+    background-color: var(--cor-fundo-imagens-nav-container-esquerdo);
+    color: var(--cor-fonte-padrão);
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: var(--cor-fonte-padrão);
+    text-decoration: none;
+}
+
+/*Ajustando o menu lateral / Container-Esquerda*/
+
+div.container-esquerda {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-gradiente-container-esquerdo-1);
+    width: 70px;
+    height: 100vh;
+    font-size: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+div.container-esquerda a {
+    color: var(--cor-fonte-padrão);
+    text-decoration: none;
+}
+
+div.container-esquerda div {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+div.container-esquerda div ul {
+    justify-content: space-between;
+}
+
+div.container-esquerda div ul.container-esquerda {
+    list-style: none;
+}
+
+div.container-esquerda div ul li {
+    margin-bottom: 20px;
+}
+
+div.container-esquerda div ul li img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+img.imagem-fandom {
+    margin-top: 40px;
+    background-image: radial-gradient(var(--cor-logo-odisseia-gradiente-1), var(--cor-logo-odisseia-gradiente-2));
+}
+
+img.login {
+    height: 35px;
+    width: 35px;
+}
+
+div.container-esquerda ul li img:hover {
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--cor-background-menu-link-hover);
+}
+
+
+
+/*Parte direita do site*/
+
+div.container-direita {
+    position: absolute;
+    left: 70px;
+    max-width: 100%;
+    background-image: url(https://i.ytimg.com/vi/ofQvYuvWSU4/maxresdefault.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+header {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+header div.header {
+    display: flex;
+    align-items: flex-end;
+}
+
+header div.curtidas {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    background-color: var(--cor-container-esquerdo-2-550px);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+
+header div.curtidas div#icurtir {
+    background-color: var(--cor-fonte-padrão);
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+}
+
+header div.curtidas div#icurtir:hover {
+    background-color: black;
+}
+
+header div.curtidas:hover {
+    background-color: var(--cor-container-esquerdo-1-550px);
+}
+
+header div.curtidas label {
+    margin-right: 5px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-image: url(../imagem/nao-curtida.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+input[type="checkbox"]:hover {
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-image: url(../imagem/curtida.png);
+}
+
+
+
+header img {
+    height: 100px;
+    cursor: pointer;
+}
+
+hr.row {
+    display: none;
+}
+
+/*Drop Down Menu*/
+
+.dp-menu {
+    font-size: 14px;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.dp-menu ul.nav {
+    display: flex;
+    list-style: none;
+    max-width: 90%;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.dp-menu ul.nav ul {
+    display: none;
+    position: absolute;
+    width: auto;
+    left: 0;
+    list-style: none;
+    font-size: 12px;
+}
+
+div.item-menu {
+    display: flex;
+}
+
+div.item-menu p.descarte-450px {
+    margin-left: 10px;
+}
+
+div.setas-menu {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    background-image: url(../imagem/seta-branca-baixo.png);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+div.item-menu > div.setas-menu:hover {
+    background-image: url(../imagem/seta-branca-hover-cima.png);
+}
+
+.dp-menu ul.nav > li {
+    display: inline;
+    position: relative;
+    display: block;
+}
+
+.dp-menu ul.nav li:hover div.setas-menu {
+    background-image: url(../imagem/seta-branca-hover-cima.png);
+}
+
+.dp-menu ul.nav ul li {
+    margin: auto;
+}
+
+.dp-menu ul.nav li:hover ul {
+    display: block;
+    width: auto;
+    text-align: center;
+    background-color: var(--cor-menu-invisivel);
+    padding: 5px;
+}
+
+.dp-menu ul.nav li.link:hover ul {
+    min-width: 100px;
+}
+
+.dp-menu ul.nav li:hover ul ul.campanhas {
+    display: none;
+}
+
+.dp-menu ul.nav ul li a {
+    display: block;
+}
+
+.dp-menu a {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.dp-menu a:hover {
+    background-color: var(--cor-background-menu-link-hover);
+    color: var(--cor-menu-invisivel);
+    font-weight: bold;
+}
+
+.dp-menu ul.nav li:hover {
+    cursor: pointer;
+}
+
+.dp-menu ul.nav li ul li.clicar:hover ul.campanhas {
+    position: absolute;
+    display: block;
+    max-width: 200px;
+    min-width: 160px;
+    margin-left: 100px;
+    text-align: center;
+    bottom: 135px;
+}
+
+li.campanha div {
+    display: flex;
+}
+
+div.setas-menu2 {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    background-image: url(../imagem/seta-branca-baixo.png);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+li.campanha:hover div div.setas-menu2 {
+    background-image: url(../imagem/seta-branca-hover-cima.png);
+}
+
+li.campanha div:hover div.setas-menu2 {
+    background-image: url(../imagem/seta-cinza-hover-cima.png);
+}
+
+
+
+ul.submenu li.clicar:hover ul.campanhas li {
+    display: inline;
+    background-color: rgb(49, 48, 48);
+}
+
+/*main*/
+
+main {
+    background-color: #0f1113d7;
+    border-radius: 5px;
+    margin: auto;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+}
+
+main h2 {
+    text-align: center;
+}
+
+div#main {
+    display: flex;
+}
+
+div.coluna-1 {
+    width: 66%;
+}
+
+div.coluna-2 {
+    columns: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+img.imagem-odisseia-caos:hover {
+    border-radius: 45%;
+    background-image: radial-gradient(var(--cor-gradiente-container-esquerdo-3), var(--cor-gradiente-container-esquerdo-1), var(--cor-gradiente-container-esquerdo-2), var(--transparente) 75%);
+}
+
+/*Ajuste geral das seções (container direito)*/
+
+section {
+    padding: 5px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+section h3 {
+    padding: 5px;
+    background-color: var(--cor-section);
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+}
+
+section div.container {
+    text-align: center;
+    border: 5px solid var(--cor-section);
+}
+
+section div img {
+    height: 150px;
+}
+
+div.container-direita section a {
+    color: var(--cor-logo-odisseia-gradiente-2);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+div.container-direita section a:hover {
+    color: var(--cor-link-hover);
+    text-decoration: underline;
+}
+
+div.container-direita section p {
+    margin: 0px 10px 10px 10px;
+}
+
+div.texto {
+    margin-bottom: 20px;
+}
+
+article {
+    margin: 20px auto;
+}
+
+/*Seção das campanhas (container direito)*/
+
+ul.campanhas {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+ul.campanhas li {
+    height: 120px;
+    width: 300px;
+    margin: 10px auto;
+}
+
+img.card {
+    height: 120px;
+    width: 300px;
+    border-radius: 10px;
+    border: 15px 2px 1px black;
+}
+
+img.card:hover {
+    height: 100px;
+    width: 250px;
+}
+
+/*Seção dos personagens (container-direito)*/
+
+div.personagens {
+    margin: 0px 10px;
+}
+
+ul.personagens-temporada {
+    display: flex;
+    list-style: none;
+}
+
+ul.personagens-temporada li {
+    margin: 15px auto;
+    
+}
+
+ul.personagens-temporada li:hover {
+    color: var(--cor-link-hover);
+    cursor: pointer;
+}
+
+ul.personagens-temporada li a:hover {
+    text-decoration: none;
+}
+
+/*Seção twitter*/
+
+iframe {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    height: 95%;
+    width: 100%;
+    border: 0px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+iframe.twitter {
+    margin: auto;
+    max-width: 500px;
+    height: 300px;
+}
+
+/*Seções de Mais Conteúdo sobre o RPG*/
+
+section.mais-sobre-universo {
+    width: 100%;
+    margin: 0px auto;
+}
+
+section.mais-sobre-universo h3 {
+    padding: 15px;
+}
+
+section.mais-sobre-universo h3 a {
+    color: var(--cor-fonte-padrão);
+}
+
+section.mais-sobre-universo h3 a:hover {
+    color: var(--cor-fonte-padrão);
+    text-decoration: underline;
+}
+
+/*Seção Créditos*/
+
+section.creditos p {
+    padding-bottom: 10px;
+}
+
+section.creditos p a#creditos {
+    color: var(--cor-fonte-padrão);
+    padding: 10px;
+    border: 2px solid var(--cor-fonte-padrão);
+    border-radius: 5px;
+}
+
+section.creditos p a#creditos:hover {
+    color: var(--cor-background-menu-link-hover);
+    text-decoration: none;
+    border: 2px solid var(--cor-background-menu-link-hover);
+}
+
+
+
+/*diferentes tamanhos de tela*/
+
+@media screen and (max-width: 1020px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div#main {
+        display: block;
+    }
+
+    div.coluna-1 {
+        width: 100%;
+    }
+    
+    div.coluna-2 {
+        width: 100%;
+    }
+
+    ul.campanhas {
+        margin: 0px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    ul.campanhas li {
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    ul.campanhas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ul.campanhas li {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .dp-menu {
+        margin: 0 30px;
+    }
+    
+
+    .dp-menu ul.nav li ul li.clicar:hover ul.campanhas {
+        position: absolute;
+        display: block;
+        max-width: 200px;
+        min-width: 160px;
+        margin-left: 100px;
+        text-align: center;
+        bottom: 135px;
+    }
+}
+
+@media screen and (max-width: 590px) {
+
+    div.container-direita {
+        position: absolute;
+        left: 70px;
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    div.container-esquerda {
+        position: fixed;
+        background-color: rgba(0, 0, 255, 0);
+        justify-content: center;
+    }
+
+    div.container-esquerda div {
+        display: block;
+        background-color: var(--cor-container-esquerdo-1-550px);
+        border-radius: 20px;
+        height: auto;
+        width: auto;
+    }
+
+    div.container-direita {
+        position: unset;
+        left: 0px;
+        width: 100vw;
+    }
+
+    header {
+        margin: 20px 5%;
+    }
+
+    header img {
+        height: 80px;
+    }
+
+    /* Deixa as curtidas na mesma altura da palavra "Odisseia" quando a tela tem 650px de largura
+    header div.curtidas {
+        margin-top: 0px;
+    }
+    */
+
+    hr.row {
+        display: block;
+        margin: 10px 30px;
+    }
+
+    /*Mais sobre o universo do rpg*/
+
+    section.mais-sobre-universo {
+        width: 98%;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    /*Modificando o Menu lateral para ir para cima*/
+    
+    div.container-esquerda {
+        position: fixed;
+        background-color: rgba(0, 0, 255, 0);
+        justify-content: center;
+        width: 100vw;
+        height: auto;
+        align-items: center;
+        margin: 0px;
+    }
+
+    div.container-esquerda div {
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        background-color: var(--cor-container-esquerdo-menor);
+        height: 50px;
+        padding: 10px 5vw;
+        border-radius: 0px;
+        margin: 0px;
+    }
+
+    div.container-esquerda div ul {
+        display: flex;
+        margin: 0px;
+        align-items: center;
+        width: 60%;
+        margin-left: 5vw;
+    }
+
+    div.container-esquerda div ul.container-esquerda {
+        justify-content: end;
+        width: 30%;
+        margin-right: 5%;
+        margin-left: 0;
+    }
+
+    div.container-esquerda div ul li {
+        margin: 0px;
+        height: 45px;
+        width: 45px;
+        align-items: center;
+    }
+
+    div.container-esquerda div ul li img {
+        margin: auto;
+        width: 40px;
+        height: 40px;
+    }
+
+    div.container-esquerda ul li p {
+        display: none;
+    }
+
+    img.imagem-fandom {
+        margin-top: 0px;
+    }
+
+    /*editando o container direito do site, que agora não é mais direito xd*/
+
+    div.container-direita {
+        width: 10w;
+    }
+
+    /*Tornando header responsivo*/
+
+    header {
+        margin-top: 70px;
+    }
+
+    header h1 {
+        font-size: 140%;
+    }
+
+    header img {
+        max-height: 80px;
+        min-height: 40px;
+    }
+    
+    header div.curtidas label {
+        display: none;
+    }
+
+    header div.curtidas {
+        padding: 10px 10px;
+    }
+
+    header div.curtidas div#icurtir {
+        max-height: 30px;
+        max-width: 30px;
+        min-height: 20px;
+        min-width: 20px;
+    }
+
+    img.img-nav-inv {
+        filter: invert(100%);
+    }
+
+    div.curtidas label {
+        font-size: 100%;
+    }
+    
+    /*Tornando o menu responsivo*/
+
+    .dp-menu ul.nav {
+        margin: 30px 0px 30px 0px;
+    }
+
+    div.item-menu p.descarte-450px {
+        display: none;
+    }
+
+    .dp-menu ul.nav li ul li.clicar:hover ul.campanhas {
+        bottom: 135px;
+    }
+
+    /*Ajustando o main*/
+
+    main {
+        border-radius: 0px;
+        width: 100%;
+        padding: 0px;
+    }
+
+    h2 {
+        margin-top: 10px;
+    }
+
+    div#main {
+        margin: 0px 10px 20px 10px;
+    }
+
+    section {
+        margin-top: 15px;
+        padding: 0px;
+    }
+
+    /* Editando o tamanho dos cards em dispositivo celulares */
+
+    ul.campanhas li {
+        max-height: auto;
+        max-width: 90%;
+        margin: 10px auto;
+    }
+    
+    .dp-menu ul.nav li ul li.clicar:hover ul.campanhas {
+        max-width: 120px;
+        min-width: 100px;
+        bottom: 107px;
+    }
+
+    img.card {
+        max-height: auto;
+        max-width: 90%;
+    }
+    
+    img.card:hover {
+        max-height: auto;
+        max-width: 80%;
+    }
+
+    /*Mais sobre o universo do rpg*/
+
+    section.mais-sobre-universo {
+        width: 95%;
+        margin-top: 10px;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    /*header*/
+
+    header h1 {
+        font-size: 120%;
+    }
+
+    /*Editando a seção das campanhas*/
+
+    ul.campanhas li {
+        max-height: 85px;
+    }
+    
+    img.card {
+        max-height: 85px;
+    }
+    
+    img.card:hover {
+        max-height: 70px;
+    }
+
+}

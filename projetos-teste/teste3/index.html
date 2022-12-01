@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        img.imagem {
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carregar nova Imagem :)</h1>
+    <img src="../../imagens/tengen.jpg" alt="Imagem" class="imagem">
+    <label for="arquivo-novo"><input type="file" id="arquivo-novo" onchange="mudarImagem()"> Selecione uma nova imagem </label>
+
+    <script src="script.js"></script>
+</body>
+</html>

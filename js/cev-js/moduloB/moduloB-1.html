@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis e Tipos Primitivos</title>
+    <link rel="stylesheet" href="../estilo/style.css">
+</head>
+<body>
+    <h1>O que vamos Aprender?</h1>
+    <p>Comandos básicos como:</p>
+    <p>Armazenando dados</p>
+    <p>Tratamento de dados</p>
+    <p>Operações com dados</p>
+
+    <h1>Tipos de Dados e Variáveis</h1>
+    <p>Aprendemos até agora os seguintes comandos:</p>
+    <ul>
+        <li>window.alert()</li>
+        <li>window.confirm()</li>
+        <li>window.prompt()</li>
+    </ul>
+
+    <p>
+        Os 2 comandos de baixo, com base no que vimos até agora, não fazem nada. No caso do primeiro, independente da resposta você vai para o mesmo lugar.
+        Já o segundo, que deveria armazenar a informação de nome do usuário, não guarda a informação que deveria.
+    </p>
+
+    <h2>Sobre comentários...</h2>
+
+    <p>
+        Primeiro vamos falar sobre comentários, eles são feito de duas formas:
+    </p>
+    
+    <ul>
+        <li>// comentário em uma única linha</li>
+        <li>/* comentário com mais de uma linha de código */</li>
+    </ul>
+    
+    <h2>Variáveis</h2>
+    <p>
+        Em um estacionamento existem vagas para carros, motos e caminhões, cada um armazenando um tipo diferente de automóvel. Além disso, para você não esquecer onde 
+        estacionou, cada vaga tem um nome. 
+    </p>
+    <p>
+        Para colocar um carro em uma vaga podemos dizer que: <code>vaga a1 = carro1</code>.
+    </p>
+    <p>
+        Ou seja, a vaga 1 recebeu o carro 1. Mas e se chegar outro carro que quer estacionar na mesma vaga em que o carro 1, tem como ele estacionar lá?
+    </p>
+    <p>
+        A resposta é não, para ele estacionar o carro 1 tem que sair da vaga, e é assim que funciona nas variáveis.
+    </p>
+    <p>
+        E se você não quiser que nenhum carro ocupe aquela vaga? Para isso podemos usar um comando como <code>a1 = null</code>. Isso tira o carro que está na vaga.
+    </p>
+    <p>
+        Assim como as vagas, as <strong>variáveis também são espaços que armazenam coisas</strong> e elas também precisam de um identificador único para cada uma. Você consegue atribuir 
+        valores a essas variáveis e, assim como os carros ficam nas vagas, eles irão ficar aramazenados nela até que outro valor os substitua. 
+    </p>
+    <p>
+        Da mesma forma que no estacionamento existem vagas de tamanhos diferentes, também existem <strong>variáveis de tamanhos diferentes</strong>, mas ao invés de carros, caminhos e motos, 
+        elas podem armazenar números inteiros, reias, strings, valores booleanos, etc.
+    </p>
+    <p>
+        Para armazenar strings você tem que usar um símbolo para mostrar que o valor é uma string, para isso podemos usar: <strong>"exemplo 1"</strong>, <strong>'exemplo 2'</strong> e <strong>`exemplo 3`</strong>iferenças 
+        entre eles no JS, mas faleremos sobre isso depois.
+    </p>
+    <p>
+        O nome de cada variável é o que chamamos de <strong>identificador</strong>, existem algumas regras para os <strong>identificadores no JS</strong>:
+    </p>
+    <ul>
+        <li>Podem começar com <strong>letra</strong>, <strong>$</strong> ou <strong>_</strong>;</li>
+        <li>Não podem começar com <strong>números</strong>;</li>
+        <li>É possível usar <strong>letras</strong> ou <strong>números</strong>;</li>
+        <li>Épossível usar <strong>acentos</strong> e <strong>símbolos</strong>;</li>
+        <li>Não podem conter <strong>espaços</strong>, subtituímos ele por "_";</li>
+        <li>Não podem ser <strong>palavras reservadas</strong>, palavras que o JS usa em seus comandos.</li>
+    </ul>
+
+    <h2>Vamos usar o NodeJS para treinar</h2>
+    <p>
+        Vamos abrir ele usando o VSCode, para isso basta clicar, na parte superior, na opção "Terminal", "Novo Terminal". Ou então use "Ctrl + Shift + ' "
+    </p>
+    <p>
+        Estando no terminal basta você digitar "node" que você entra no NodeJS.
+    </p>
+    <p>
+        Para sair do node basta digitar ".exit" e para sair do terminal em si digite "exit".
+    </p>
+
+    <p>
+        DICA: caso queira limpar o que escreveu até agora apertar "Ctrl + L"
+    </p>
+
+    <h3>Dicas para escolher Nomes de Identificadores</h3>
+    <ul>
+        <li><strong>Maiúsculas</strong> e <strong>minúsculas</strong> fazem diferença. Você tem que escrever o nome variável da mesma forma que você a nomeou anteriormente;</li>
+        <li>Tente escolher <strong>nomes coerentes</strong> para as variáveis, algo que faça sentido;</li>
+        <li>Evite se tornar um <strong>'programador alfabeto'</strong> ou um <strong>'programador contador'</strong>, não use apenas letrar individuais ou números (N1, N2, N3...) para identificar variáveis, vai gerar confusão;</li>
+    </ul>
+
+    <h3>Tipos Principais de Variáveis no JS</h3>
+    <p>
+        Diferente de outras linguagens, o JS não diferencia Números Inteiros de Números Reias (float), todos os números se encaixam como <strong>number</strong>.
+    </p>
+    <p>
+        Qualquer informação armazenado entre aspas, mostradas anteriormente, são classificados como <strong>String</strong>.
+    </p>
+    <p>
+        E as informações de True or False são <strong>Valores Booleanos</strong>;
+    </p>
+
+    <p>
+        Existem outros tipos de dados, sendo eles:
+    </p>
+
+    
+        <ul>
+            <li>number
+                <ul>
+                    <li>Infinity</li>
+                    <li>NaN (Not a Number)</li>
+                </ul>
+            </li>
+            <li>string</li>
+            <li>boolean</li>
+            <li>null</li>
+            <li>undefined</li>
+            <li>object
+                <ul>
+                    <li>array</li>
+                </ul>
+            </li>
+            <li>function</li>
+        </ul>
+
+
+    <p>
+        DICA: para descobrir o tipo de uma informação você precisa usar o <strong>typeof</strong>.
+    </p>
+
+
+    <script>
+        //Comentário em linha e abaixo o comentário em várias linhas:
+        /*
+        alert('Minha primeira mensagem!');
+        confirm('Mano, tu é gay?');
+        prompt('Escreva seu nome noturno: ');
+        */
+    </script>
+</body>
+</html>

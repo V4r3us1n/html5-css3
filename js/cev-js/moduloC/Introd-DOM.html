@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.808);
+            color: white;
+        }
+
+        main {
+            width: 700px;
+            margin: 50px auto;
+        }
+
+        main h1 {
+            margin-top: 20px;
+        }
+
+        main h1, main h2, main h3, main p {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        div {
+            margin: 0 auto;
+            position: relative;
+            height: 40px;
+            width: 200px;
+            background-image: linear-gradient(to right, purple, aqua);
+            color: white;
+            border: 2px solid brown;
+            border-radius: 20px;
+        }
+
+        div p {
+            width: 100px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Iniciando estudos DOM</h1>
+        <p >Aqui vai o resultado</p>
+        <p >Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+        <p  id="msg">Parágrafo vazio...</p>
+
+        <div><p>Clique em mim</p></div>
+
+        <h2>O que é DOM?</h2>
+        <p>
+            Como já citado anteriormente, DOM é Document Object Model (Modelo de Objetos para Documentos), se trata de um conjunto objetos dentro do seu navegador que vai te dar acesso aos componentes internos de seu website.
+        </p>
+        <p>
+            Ele só funciona dentro de navegadores. 
+        </p>
+        
+        <h2>Árvore DOM</h2>
+        <p>
+            Raíz (window), começa a partir dela, tudo no JS está dentro de um objeto chamado "window" (janela).
+        </p>
+        <p>
+            Dentro do window existem vários outros objetos, como:
+        </p>
+        <ul>
+            <li>location : diz a localização do seu site, url, página atual, página anterior, etc</li>
+            <li>document : documento atual</li>
+            <li>history : guarda informações como "de onde você veio", "para onde você vai", etc. Facilita a navegação no seu site.</li>
+        </ul>
+
+        <p>
+            Dentro do "document" existe outro objeto muito importante que é o "<strong>html</strong>".
+        </p>
+        <p>
+            Dentro do "html" temos 2 objetos/child: o "<strong>head</strong>" e "<strong>body</strong>".
+        </p>
+        <p>
+            Seria algo assim:
+        </p>
+        <pre><code>
+            window:
+                location
+                document
+                    html
+                        head
+                            meta
+                            title
+                        body
+                            h1
+                            p
+                            p
+                                strong
+                            div
+                                p              
+                history
+        </code></pre>
+        <p>
+            Os objetos que estão dentro de outros são chamados "<strong>child</strong>" e os objetos que abrigam eles são os "<strong>parent</strong>" 
+        </p>
+
+        <p>
+            Todos os objetos mostrados no exemplo anterior são elementos, você pode acessar eles com vários metódos, alguns deles são:
+        </p>
+        <ul>
+            <li>por Marca (tag)</li>
+            <li>por ID</li>
+            <li>por Nome</li>
+            <li>por Classe</li>
+            <li>por Seletor (CSS)</li>
+        </ul>
+
+        <h3>Selecionando elementos por Marca</h3>
+        <p>basta você usar o seguinte comando:</p>
+        <pre><code>
+            window.document.getElementsByTagName('p')
+            //Pode ocultar o "window"
+        </code></pre>
+        <p>Com ele você consegue selecionar mais de um objeto, como parágrafos, não existe só um.</p>
+
+        <h3>Selecionando elementos por ID</h3>
+        <p>QUando seu site é mais desenvolvido e voce^tem que selecionar  elementos únicos, você pode usar essa seleção. Basta usar o seguinte comando:</p>
+        <pre><code>
+            documento.getElementById()
+        </code></pre>
+
+        <h3>Selecionando elementos por Nome</h3>
+        <p>Se você tem a propriedade "Name" você pode usar o seguinte coamndo para selecionar:</p>
+        <pre><code>
+            document.getElementsByName()
+        </code></pre>
+        <p>Percebeu que o "Elements" está no plural? Mostra que você tem que usar o colchetes quando quiser selecionar algo específico.</p>
+
+        <h3>Selecionando elementos por Classe</h3>
+        <p>Entendo os outros você entende esse também, então use o seguinte comando:</p>
+        <pre><code>
+            document.getElementsByClassName()
+        </code></pre>
+
+        <h3>Selecionando elementos por Seletor</h3>
+        <p></p>
+        <pre><code>
+            querySelector(div#msg)
+            ou
+            querySelectorAll()
+        </code></pre>
+        <p id="a">Você usa basicamente a síntaxe do CSS, colocar o nome do elemento: <strong>div</strong> e o id/classe (identificador) <strong>#msg</strong></p>
+
+    </main>
+
+    <script>
+        var p1 = document.getElementsByTagName('p')[0]; //Selecionar o primeiro parágrafo que aparecer
+        document.write(p1.innerText);
+        p1.style.color = 'yellow';
+
+        var d = document.getElementById('msg');
+        d.style.background = 'gold';
+        d.style.color = 'blue';
+        d.innerText = 'Estou aguardando...';
+
+        var p = document.querySelector('p#a')
+        p.style.color = 'red';
+    </script>
+</body>
+</html>

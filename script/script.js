@@ -10,6 +10,20 @@ function mudarImagemCapa() {
 }
 
 function mudarImagemPerfil() {
+    let imagemPerfil = document.querySelector("img.imagem-perfil");   
+    let novaImagemPerfilArq = document.getElementById("imudar-imagem-perfil").file[0];
+
+    const reader = new FileReader();
+    reader.onloadend = function() {
+        PerformanceEventTiming.src = reader.result;
+    }
+
+    if (novaImagemPerfilArq) {
+        novaImagemPerfilArq = reader.readAsDataURL(novaImagemPerfilArq);
+        imagemPerfil.src = `${novaImagemPerfilArq}`;
+    } else {
+        preview.src = "";
+    }
 
 }
 
@@ -33,7 +47,7 @@ function mudarTamanhoIframe2() {
     valoriframe = 2;
 }
 
-function mudarTamanhoIframe1() {
+function mudarTamanhoIframe3() {
     document.getElementById("iframe-conteudo").style.height = "550px";
     valoriframe = 3;
 }
@@ -68,5 +82,46 @@ function seguirPerfil() {
         label_seguir.style.fontSize = "25px";
         label_seguir.style.marginTop = "0px";
         div_seguir.style.margin = "5px 15px";
+    }
+}
+
+    /* função para exibir os desafios do menu "Estudos" em outra guia */
+
+function abrirLinksEmOutraGuia() {
+    let estadoCheckbox = document.getElementById("abrir-guia");
+
+    let linkDesafio = document.getElementsByClassName("desafio");
+    let nDesafios = document.getElementsByClassName("desafio").length;
+    console.log(nDesafios)
+
+    if (estadoCheckbox.checked == true) {
+        for (i = 0; i <= nDesafios - 1; i++) {
+            linkDesafio[i].target = "_blank";
+        }
+    } else {
+        for (i = 0; i <= nDesafios - 1; i++) {
+            linkDesafio[i].target = "_self";
+        }
+    }
+}
+
+/* função para exibir os itens do menu "Projetos" em outra guia */
+
+function abrirProjetoEstado() {
+    let estadoCheckboxProjeto = document.getElementById("abrir-projeto");
+    let nLinksProjetos = document.getElementsByClassName("link-projeto").length;
+    console.log(`há ${nLinksProjetos} projetos`)
+    let linkProjeto = document.getElementsByClassName("link-projeto");
+
+    if (estadoCheckboxProjeto.checked == true) {
+        for (i = 0; i <= nLinksProjetos - 1; i++) {
+            linkProjeto[i].target = "_blank";
+            console.log(i);
+        }
+    } else {
+        for (i = 0; i <= nLinksProjetos - 1; i++) {
+            linkProjeto[i].target = "_self";
+            console.log(i);
+        }
     }
 }

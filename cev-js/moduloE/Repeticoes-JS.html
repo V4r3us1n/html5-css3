@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetições JS</title>
+    <link rel="stylesheet" href="../estilo/style.css">
+</head>
+<body>
+    <h1>Repetições em JavaScript</h1>
+    <p>
+        é nesse ponto que muita gente entra em desespero, nesse módulo nós vamos ver:
+    </p>
+    <ul>
+        <li>Estruturas de Repetição com Teste Lógico no ínicio (while)</li>
+        <li>Estruturas de Repetição com Teste Lógico no Final (do while)</li>
+        <li>Estruturas de Repetição com Variável de Controle (for)</li>
+    </ul>
+
+    <p>
+        Essas são as 3 estruturas de repetição básicas das linguagens de programação.
+    </p>
+    <p>
+        Nesse módulo também serão propostos alguns desafios para você fazer!
+    </p>
+
+    <h1>Repetições (Parte 1)</h1>
+    <p>
+        As estruturas de repetições começam da mesma forma que uma estrutura de condição, ou seja, com um <strong>teste lógico</strong> que pode ser Verdadeiro ou Falso. No entanto, ele se comporta de forma diferente, 
+        se o teste lógico for <strong>Verdadeiro</strong> ele vai executar o bloco e, ao invés de continuar a sequência, ele vai voltar para refazer o teste, isso vai continuar (entra em loop) até que o resultado seja <strong>Falso</strong>.
+    </p>
+    <p>
+        Enquanto a condição for verdade o loop (laço) será mantido, quando ela for falsa o loop será quebrado.
+    </p>
+    <p>
+        A primeira estrutura que vamos testar é o <strong>while</strong>, veja:
+    </p>
+    <pre><code>
+        while (condição) {
+            [bloco]
+        }
+    </code></pre>
+
+    <p>
+        Vamos para um exemplo mais prático:
+    </p>
+
+    <pre><code>
+        function comerPizza() {
+            while (temFatia()) {
+                comerFatia();
+            }
+        }
+    </code></pre>
+
+    <p>
+        Vamos fazer alguns testes (Repeticao-p1.js)
+    </p>
+
+    <p>
+        Como pode ver o while é possui teste lógico no início, ou seja, primeiro ele realiza o teste lógico e depois ele executa o bloco, para aí ele entrar em loop, ou não.
+    </p>
+    <p>
+        Existe também uma estrutura oposta a ela, que primeiro executa o bloco e depois realiza o teste lógico, para então entrar em loop ou não. Chamamos essa estrutura de repetição de <strong>do while</strong>, e funciona da seguinte forma:
+    </p>
+
+    <pre><code>
+        do {
+            [bloco]
+        } while (condição)
+    </code></pre>
+
+    <script>
+
+    </script>
+</body>
+</html>

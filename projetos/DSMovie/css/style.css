@@ -1,0 +1,226 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root {
+    --cor-fundo: #DDD;
+    --cor-menu: #4D41C0;
+    --cor-card: #fff;
+    --nome-filme: #4A4A4A;
+    --inserir-dados: #AAA;
+    --cor-nota: #FFBB3A;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body, main {
+    background-color: var(--cor-fundo);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+}
+
+header {
+    background-color: var(--cor-menu);
+    color: var(--cor-card);
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav a, nav a:hover {
+    font-size: 12px;
+    font-weight: 400;
+    color: unset;
+    text-decoration: none;
+}
+
+.dsmovie-contact-container {
+    display: flex;
+    align-items: center;
+}
+
+.dsmovie-contact-container img {
+    margin-right: 10px;
+}
+
+#dsmovie-card-list {
+    padding: 0 10px;
+}
+
+.dsmovie-card {
+    width: 100%;
+    background-color: var(--cor-card);
+    border-radius: 8px 8px 8px 8px;
+}
+
+.dsmovie-card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.dsmovie-card h3 {
+    color: var(--nome-filme);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.dsmovie-card-description {
+    background-color: var(--cor-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 20px 20px;
+    border-radius: 0 0 8px 8px;
+    height: 190px;
+}
+
+.dsmovie-card-description h3 {
+    margin-bottom: 10px;
+}
+
+.dsmovie-card-description-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dsmovie-card-description-bottom h4 {
+    color: var(--cor-nota);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.dsmovie-card-description-bottom p {
+    color: #AAA;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.dsmovie-card-description-bottom img {
+    width: 22px;
+}
+
+.dsmovie-button {
+    background-color: var(--cor-menu);
+    width: 180px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dsmovie-button, .dsmovie-button:hover {
+    justify-content: center;
+    color: var(--cor-card);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 0;
+}
+
+.dsmovie-form-container{
+    padding: 40px 0;
+    max-width: 480px;
+    margin: auto;
+}
+
+.dsmovie-form-description {
+    background-color: var(--cor-card);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.dsmovie-form-description h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.dsmovie-form-group {
+    display: block;
+    width: 460px;
+    padding: 0 20px 0 20px;
+    margin-bottom: 20px;
+}
+
+.dsmovie-form-group label {
+    font-size: 12px;
+    color: var(--inserir-dados);
+}
+
+.dsmovie-button-container {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dsmovie-pagination-container {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.dsmovie-pagination-box {
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dsmovie-pagination-box p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--cor-menu);
+    font-weight: 400;
+}
+
+.dsmovie-pagination-box button {
+    height: 40px;
+    width: 40px;
+    border: 1px solid var(--cor-menu);
+    border-radius: 4px;
+    background-color: var(--cor-card);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dsmovie-pagination-box button img {
+    filter: brightness(0) saturate(100%) invert(31%) sepia(80%) saturate(1405%) hue-rotate(226deg) brightness(77%) contrast(97%);
+}
+
+.dsmovie-pagination-box button:disabled {
+    border: 1px solid var(--inserir-dados);
+}
+
+.dsmovie-pagination-box button:disabled img {
+    filter: unset;
+}
+
+.dsmovie-flip-horizontal {
+    transform: rotate(180deg);
+}

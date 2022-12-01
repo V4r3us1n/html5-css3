@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 4</title>
+    <style>
+        body {
+            background-color: rgb(62, 112, 252);
+            color: rgb(255, 187, 0);
+            font-size: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formatando Strings</h1>
+    <p>
+        Vamos praticar um pouco os comandos:
+    </p>
+    <ul>
+        <li>.length //quantos caracteres a string tem</li>
+        <li>.toUpperCase //tudo para 'MAIÚSCULAS'</li>
+        <li>.toLowerCase //tudo para 'minúsculas'</li>
+    </ul>
+
+    <pre><code>
+        //Formatando Strings
+        var nome = prompt('Qual é seu nome?');
+        document.writeln(`Olá ${nome}, seu nome tem ${nome.length} letras <br>`);
+        document.write(`Seu nome em maiúsculo é ${nome.toUpperCase()} <br>`);
+        document.write(`Seu nome em minúsculo é ${nome.toLowerCase()}`);
+    </code></pre>
+
+    <h1>Formatando Números</h1>
+    <p>
+        Caso você queira adicionar casas decimais a um número basta você usar o comando "<code>.toFixed()</code>", entre parênteses você define quantas casas decimais ele vai ter.
+    </p>
+    <p>
+        Você também pode trocar o "ponto" por "vírgula" usando o "<code>.replace(".", ",")</code>"
+    </p>
+
+    <p>
+        Como faz para eu mostrar que se trata de dinheiro, como mostrar o "R$" para indicar que é real?
+    </p>
+    <p>
+        Use o seguinte comando: <code>n1.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})</code>
+    </p>
+    <p>
+        O comando acima vai localizar a String em português, no estilo vai exibir como valor monetário, usando o real brasileiro como moeda (BRL)
+    </p>
+
+    <p>
+        Próxima aula vamos falar sobre OPERADORS.
+    </p>
+
+    <script>
+        //Formatando Números
+        var n1 = 1543.5;
+        alert(n1);
+        document.write(`${n1.toFixed(2)} <br>`); //Vai exibir o valor  com duas casas decimais
+        document.write(`${n1.toFixed(2).replace(".", ",")} <br>`); //Troca o "ponto" por "vírgula"
+        document.write(`${n1.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} <br>`); //Vai localizar a string em português, entre chaves estão os atributos. No estilo vai mostrar como valor monetário (currency), e o valor será exibido como BRL (real do Brasil)
+        document.write(`${n1.toLocaleString('pt-br', {style: 'currency', currency: 'URS'})} <br>`);
+        document.write(`${n1.toLocaleString('pt-br', {style: 'currency', currency: 'EUR'})} <br>`);
+    </script>
+</body>

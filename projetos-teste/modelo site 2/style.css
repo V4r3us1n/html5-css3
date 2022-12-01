@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+body, ul, li, p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+    background-color: rgb(12, 12, 12);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.header {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    background-color: tomato;
+}
+
+/* CSS GRID LAYOUT */
+
+.grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+.grid1 div {
+    background-image: linear-gradient(to bottom, cyan, black 60%);
+    border-radius: 10px;
+    height: 300px;
+}
+
+.grid1 > div:nth-child(n + 4) {
+    background-image: linear-gradient(to bottom, lime, black 60%);
+    /*display: grid;*/
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    max-height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    align-items: flex-end;
+}
+
+.grid1 > div:nth-child(n + 4) p {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid1 p {
+    background-color: black;
+    border-radius: 0 0 10px 10px;
+    padding: 5px;
+}
+
+.grid1 div img {
+    height: 98%;
+}
+
+.grid1 > div.anuncio {
+    grid-column: 1;
+    grid-row: 2 / 5;
+    background-image: linear-gradient(to bottom, cyan, black 60%);
+    border-radius: 10px 10px 0 0;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.grid1 > div.anuncio p {
+    width: 100%;
+    padding: 5px 0 5px 0;
+    text-indent: 5px;
+}
+
+
+.grid1 > div.anuncio:hover {
+    background-image: linear-gradient(to bottom, purple, black 60%);
+}
+
+@media (max-width: 700px) {
+    .grid1 {
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid1 > div:nth-child(n + 4) {
+        display: block;
+    }
+    .grid1 > div.anuncio {
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+        margin-top: 0;
+    }
+}

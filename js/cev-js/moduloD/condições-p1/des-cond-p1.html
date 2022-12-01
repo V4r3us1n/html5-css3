@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <link rel="stylesheet" href="../../estilo/style.css">
+    <style>
+        input {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Faça o programa do país no HTML -->
+    <h1>De que país você é?</h1>
+
+    País de origem: <input type="text" value="" id="txtpais">
+    <input type="button" value="verificar" onclick="confirmar()">
+
+    <div id="res">
+
+    </div>
+
+    <script>
+        function confirmar () {
+            var txtp = document.getElementById('txtpais');
+            var pais = txtp.value
+            var res = document.querySelector('div#res');
+            res.innerHTML = `<p>Se você vive em <strong>${pais}</strong>, então...</p>`;
+            if (pais != 'Brasil') {
+                res.innerHTML += '<p>Você é <strong>ESTRANGEIRO</strong>!</p>';
+            } else {
+                res.innerHTML += '<p>Você é <strong>BRASILEIRO</strong>!</p>';
+            }
+        }
+    </script>
+</body>
+</html>

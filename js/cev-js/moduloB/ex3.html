@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 3</title>
+    <style>
+        body {
+            background-color: rgb(62, 112, 252);
+            color: rgb(255, 187, 0);
+            font-size: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        No caso abaixo os dados inseridos na variável são tratados como Strings, e quando você "soma" os valores você na verdade são concatenados.
+    </p>
+    <pre><code>
+        var n1 = prompt('Digite um número: ');
+        var n2 = prompt('Digite outro número: ');
+        var s = n1 + n2;
+        alert('A soma entre os valores é ' + s);
+    </code></pre>
+
+    <p>
+        Para que o JS entenda que o operador "+" servirá para somar, e não concatenar, você deve indicar para ele que os valores utilizados na operação são números e não strings.
+    </p>
+    <p>
+        Vamos ter que realizar uma conversão de tipos de "String > Número". Existem 3 formas de se fazer isso, sendo elas:
+    </p>
+
+    <ul>
+        <li>Number.paseInt(n) ou parseInt(n) [Serve para números inteiros]</li>
+        <li>Number.parseFloat(n) ou parseFloat(n) [Serve para números quebrados]</li>
+        <li>Number(n) [Usando apenas isso o JS vai descobrir por conta própria se o valor é Inteiro ou Real]</li>
+    </ul>
+
+    <p>
+        Por mais que a última opção seja "melhor" do que as outras, elas também são necessárias, você pode acabar encontrando situações onde os valores tem que ser, obrigatoriamente, Inteiros ou Reais apenas.
+    </p>
+
+    <p>
+        Para fazer a conversão de número para String existem 2 opções:
+    </p>
+    
+    <ul>
+        <li>String(n)</li>
+        <li>n.toString()</li>
+    </ul>
+
+    <p>
+        Toma aqui um exemplo dessas conversões:
+    </p>
+
+    <pre><code>
+        var n1 = parseInt(prompt('Digite um número: '));
+        var n2 = parseInt(prompt('Digite outro número: '));
+        var s = n1 + n2;
+        alert('A soma entre os valores é ' + s);
+
+        var n3 = parseFloat(prompt('Digite outro número: '));
+        var n4 = parseFloat(prompt('Digite outro número: '));
+        var s2 = n3 + n4;
+        alert('A soma entre ' + n3 + ' e ' + n4 + ' é ' + String(s2)); //Convertendo o valor de s2 para String
+
+        var n5 = Number(prompt('Digite outro número: '));
+        var n6 = Number(prompt('Digite outro número: '));
+        var s3 = n5 + n6;
+        alert(`A soma entre ${n5} e ${n6} é ${s3.toString()}`); //Convertendo o valor de s3 para String
+    </code></pre>
+    
+    <p>
+        Não precisa usar o ".toString()", só a variável já basta aqui.
+    </p>
+
+    <p>
+        <strong>IMPORTANTE</strong>: antes você tinha que usar o '+' para concatenar sempre que envolvia uma variável. Mas agora nas novas versões tem outro jeito: TemplateStrings
+    </p>
+
+    <pre><code>
+        `Eu estou usando ${s}` //É obrigatório o uso de craz
+    </code></pre>
+
+    <p>
+        Existem outras coisas que se pode fazer com Strings, como:
+    </p>
+
+    <ul>
+        <li>.length //quantos caracteres a string tem</li>
+        <li>.toUpperCase() //tudo para 'MAIÚSCULAS'</li>
+        <li>.toLowerCase() //tudo para 'minúsculas'</li>
+    </ul>
+
+    <script>
+        //Formatando Strings
+        var nome = prompt('Qual é seu nome?');
+        var idade = Number(prompt('Qual é sua idade?'));
+        var nota = Number(prompt('Qual foi sua nota?'));
+        
+        alert(`O aluno ${nome}, de ${idade} anos, tirou a nota ${nota}!`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;800&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    color: var(--cor-fonte-padrão);
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    --cor-fonte-padrão: rgb(243, 241, 241);
+    --cor-fonte-input: black;
+    --cor-fundo-main: rgba(0, 0, 0, 0.562);
+    --cor-gradiente-container-esquerdo-2: rgb(6, 6, 65);
+    --cor-gradiente-container-esquerdo-1: rgb(47, 2, 56);
+    --cor-gradiente-container-esquerdo-3: #179e9e;
+    --cor-borda-button: rgb(90, 90, 90);
+    --cor-borda-button-hover: rgb(204, 203, 203);
+}
+
+body {
+    background-image: url(https://i.ytimg.com/vi/HqEmiq7LHoY/maxresdefault.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+input {
+    color: var(--cor-fonte-input);
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--cor-fundo-main);
+    width: 500px;
+    height: auto;
+    border: 2px solid var(--cor-fonte-padrão);
+    border-radius: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5em;
+}
+
+hr {
+    margin: 10px 20px;
+    background-color: var(--cor-fonte-padrão);
+    padding: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Informações de Login*/
+
+fieldset.info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p.texto {
+    display: flex;
+    margin:30px  30px;
+    width: auto;
+    justify-content: space-between;
+}
+
+p.checkbox {
+    width: 100%;
+    text-align: center;
+}
+
+input.inserir-info {
+    width: 75%;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid var(--cor-fonte-input);
+}
+
+hr.fim-fieldset-info {
+    padding: 0.6px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*Botões para Entrar ou Cadastrar*/
+
+
+fieldset.button {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.button div.container {
+    width: 80%;
+    margin: auto;
+}
+
+
+div.container > div {
+    position: relative;
+}
+
+.button p {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.entrar {
+    background-image: linear-gradient(to right, var(--cor-gradiente-container-esquerdo-1) -5%, var(--cor-gradiente-container-esquerdo-2) 70%, var(--cor-gradiente-container-esquerdo-3) 120%);
+    display: flex;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 25px;
+    align-content: center;
+    border: 2px solid var(--cor-fonte-padrão);
+    color: var(--cor-fonte-padrão);
+}
+
+div.botao {
+    width: 100%;
+    height: 40px;
+}
+
+div.entrar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 100%;
+}
+
+a.botao-cadastro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 11px 0px;
+    text-align: center;
+}
+
+input.entrar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    justify-content: center;
+    height: 44px;
+}
+
+a.botao-cadastro:hover {
+    color: var(--cor-borda-button-hover);
+    cursor: pointer;
+}
+
+input.entrar:hover {
+    height: 48px;
+}
+
+div.entrar:hover {
+    height: 42px;
+}
+
+.entrar:hover {
+    width: 104%;
+    border: 2px solid var(--cor-borda-button-hover);
+    border-radius: 30px;
+    cursor: pointer;
+    color: var(--cor-borda-button-hover);
+}
+
+@media screen and (max-width: 650px) {
+    main {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    main.container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    main.container {
+        width: 95%;
+    }
+}

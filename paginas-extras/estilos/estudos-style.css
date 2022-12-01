@@ -15,6 +15,7 @@
     --cor-lista-modulo-curso: rgb(11, 11, 35);
     --cor-lista-hover: rgba(29, 29, 58, 0.527);
     --cor-link-hover: rgb(171, 169, 173);
+    --cor-fundo-iframe: #10101A;
 }
 
 * {
@@ -27,10 +28,21 @@
 
 body {
     width: 90vw;
+    background-color: var(--cor-fundo-iframe);
+}
+
+p {
+    text-indent: 20px;
 }
 
 a {
     text-decoration: none;
+}
+
+label {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
 }
 
 /* Colocando cor de fundo e estilizando um pouco os itens da lista */
@@ -77,8 +89,6 @@ div.seta {
     background-position: bottom center;
     background-size: cover;
 }
-
-
 
 /* Editando a lista */
 

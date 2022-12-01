@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis Compostas</title>
+    <link rel="stylesheet" href="../estilo/style.css">
+</head>
+<body>
+    <h1>Variáveis Compostas</h1>
+    <p>OBS: só recaptulando que para criar uma variável você pode usar tanto <strong>var</strong> como <strong>let</strong> sendo que "let" só vale dentro do bloco que está sendo usado!</p>
+    <p>Diferente de <strong>Variáveis Simples</strong>, que só conseguem armazenar um valor por vez, as <strong>Variáveis Compostas</strong> são capazes de armazenar <em>vários valores</em> em uma mesma estrutura.</p>
+    <p>Imagine se você tivesse que criar mil váriáveis para uma mesma estrutura, seu código ficaria enorme. Com a variável composta  esse problema seria resolvido, todos os valores ficariam <strong>guardado em índices/chaves</strong> dentro da variável. Para você declarar uma variável composta em JS você faz o seguinte:</p>
+    
+    <pre><code>
+        var a = [a0, a1, a2]
+    </code></pre>
+    
+    <p>Todos os valores que você quer adicionar na variável serão colocados como índice/chave (ordem de chegada: 0, 1, 2, 3) dentro dos colchetes!</p>
+    <p>Essas variáveis compostas são chamadas de <strong>Arrays</strong>, também conhecidas como <strong>Vetores</strong>. Um Vetor é composto de Elementos, um <strong>elemento de um vetor</strong> é um par que <strong>agrupa</strong> o <strong>espaço da memória</strong>, o <strong>valor colocado dentro dele</strong> e o <strong>índice/chave</strong>.</p>
+    <ul>
+        <li><strong>array</strong>: é a variável composta</li>
+        <li><strong>elemento</strong>: par que <strong>agrupa</strong> o <strong>espaço da memória</strong>, o <strong>valor colocado dentro dele</strong> e o <strong>índice/chave</strong></li>
+        <li><strong>índice/chave</strong>: é a posição dele (se for o primeiro valor da variável composta será "0" e assim por diante...)</li>
+        <li><strong>conteúdo de cada elemento/valor</strong>: bem auto-explicativo</li>
+    </ul>
+
+    <p><strong>Um Array/Vetor/Variável Composta é uma variável que tem vários elementos, cada elemento é composto seu valor e por uma chave de identificação!</strong></p>
+    <p>Ex:</p>
+    
+    <pre><code>
+        let num [5,8,4]
+    </code></pre>
+
+    <p>As vírgulas definem quantos espaços vão ter no array!</p>
+    <p>Tá, e se eu quiser adicionar um valor a um array, mas eu não quero perder os outros, o que eu faço?</p>
+    <p>Bom, veja abaixo:</p>
+
+    <pre><code>
+        let num = [5, 8, 4]
+        num[3] = 6
+    </code></pre>
+
+    <p>No exemplo acima, os espaços ocupados vão do 0 ao 2, então foi adicionado o índice 3 com o valor de 6.</p>
+    <p>E se eu não sei qual é a posição exata, como faz para eu colocar exatamente na última posiçõa?</p>
+    <p>Faça isso:</p>
+
+    <pre><code>
+        let num = [5, 8, 4, 6]
+        num.push(7)
+    </code></pre>
+
+    <p>Esse é um método interno que vai adicionar automaticamente um elemento, adicionando um novo elemento e adicionando o valor "7" a esse novo espaço criado.</p>
+    <p>Para você saber o tamanho do array você deve usar "<strong>num.length</strong>", no caso "num" é o nome da variável. OBS: <strong>Ele conta o índice 0</strong>.  Obs: nas outras linguagens o "length" é escrito seguido de parênteses, assim: <strong>.length()</strong>, ele não te^m isso no JS pois ele é uma tributo e não um método!</p>
+    <p>Existe um outro método interno dos vetores que é muito útil é o <strong>.sort()</strong>, ele pega todos os valores dentro do array e colocar em ordem crescente, veja:</p>
+
+    <pre><code>
+        let num = [5, 8, 4, 6, 7]
+        num.sort()
+        console.log(num) //Vai aparecer [4,5,6,7,8]
+    </code></pre>
+
+    <p>Como faço para exibir o vetor sem os colchetes?</p>
+    <p>Faça o seguinte:</p>
+
+    <pre><code>
+        let num = [1,2,3,4,5,6,7,8,9]
+
+        for (let pos = 0; pos &lt num.length; pos++) {
+            console.log(`A posição ${pos} tem valor ${a[pos]}!`)
+        }
+    </code></pre>
+
+    <p>Essa não é a única forma de fazer, existe uma mais simples, veja:</p>
+
+    <pre><code>
+        for (let pos in num) {
+            console.log(`A posição ${pos} tem valor ${a[pos]}!`)
+        }
+    </code></pre>
+
+    <p>Lendo ele fica assim: "Para cada posição dentro de <strong>num</strong> vai ser executado o bloco abaixo".</p>
+    <p>Essa sintaxe acima só funciona para Arrays e Objetos!</p>
+
+    <p>Como eu busco valores dentro de um vetor?</p>
+    <p>Para fazer isso vamos precisar da funcionalidade <strong>.indexOf(7)</strong> que, nesse caso, vai estar buscando em que posição está o valor <strong>7</strong>.</p>
+    <p>Ele vai retornar a posição desse valor, ex:</p>
+
+    <pre><code>
+        let a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        console.log(a.indexOf(7)) //Vai retornar o valor "6"
+    </code></pre>
+
+    <p>Caso não exista o valor procurado ele vai retornar o valor <strong>-1</strong> que significa a ause^ncia do valor procurado.</p>
+
+</body>
+</html>

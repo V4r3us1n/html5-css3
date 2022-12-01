@@ -1,0 +1,158 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+:root {
+    --cor-fonte-login: #28E28A;
+    --cor-fonte-mensagem: #01FCBA;
+    --cor-fundo-principal: #180C24;
+    --cor-fundo-login: #301E41;
+    --cor-fundo-input: #59446F;
+    --cor-sombra: #00000056;
+    --cor-fonte: #f0ffffde;
+    --cor-fonte-input: #f0ffff94;
+    --cor-sombre-button: #00ff8052;
+}
+
+body {
+    background-color: var(--cor-fundo-principal);
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-fundo-principal);
+    height: 100vh;
+    width: 100vw;
+}
+
+div.left-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+div.right-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+.card-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: var(--cor-fundo-login);
+    padding: 30px 35px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px var(--cor-sombra);
+}
+
+div.left-login > h1 {
+    color: var(--cor-fonte-mensagem);
+    font-size: 3vw;
+}
+
+div.card-login > h2 {
+    color: var(--cor-fonte-login);
+    font-weight: 800;
+}
+
+div.card-login > p {
+    width: 100%;
+    color: var(--cor-fonte);
+}
+
+div.card-login > p > label {
+    margin: 10px 0px;
+}
+
+div.card-login > p > input {
+    background-color: var(--cor-fundo-input);
+    color: var(--cor-fonte);
+    box-shadow: var(--cor-sombra);
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1em;
+    outline: none;
+    box-sizing: border-box;
+    margin: 10px 0px;
+}
+
+div.card-login > p > input::placeholder {
+    color: var(--cor-fonte-input);
+}
+
+div.card-login > button {
+    background-color: var(--cor-fonte-login);
+    font-weight: bolder;
+    color: var(--cor-fundo-principal);
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0px;
+    font-size: 0.7em;
+    margin: 25px;
+    outline: none; /*Geralmente aparece uma borda quando o elemento é selecionado, mas como está em "none" então isso não acontece*/
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px var(--cor-sombre-button);
+}
+
+img.left-login-image {
+    width: 35vw;
+}
+
+/*Criando media_querys para deixar o site responsivo*/
+
+@media only screen and (max-width: 950px) { /*Se a tela tiver no máximo 950px de largura*/
+    .card-login {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) { /*Se a tela tiver no máximo 600px de largura*/
+    main {
+        flex-direction: column;
+    }
+
+    div.right-login {
+        width: 100%;
+        height: auto;
+    }
+
+    img.left-login-image {
+        width: 50vh;
+    }
+
+    div.left-login {
+        width: 100%;
+        height: auto;
+    }
+
+    div.left-login > h1 {
+        display: none;
+    }
+
+    .card-login {
+        width: 90%;
+    }
+}
